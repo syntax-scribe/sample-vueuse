@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 17 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 17
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useIntersectionObserver/index.ts`**
@@ -40,6 +51,63 @@
 | `defaultWindow` | `../_configurable` |
 | `unrefElement` | `../unrefElement` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `cleanup` | `any` | let/var | `noop` | ✗ |
+| `observer` | `IntersectionObserver` | const | `new IntersectionObserver(
+            callback,
+            {
+              root: unrefElement(root),
+              rootMargin,
+              threshold,
+            },
+          )` | ✗ |
+| `stopWatch` | `any` | const | `isSupported.value
+    ? watch(
+        () => [targets.value, unrefElement(root as MaybeComputedElementRef), isActive.value] as const,
+        ([targets, root]) => {
+          cleanup()
+          if (!isActive.value)
+            return
+
+          if (!targets.length)
+            return
+
+          const observer = new IntersectionObserver(
+            callback,
+            {
+              root: unrefElement(root),
+              rootMargin,
+              threshold,
+            },
+          )
+
+          targets.forEach(el => el && observer.observe(el))
+
+          cleanup = () => {
+            observer.disconnect()
+            cleanup = noop
+          }
+        },
+        { immediate, flush: 'post' },
+      )
+    : noop` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -179,13 +247,6 @@ export function useIntersectionObserver(
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseIntersectionObserverOptions`
@@ -247,13 +308,6 @@ export interface UseIntersectionObserverReturn extends Pausable {
 |------|------|----------|-------------|
 | `isSupported` | `ComputedRef<boolean>` | ✗ |  |
 | `stop` | `() => void` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

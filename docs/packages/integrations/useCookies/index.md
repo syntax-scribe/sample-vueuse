@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 16 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 4 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 16
-- **Classes**: 0
-- **Imports**: 4
-- **Interfaces**: 0
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/integrations/useCookies/index.ts`**
@@ -27,6 +37,16 @@
 | `tryOnScopeDispose` | `@vueuse/shared` |
 | `Cookie` | `universal-cookie` |
 | `shallowRef` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `universalCookie` | `any` | const | `new Cookie(req ? req.headers.cookie : null)` | ✗ |
+| `watchingDependencies` | `string[]` | const | `autoUpdateDependencies ? [...dependencies || []] : dependencies` | ✗ |
 
 
 ---
@@ -464,20 +484,6 @@ function shouldUpdate(
   - `newCookies: RawCookies`
   - `oldCookies: RawCookies`
 - **Return Type**: `boolean`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

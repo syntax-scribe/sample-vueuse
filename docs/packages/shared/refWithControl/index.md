@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 7 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 3 |
+| 📊 Variables & Constants | 5 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 7
-- **Classes**: 0
-- **Imports**: 3
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/shared/refWithControl/index.ts`**
@@ -26,6 +36,19 @@
 | `Fn` | `../utils` |
 | `customRef` | `vue` |
 | `extendRef` | `../extendRef` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `source` | `T` | let/var | `initial` | ✗ |
+| `track` | `Fn` | let/var | `*not shown*` | ✗ |
+| `trigger` | `Fn` | let/var | `*not shown*` | ✗ |
+| `old` | `T` | const | `source` | ✗ |
+| `controlledRef` | `<T>(initial: T, options?: ControlledRefOptions<T>) => any` | const | `refWithControl` | ✓ |
 
 
 ---
@@ -264,13 +287,6 @@ function set(value: T, triggering = true) {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `ControlledRefOptions<T>`
@@ -302,13 +318,6 @@ export interface ControlledRefOptions<T> {
 |------|------|----------|-------------|
 | `onBeforeChange` | `(value: T, oldValue: T) => void | boolean` | ✓ |  |
 | `onChanged` | `(value: T, oldValue: T) => void` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

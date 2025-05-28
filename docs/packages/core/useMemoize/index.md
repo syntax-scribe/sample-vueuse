@@ -2,20 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 8 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 1 |
+| 📊 Variables & Constants | 0 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 3 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 8
-- **Classes**: 0
-- **Imports**: 1
-- **Interfaces**: 3
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useMemoize/index.ts`**
@@ -261,13 +270,6 @@ export function useMemoize<Result, Args extends unknown[]>(
 ```
 // Get data from cache (x2)
 ```
-
-
----
-
-## Classes
-
-> No classes found in this file.
 
 
 ---

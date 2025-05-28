@@ -2,18 +2,28 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 8 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 8
-- **Classes**: 0
-- **Imports**: 7
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useFocus/index.test.ts`**
@@ -29,6 +39,16 @@
 | `it` | `vitest` |
 | `shallowRef` | `vue` |
 | `useFocus` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `target` | `Ref<HTMLButtonElement>` | let/var | `*not shown*` | ✗ |
+| `event` | `Event` | let/var | `new Event('focus')` | ✗ |
 
 
 ---
@@ -115,26 +135,5 @@
 </details>
 
 - **Return Type**: `boolean`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

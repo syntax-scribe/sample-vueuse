@@ -2,18 +2,28 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 12 |
+| 📊 Variables & Constants | 8 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 12
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useCssVar/index.test.ts`**
@@ -34,6 +44,22 @@
 | `useTemplateRef` | `vue` |
 | `mount` | `../../.test` |
 | `useCssVar` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `color` | `"--color"` | const | `'--color'` | ✗ |
+| `color` | `"--color"` | const | `'--color'` | ✗ |
+| `property` | `"--color"` | let/var | `'--color'` | ✗ |
+| `window` | `any` | let/var | `defaultWindow` | ✗ |
+| `color` | `"--color"` | let/var | `'--color'` | ✗ |
+| `color` | `"--color"` | const | `'--color'` | ✗ |
+| `color` | `"--color"` | const | `'--color'` | ✗ |
+| `color` | `"--color"` | const | `'--color'` | ✗ |
 
 
 ---
@@ -70,26 +96,5 @@ function changeVar() {
 </details>
 
 - **Return Type**: `void`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

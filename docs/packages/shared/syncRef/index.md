@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 4 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 12 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 4
-- **Interfaces**: 2
-- **Type Aliases**: 12
 
 ## 🛠️ File Location:
 📂 **`packages/shared/syncRef/index.ts`**
@@ -28,6 +38,17 @@
 | `ConfigurableFlushSync` | `../utils` |
 | `WatchPausableReturn` | `../watchPausable` |
 | `pausableWatch` | `../watchPausable` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `watchers` | `WatchPausableReturn[]` | const | `[]` | ✗ |
+| `transformLTR` | `((left: L) => R) | ((v: L) => L)` | const | `('ltr' in transform && transform.ltr) || (v => v)` | ✗ |
+| `transformRTL` | `((right: R) => L) | ((v: R) => R)` | const | `('rtl' in transform && transform.rtl) || (v => v)` | ✗ |
 
 
 ---
@@ -138,13 +159,6 @@ export function syncRef<L, R, D extends Direction = 'both'>(
 - **Calls**:
   - `watchers.forEach`
   - `w.stop`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

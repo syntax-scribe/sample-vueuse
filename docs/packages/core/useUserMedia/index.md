@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 7 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 9 |
+| 📊 Variables & Constants | 0 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 4 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 7
-- **Classes**: 0
-- **Imports**: 9
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useUserMedia/index.ts`**
@@ -33,6 +44,34 @@
 | `watch` | `vue` |
 | `defaultNavigator` | `../_configurable` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| await-expression | `useUserMedia` | navigator!.mediaDevices.getUserMedia({
+      video: getDeviceOptions('video'),
+      audio: getDeviceOptions('audio'),
+    }), _start(), start() | *none* |
+| async-function | `_start` | navigator!.mediaDevices.getUserMedia({
+      video: getDeviceOptions('video'),
+      audio: getDeviceOptions('audio'),
+    }) | *none* |
+| async-function | `start` | _start() | *none* |
+| async-function | `restart` | start() | *none* |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -275,13 +314,6 @@ async function restart() {
 - **Calls**:
   - `_stop`
   - `start`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

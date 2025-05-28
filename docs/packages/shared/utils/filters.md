@@ -2,20 +2,31 @@
 
 # 📄 `filters.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 14 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 14 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 5 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 5 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 14
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 5
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/shared/utils/filters.ts`**
@@ -35,6 +46,43 @@
 | `toValue` | `vue` |
 | `toRef` | `../toRef` |
 | `noop` | `./is` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `timer` | `ReturnType<typeof setTimeout> | undefined` | let/var | `*not shown*` | ✗ |
+| `maxTimer` | `ReturnType<typeof setTimeout> | undefined | null` | let/var | `*not shown*` | ✗ |
+| `lastRejector` | `AnyFn` | let/var | `noop` | ✗ |
+| `lastInvoker` | `() => void` | let/var | `*not shown*` | ✗ |
+| `lastExec` | `number` | let/var | `0` | ✗ |
+| `timer` | `ReturnType<typeof setTimeout> | undefined` | let/var | `*not shown*` | ✗ |
+| `isLeading` | `boolean` | let/var | `true` | ✗ |
+| `lastRejector` | `AnyFn` | let/var | `noop` | ✗ |
+| `lastValue` | `any` | let/var | `*not shown*` | ✗ |
+| `ms` | `MaybeRefOrGetter<number>` | let/var | `*not shown*` | ✗ |
+| `trailing` | `boolean` | let/var | `*not shown*` | ✗ |
+| `leading` | `boolean` | let/var | `*not shown*` | ✗ |
+| `rejectOnCancel` | `boolean` | let/var | `*not shown*` | ✗ |
+| `elapsed` | `number` | const | `Date.now() - lastExec` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `createFilterWrapper` | *none* | new Promise(...), Promise.resolve(filter(() => fn.apply(this, args), { fn, thisArg: this, args }))
+        .then(resolve).catch, Promise.resolve(filter(() => fn.apply(this, args), { fn, thisArg: this, args })).then, Promise.resolve |
+| promise-chain | `wrapper` | *none* | new Promise(...), Promise.resolve(filter(() => fn.apply(this, args), { fn, thisArg: this, args }))
+        .then(resolve).catch, Promise.resolve(filter(() => fn.apply(this, args), { fn, thisArg: this, args })).then, Promise.resolve |
+| promise-chain | `debounceFilter` | *none* | Promise.resolve, new Promise(...) |
+| promise-chain | `filter` | *none* | Promise.resolve, new Promise(...) |
+| promise-chain | `filter` | *none* | new Promise(...) |
 
 
 ---
@@ -500,13 +548,6 @@ function resume() {
 - **Return Type**: `void`
 - **Calls**:
   - `extendFilter`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

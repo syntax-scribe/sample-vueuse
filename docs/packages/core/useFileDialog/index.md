@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 10 |
+| 📊 Variables & Constants | 5 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 10
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useFileDialog/index.ts`**
@@ -33,6 +43,28 @@
 | `readonly` | `vue` |
 | `defaultDocument` | `../_configurable` |
 | `unrefElement` | `../unrefElement` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `DEFAULT_OPTIONS` | `UseFileDialogOptions` | const | `{
+  multiple: true,
+  accept: '*',
+  reset: false,
+  directory: false,
+}` | ✗ |
+| `dt` | `DataTransfer` | const | `new DataTransfer()` | ✗ |
+| `input` | `HTMLInputElement | undefined` | let/var | `*not shown*` | ✗ |
+| `result` | `HTMLInputElement` | const | `event.target as HTMLInputElement` | ✗ |
+| `_options` | `{ multiple?: boolean; accept?: string; capture?: string; reset?: boolean; directory?: boolean; initialFiles?: FileList | File[]; input?: MaybeRef<T>; document?: Document; }` | const | `{
+      ...DEFAULT_OPTIONS,
+      ...options,
+      ...localOptions,
+    }` | ✗ |
 
 
 ---
@@ -222,13 +254,6 @@ export function useFileDialog(options: UseFileDialogOptions = {}): UseFileDialog
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseFileDialogOptions`
@@ -313,13 +338,6 @@ export interface UseFileDialogReturn {
 | `reset` | `() => void` | ✗ |  |
 | `onChange` | `EventHookOn<FileList | null>` | ✗ |  |
 | `onCancel` | `EventHookOn` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

@@ -2,19 +2,29 @@
 
 # 📄 `ssr-handlers.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 2 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 3 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 2
-- **Interfaces**: 3
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/ssr-handlers.ts`**
@@ -25,6 +35,24 @@
 |------|--------|
 | `Awaitable` | `@vueuse/shared` |
 | `MaybeElementRef` | `./unrefElement` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `_global` | `{}` | const | `typeof globalThis !== 'undefined'
+    ? globalThis
+    : typeof window !== 'undefined'
+      ? window
+      : typeof global !== 'undefined'
+        ? global
+        : typeof self !== 'undefined'
+          ? self
+          : {}` | ✗ |
+| `globalKey` | `"__vueuse_ssr_handlers__"` | const | `'__vueuse_ssr_handlers__'` | ✗ |
 
 
 ---
@@ -80,13 +108,6 @@ export function setSSRHandler<T extends keyof SSRHandlersMap>(key: T, fn: SSRHan
   - `key: T`
   - `fn: SSRHandlersMap[T]`
 - **Return Type**: `void`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 
@@ -154,13 +175,6 @@ export interface SSRHandlersMap {
 | `getDefaultStorage` | `() => StorageLike | undefined` | ✗ |  |
 | `getDefaultStorageAsync` | `() => StorageLikeAsync | undefined` | ✗ |  |
 | `updateHTMLAttrs` | `(selector: string | MaybeElementRef, attribute: string, value: string) => void` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

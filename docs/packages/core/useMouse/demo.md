@@ -2,18 +2,28 @@
 
 # 📄 `demo.vue`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 6 |
+| 📊 Variables & Constants | 0 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 6
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useMouse/demo.vue`**
@@ -28,6 +38,16 @@
 | `useParentElement` | `@vueuse/core` |
 | `reactive` | `vue` |
 | `YAML` | `yaml` |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `reactive` | reactive | *none* | *none* |
+| `reactive` | reactive | *none* | *none* |
 
 
 ---
@@ -51,26 +71,5 @@
 - **Parameters**:
   - `event: any`
 - **Return Type**: `number[]`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

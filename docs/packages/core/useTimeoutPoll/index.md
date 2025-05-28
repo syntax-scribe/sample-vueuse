@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 0 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 2 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useTimeoutPoll/index.ts`**
@@ -31,6 +41,16 @@
 | `tryOnScopeDispose` | `@vueuse/shared` |
 | `useTimeoutFn` | `@vueuse/shared` |
 | `shallowRef` | `vue` |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| await-expression | `useTimeoutPoll` | fn() | *none* |
+| async-function | `loop` | fn() | *none* |
 
 
 ---
@@ -157,13 +177,6 @@ function pause() {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseTimeoutPollOptions`
@@ -195,13 +208,6 @@ export interface UseTimeoutPollOptions {
 |------|------|----------|-------------|
 | `immediate` | `boolean` | ✓ |  |
 | `immediateCallback` | `boolean` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

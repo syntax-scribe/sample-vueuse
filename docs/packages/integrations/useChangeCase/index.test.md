@@ -2,20 +2,30 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 4 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 7
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/integrations/useChangeCase/index.test.ts`**
@@ -35,6 +45,87 @@
 
 ---
 
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `helloWorld` | `"helloWorld"` | const | `'helloWorld'` | ✗ |
+| `vueuse` | `"vue use"` | const | `'vue use'` | ✗ |
+| `obj` | `ObjectTypes` | const | `{
+    capitalCase: {
+      helloWorld: 'Hello World',
+      vueuse: 'Vue Use',
+      delimiterHelloWorld: 'Hello-World',
+      delimiterVueuse: 'Vue-Use',
+    },
+    constantCase: {
+      helloWorld: 'HELLO_WORLD',
+      vueuse: 'VUE_USE',
+      delimiterHelloWorld: 'HELLO-WORLD',
+      delimiterVueuse: 'VUE-USE',
+    },
+    dotCase: {
+      helloWorld: 'hello.world',
+      vueuse: 'vue.use',
+      delimiterHelloWorld: 'hello-world',
+      delimiterVueuse: 'vue-use',
+    },
+    trainCase: {
+      helloWorld: 'Hello-World',
+      vueuse: 'Vue-Use',
+      delimiterHelloWorld: 'Hello-World',
+      delimiterVueuse: 'Vue-Use',
+    },
+    noCase: {
+      helloWorld: 'hello world',
+      vueuse: 'vue use',
+      delimiterHelloWorld: 'hello-world',
+      delimiterVueuse: 'vue-use',
+    },
+    kebabCase: {
+      helloWorld: 'hello-world',
+      vueuse: 'vue-use',
+      delimiterHelloWorld: 'hello-world',
+      delimiterVueuse: 'vue-use',
+    },
+    pascalCase: {
+      helloWorld: 'HelloWorld',
+      vueuse: 'VueUse',
+      delimiterHelloWorld: 'Hello-World',
+      delimiterVueuse: 'Vue-Use',
+    },
+    pascalSnakeCase: {
+      helloWorld: 'Hello_World',
+      vueuse: 'Vue_Use',
+      delimiterHelloWorld: 'Hello-World',
+      delimiterVueuse: 'Vue-Use',
+    },
+    pathCase: {
+      helloWorld: 'hello/world',
+      vueuse: 'vue/use',
+      delimiterHelloWorld: 'hello-world',
+      delimiterVueuse: 'vue-use',
+    },
+    sentenceCase: {
+      helloWorld: 'Hello world',
+      vueuse: 'Vue use',
+      delimiterHelloWorld: 'Hello-world',
+      delimiterVueuse: 'Vue-use',
+    },
+    snakeCase: {
+      helloWorld: 'hello_world',
+      vueuse: 'vue_use',
+      delimiterHelloWorld: 'hello-world',
+      delimiterVueuse: 'vue-use',
+    },
+  }` | ✗ |
+| `options` | `Options` | const | `{
+        delimiter: '-',
+      }` | ✗ |
+
+
+---
+
 ## Functions
 
 ### `input(): string`
@@ -47,13 +138,6 @@
 </details>
 
 - **Return Type**: `string`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

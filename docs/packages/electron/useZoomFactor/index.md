@@ -2,18 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 6 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 6
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/electron/useZoomFactor/index.ts`**
@@ -32,6 +43,25 @@
 
 ---
 
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `webFrame` | `WebFrame | undefined` | let/var | `*not shown*` | ✗ |
+| `newFactor` | `Ref<number> | null` | let/var | `null` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
+
+
+---
+
 ## Functions
 
 ### `useZoomFactor(factor: MaybeRef<number>): Ref<number>`
@@ -46,26 +76,5 @@ export function useZoomFactor(factor: MaybeRef<number>): Ref<number>
 - **Parameters**:
   - `factor: MaybeRef<number>`
 - **Return Type**: `Ref<number>`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 5 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 5
-- **Interfaces**: 0
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/shared/refAutoReset/index.ts`**
@@ -28,6 +38,15 @@
 | `customRef` | `vue` |
 | `toValue` | `vue` |
 | `tryOnScopeDispose` | `../tryOnScopeDispose` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `timer` | `any` | let/var | `*not shown*` | ✗ |
 
 
 ---
@@ -96,7 +115,7 @@ export function refAutoReset<T>(defaultValue: MaybeRefOrGetter<T>, afterMs: Mayb
   - `clearTimeout`
   - `track`
   - `resetAfter`
-### `resetAfter(): number`
+### `resetAfter(): Timeout`
 
 <details><summary>Code</summary>
 
@@ -109,23 +128,9 @@ export function refAutoReset<T>(defaultValue: MaybeRefOrGetter<T>, afterMs: Mayb
 ```
 </details>
 
-- **Return Type**: `number`
+- **Return Type**: `Timeout`
 - **Calls**:
   - `setTimeout`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 60 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 6 |
+| 📊 Variables & Constants | 7 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 4 |
+| 📑 Type Aliases | 4 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 33
-- **Classes**: 0
-- **Imports**: 6
-- **Interfaces**: 4
-- **Type Aliases**: 4
 
 ## 🛠️ File Location:
 📂 **`packages/core/useTimeAgo/index.ts`**
@@ -34,8 +45,454 @@
 
 ---
 
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `DEFAULT_UNITS` | `UseTimeAgoUnit<UseTimeAgoUnitNamesDefault>[]` | const | `[
+  { max: 60000, value: 1000, name: 'second' },
+  { max: 2760000, value: 60000, name: 'minute' },
+  { max: 72000000, value: 3600000, name: 'hour' },
+  { max: 518400000, value: 86400000, name: 'day' },
+  { max: 2419200000, value: 604800000, name: 'week' },
+  { max: 28512000000, value: 2592000000, name: 'month' },
+  { max: Number.POSITIVE_INFINITY, value: 31536000000, name: 'year' },
+]` | ✗ |
+| `DEFAULT_MESSAGES` | `UseTimeAgoMessages<UseTimeAgoUnitNamesDefault>` | const | `{
+  justNow: 'just now',
+  past: n => n.match(/\d/) ? `${n} ago` : n,
+  future: n => n.match(/\d/) ? `in ${n}` : n,
+  month: (n, past) => n === 1
+    ? past
+      ? 'last month'
+      : 'next month'
+    : `${n} month${n > 1 ? 's' : ''}`,
+  year: (n, past) => n === 1
+    ? past
+      ? 'last year'
+      : 'next year'
+    : `${n} year${n > 1 ? 's' : ''}`,
+  day: (n, past) => n === 1
+    ? past
+      ? 'yesterday'
+      : 'tomorrow'
+    : `${n} day${n > 1 ? 's' : ''}`,
+  week: (n, past) => n === 1
+    ? past
+      ? 'last week'
+      : 'next week'
+    : `${n} week${n > 1 ? 's' : ''}`,
+  hour: n => `${n} hour${n > 1 ? 's' : ''}`,
+  minute: n => `${n} minute${n > 1 ? 's' : ''}`,
+  second: n => `${n} second${n > 1 ? 's' : ''}`,
+  invalid: '',
+}` | ✗ |
+| `roundFn` | `(n: number) => number` | const | `typeof rounding === 'number'
+    ? (n: number) => +n.toFixed(rounding)
+    : Math[rounding]` | ✗ |
+| `diff` | `number` | const | `+now - +from` | ✗ |
+| `past` | `boolean` | const | `diff > 0` | ✗ |
+| `formatter` | `UseTimeAgoMessages<UnitNames>[UnitNames | keyof UseTimeAgoMessagesBuiltIn]` | const | `messages[name]` | ✗ |
+| `unitMax` | `number` | const | `units.find(i => i.name === max)?.max` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+
+
+---
+
 ## Functions
 
+### `past(n: string): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => n.match(/\d/) ? `${n} ago` : n
+```
+</details>
+
+- **Parameters**:
+  - `n: string`
+- **Return Type**: `string`
+### `future(n: string): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => n.match(/\d/) ? `in ${n}` : n
+```
+</details>
+
+- **Parameters**:
+  - `n: string`
+- **Return Type**: `string`
+### `month(n: number, past: boolean): string`
+
+<details><summary>Code</summary>
+
+```ts
+(n, past) => n === 1
+    ? past
+      ? 'last month'
+      : 'next month'
+    : `${n} month${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+  - `past: boolean`
+- **Return Type**: `string`
+### `year(n: number, past: boolean): string`
+
+<details><summary>Code</summary>
+
+```ts
+(n, past) => n === 1
+    ? past
+      ? 'last year'
+      : 'next year'
+    : `${n} year${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+  - `past: boolean`
+- **Return Type**: `string`
+### `day(n: number, past: boolean): string`
+
+<details><summary>Code</summary>
+
+```ts
+(n, past) => n === 1
+    ? past
+      ? 'yesterday'
+      : 'tomorrow'
+    : `${n} day${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+  - `past: boolean`
+- **Return Type**: `string`
+### `week(n: number, past: boolean): string`
+
+<details><summary>Code</summary>
+
+```ts
+(n, past) => n === 1
+    ? past
+      ? 'last week'
+      : 'next week'
+    : `${n} week${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+  - `past: boolean`
+- **Return Type**: `string`
+### `hour(n: number): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => `${n} hour${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+- **Return Type**: `string`
+### `minute(n: number): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => `${n} minute${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+- **Return Type**: `string`
+### `second(n: number): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => `${n} second${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+- **Return Type**: `string`
+### `past(n: string): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => n.match(/\d/) ? `${n} ago` : n
+```
+</details>
+
+- **Parameters**:
+  - `n: string`
+- **Return Type**: `string`
+### `future(n: string): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => n.match(/\d/) ? `in ${n}` : n
+```
+</details>
+
+- **Parameters**:
+  - `n: string`
+- **Return Type**: `string`
+### `month(n: number, past: boolean): string`
+
+<details><summary>Code</summary>
+
+```ts
+(n, past) => n === 1
+    ? past
+      ? 'last month'
+      : 'next month'
+    : `${n} month${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+  - `past: boolean`
+- **Return Type**: `string`
+### `year(n: number, past: boolean): string`
+
+<details><summary>Code</summary>
+
+```ts
+(n, past) => n === 1
+    ? past
+      ? 'last year'
+      : 'next year'
+    : `${n} year${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+  - `past: boolean`
+- **Return Type**: `string`
+### `day(n: number, past: boolean): string`
+
+<details><summary>Code</summary>
+
+```ts
+(n, past) => n === 1
+    ? past
+      ? 'yesterday'
+      : 'tomorrow'
+    : `${n} day${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+  - `past: boolean`
+- **Return Type**: `string`
+### `week(n: number, past: boolean): string`
+
+<details><summary>Code</summary>
+
+```ts
+(n, past) => n === 1
+    ? past
+      ? 'last week'
+      : 'next week'
+    : `${n} week${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+  - `past: boolean`
+- **Return Type**: `string`
+### `hour(n: number): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => `${n} hour${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+- **Return Type**: `string`
+### `minute(n: number): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => `${n} minute${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+- **Return Type**: `string`
+### `second(n: number): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => `${n} second${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+- **Return Type**: `string`
+### `past(n: string): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => n.match(/\d/) ? `${n} ago` : n
+```
+</details>
+
+- **Parameters**:
+  - `n: string`
+- **Return Type**: `string`
+### `future(n: string): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => n.match(/\d/) ? `in ${n}` : n
+```
+</details>
+
+- **Parameters**:
+  - `n: string`
+- **Return Type**: `string`
+### `month(n: number, past: boolean): string`
+
+<details><summary>Code</summary>
+
+```ts
+(n, past) => n === 1
+    ? past
+      ? 'last month'
+      : 'next month'
+    : `${n} month${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+  - `past: boolean`
+- **Return Type**: `string`
+### `year(n: number, past: boolean): string`
+
+<details><summary>Code</summary>
+
+```ts
+(n, past) => n === 1
+    ? past
+      ? 'last year'
+      : 'next year'
+    : `${n} year${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+  - `past: boolean`
+- **Return Type**: `string`
+### `day(n: number, past: boolean): string`
+
+<details><summary>Code</summary>
+
+```ts
+(n, past) => n === 1
+    ? past
+      ? 'yesterday'
+      : 'tomorrow'
+    : `${n} day${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+  - `past: boolean`
+- **Return Type**: `string`
+### `week(n: number, past: boolean): string`
+
+<details><summary>Code</summary>
+
+```ts
+(n, past) => n === 1
+    ? past
+      ? 'last week'
+      : 'next week'
+    : `${n} week${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+  - `past: boolean`
+- **Return Type**: `string`
+### `hour(n: number): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => `${n} hour${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+- **Return Type**: `string`
+### `minute(n: number): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => `${n} minute${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+- **Return Type**: `string`
+### `second(n: number): string`
+
+<details><summary>Code</summary>
+
+```ts
+n => `${n} second${n > 1 ? 's' : ''}`
+```
+</details>
+
+- **Parameters**:
+  - `n: number`
+- **Return Type**: `string`
 ### `past(n: string): string`
 
 <details><summary>Code</summary>
@@ -611,13 +1068,6 @@ function applyFormat(name: UnitNames | keyof UseTimeAgoMessagesBuiltIn, val: num
   - `formatter`
   - `formatter.replace`
   - `val.toString`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

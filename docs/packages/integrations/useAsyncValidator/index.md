@@ -2,20 +2,32 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 13 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 4 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 4 |
+| 📐 Interfaces | 3 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 13
-- **Interfaces**: 3
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/integrations/useAsyncValidator/index.ts`**
@@ -37,6 +49,47 @@
 | `shallowRef` | `vue` |
 | `toValue` | `vue` |
 | `watch` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `AsyncValidatorSchema` | `any` | const | `Schema.default || Schema` | ✗ |
+| `shell` | `UseAsyncValidatorReturn` | const | `{
+    isFinished,
+    pass,
+    errors,
+    errorInfo,
+    errorFields,
+    execute,
+  } as UseAsyncValidatorReturn` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `useAsyncValidator` | *none* | new Promise(...), until(isFinished).toBe(true).then(() => resolve(shell)).catch, until(isFinished).toBe(true).then, waitUntilFinished().then |
+| await-expression | `useAsyncValidator` | validator.value.validate(valueRef.value, validateOption) | *none* |
+| async-function | `execute` | validator.value.validate(valueRef.value, validateOption) | *none* |
+| promise-chain | `waitUntilFinished` | *none* | new Promise(...), until(isFinished).toBe(true).then(() => resolve(shell)).catch, until(isFinished).toBe(true).then |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -205,13 +258,6 @@ function waitUntilFinished() {
 - **Calls**:
   - `until(isFinished).toBe(true).then(() => resolve(shell)).catch`
   - `reject`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useElementByPoint/index.ts`**
@@ -34,6 +44,17 @@
 | `defaultDocument` | `../_configurable` |
 | `useRafFn` | `../useRafFn` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `controls` | `Pausable` | const | `interval === 'requestAnimationFrame'
+    ? useRafFn(cb, { immediate })
+    : useIntervalFn(cb, interval, { immediate })` | ✗ |
 
 
 ---
@@ -125,13 +146,6 @@ export function useElementByPoint<M extends boolean = false>(options: UseElement
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseElementByPointOptions<Multiple extends boolean = false>`
@@ -177,13 +191,6 @@ export interface UseElementByPointReturn<Multiple extends boolean = false> exten
 |------|------|----------|-------------|
 | `isSupported` | `ComputedRef<boolean>` | ✗ |  |
 | `element` | `ShallowRef<Multiple extends true ? HTMLElement[] : HTMLElement | null>` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

@@ -2,19 +2,29 @@
 
 # 📄 `directive.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 4 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 4
-- **Interfaces**: 0
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/core/useScroll/directive.ts`**
@@ -27,6 +37,47 @@
 | `UseScrollOptions` | `./index` |
 | `UseScrollReturn` | `./index` |
 | `useScroll` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `handler` | `any` | const | `binding.value` | ✗ |
+| `vScroll` | `ObjectDirective<
+  HTMLElement,
+BindingValueFunction | BindingValueArray
+>` | const | `{
+  mounted(el, binding) {
+    if (typeof binding.value === 'function') {
+      const handler = binding.value
+      const state = useScroll(el, {
+        onScroll() {
+          handler(state)
+        },
+        onStop() {
+          handler(state)
+        },
+      })
+    }
+    else {
+      const [handler, options] = binding.value
+      const state = useScroll(el, {
+        ...options,
+        onScroll(e) {
+          options.onScroll?.(e)
+          handler(state)
+        },
+        onStop(e) {
+          options.onStop?.(e)
+          handler(state)
+        },
+      })
+    }
+  },
+}` | ✓ |
 
 
 ---
@@ -77,20 +128,6 @@ mounted(el, binding) {
   - `handler`
   - `options.onScroll`
   - `options.onStop`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

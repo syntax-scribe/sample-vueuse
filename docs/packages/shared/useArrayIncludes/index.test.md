@@ -2,18 +2,27 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 5 |
+| 📊 Variables & Constants | 0 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 5
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/shared/useArrayIncludes/index.test.ts`**
@@ -59,26 +68,31 @@
   - `element: unknown`
   - `value: any`
 - **Return Type**: `boolean`
+### `comparator(element: unknown, value: any): boolean`
 
----
+<details><summary>Code</summary>
 
-## Classes
+```ts
+(element, value) => element.id === value.id
+```
+</details>
 
-> No classes found in this file.
+- **Parameters**:
+  - `element: unknown`
+  - `value: any`
+- **Return Type**: `boolean`
+### `comparator(element: unknown, value: any): boolean`
 
+<details><summary>Code</summary>
 
----
+```ts
+(element, value) => element.id === value.id
+```
+</details>
 
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
+- **Parameters**:
+  - `element: unknown`
+  - `value: any`
+- **Return Type**: `boolean`
 
 ---

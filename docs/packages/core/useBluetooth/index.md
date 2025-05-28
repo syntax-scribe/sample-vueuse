@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 0 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 3 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 3 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 3
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useBluetooth/index.ts`**
@@ -34,6 +45,34 @@
 | `defaultNavigator` | `../_configurable` |
 | `useEventListener` | `../useEventListener` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| await-expression | `useBluetooth` | navigator?.bluetooth.requestDevice({
+        acceptAllDevices,
+        filters,
+        optionalServices,
+      }), device.value.gatt.connect() | *none* |
+| async-function | `requestDevice` | navigator?.bluetooth.requestDevice({
+        acceptAllDevices,
+        filters,
+        optionalServices,
+      }) | *none* |
+| async-function | `connectToBluetoothGATTServer` | device.value.gatt.connect() | *none* |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -266,13 +305,6 @@ async function connectToBluetoothGATTServer() {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseBluetoothRequestDeviceOptions`
@@ -364,13 +396,6 @@ export interface UseBluetoothReturn {
 | `requestDevice` | `() => Promise<void>` | ✗ |  |
 | `server` | `ShallowRef<BluetoothRemoteGATTServer | undefined>` | ✗ |  |
 | `error` | `ShallowRef<unknown | null>` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

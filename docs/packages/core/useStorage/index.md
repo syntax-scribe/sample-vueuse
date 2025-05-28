@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 200 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 19 |
+| 📊 Variables & Constants | 7 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 4 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 104
-- **Classes**: 0
-- **Imports**: 19
-- **Interfaces**: 4
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useStorage/index.ts`**
@@ -46,8 +57,1345 @@
 
 ---
 
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `StorageSerializers` | `Record<'boolean' | 'object' | 'number' | 'any' | 'string' | 'map' | 'set' | 'date', Serializer<any>>` | const | `{
+  boolean: {
+    read: (v: any) => v === 'true',
+    write: (v: any) => String(v),
+  },
+  object: {
+    read: (v: any) => JSON.parse(v),
+    write: (v: any) => JSON.stringify(v),
+  },
+  number: {
+    read: (v: any) => Number.parseFloat(v),
+    write: (v: any) => String(v),
+  },
+  any: {
+    read: (v: any) => v,
+    write: (v: any) => String(v),
+  },
+  string: {
+    read: (v: any) => v,
+    write: (v: any) => String(v),
+  },
+  map: {
+    read: (v: any) => new Map(JSON.parse(v)),
+    write: (v: any) => JSON.stringify(Array.from((v as Map<any, any>).entries())),
+  },
+  set: {
+    read: (v: any) => new Set(JSON.parse(v)),
+    write: (v: any) => JSON.stringify(Array.from(v as Set<any>)),
+  },
+  date: {
+    read: (v: any) => new Date(v),
+    write: (v: any) => v.toISOString(),
+  },
+}` | ✓ |
+| `customStorageEventName` | `"vueuse-storage"` | const | `'vueuse-storage'` | ✓ |
+| `data` | `RemovableRef<T>` | const | `(shallow ? shallowRef : deepRef)(typeof defaults === 'function' ? defaults() : defaults) as RemovableRef<T>` | ✗ |
+| `serializer` | `Serializer<any>` | const | `options.serializer ?? StorageSerializers[type]` | ✗ |
+| `firstMounted` | `boolean` | let/var | `false` | ✗ |
+| `payload` | `{ key: any; oldValue: string; newValue: string; storageArea: Storage; }` | const | `{
+        key: keyComputed.value,
+        oldValue,
+        newValue,
+        storageArea: storage as Storage,
+      }` | ✗ |
+| `rawValue` | `string` | const | `event
+      ? event.newValue
+      : storage!.getItem(keyComputed.value)` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `watch` | watch | *none* | *none* |
+
+
+---
+
 ## Functions
 
+### `read(v: any): boolean`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v === 'true'
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `boolean`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): boolean`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v === 'true'
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `boolean`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.parse(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+- **Calls**:
+  - `JSON.parse`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.parse(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+- **Calls**:
+  - `JSON.parse`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): number`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => Number.parseFloat(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `number`
+- **Calls**:
+  - `Number.parseFloat`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): number`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => Number.parseFloat(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `number`
+- **Calls**:
+  - `Number.parseFloat`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): Map<unknown, unknown>`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Map(JSON.parse(v))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Map<unknown, unknown>`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(Array.from((v as Map<any, any>).entries()))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): Map<unknown, unknown>`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Map(JSON.parse(v))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Map<unknown, unknown>`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(Array.from((v as Map<any, any>).entries()))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): Set<unknown>`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Set(JSON.parse(v))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Set<unknown>`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(Array.from(v as Set<any>))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): Set<unknown>`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Set(JSON.parse(v))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Set<unknown>`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(Array.from(v as Set<any>))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): Date`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Date(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Date`
+### `write(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v.toISOString()
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+- **Calls**:
+  - `v.toISOString`
+### `read(v: any): Date`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Date(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Date`
+### `write(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v.toISOString()
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+- **Calls**:
+  - `v.toISOString`
+### `read(v: any): boolean`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v === 'true'
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `boolean`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): boolean`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v === 'true'
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `boolean`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.parse(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+- **Calls**:
+  - `JSON.parse`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.parse(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+- **Calls**:
+  - `JSON.parse`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): number`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => Number.parseFloat(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `number`
+- **Calls**:
+  - `Number.parseFloat`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): number`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => Number.parseFloat(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `number`
+- **Calls**:
+  - `Number.parseFloat`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): Map<unknown, unknown>`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Map(JSON.parse(v))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Map<unknown, unknown>`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(Array.from((v as Map<any, any>).entries()))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): Map<unknown, unknown>`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Map(JSON.parse(v))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Map<unknown, unknown>`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(Array.from((v as Map<any, any>).entries()))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): Set<unknown>`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Set(JSON.parse(v))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Set<unknown>`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(Array.from(v as Set<any>))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): Set<unknown>`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Set(JSON.parse(v))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Set<unknown>`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(Array.from(v as Set<any>))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): Date`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Date(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Date`
+### `write(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v.toISOString()
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+- **Calls**:
+  - `v.toISOString`
+### `read(v: any): Date`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Date(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Date`
+### `write(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v.toISOString()
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+- **Calls**:
+  - `v.toISOString`
+### `read(v: any): boolean`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v === 'true'
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `boolean`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): boolean`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v === 'true'
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `boolean`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.parse(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+- **Calls**:
+  - `JSON.parse`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.parse(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+- **Calls**:
+  - `JSON.parse`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): number`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => Number.parseFloat(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `number`
+- **Calls**:
+  - `Number.parseFloat`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): number`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => Number.parseFloat(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `number`
+- **Calls**:
+  - `Number.parseFloat`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => String(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `read(v: any): Map<unknown, unknown>`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Map(JSON.parse(v))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Map<unknown, unknown>`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(Array.from((v as Map<any, any>).entries()))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): Map<unknown, unknown>`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Map(JSON.parse(v))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Map<unknown, unknown>`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(Array.from((v as Map<any, any>).entries()))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): Set<unknown>`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Set(JSON.parse(v))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Set<unknown>`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(Array.from(v as Set<any>))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): Set<unknown>`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Set(JSON.parse(v))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Set<unknown>`
+### `write(v: any): string`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => JSON.stringify(Array.from(v as Set<any>))
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `string`
+- **Calls**:
+  - `JSON.stringify`
+### `read(v: any): Date`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Date(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Date`
+### `write(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v.toISOString()
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+- **Calls**:
+  - `v.toISOString`
+### `read(v: any): Date`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => new Date(v)
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `Date`
+### `write(v: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+(v: any) => v.toISOString()
+```
+</details>
+
+- **Parameters**:
+  - `v: any`
+- **Return Type**: `any`
+- **Calls**:
+  - `v.toISOString`
 ### `read(v: any): boolean`
 
 <details><summary>Code</summary>
@@ -1565,13 +2913,6 @@ function updateFromCustomEvent(event: CustomEvent<StorageEventLike>) {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `Serializer<T>`
@@ -1713,13 +3054,6 @@ export interface UseStorageOptions<T> extends ConfigurableEventFilter, Configura
 | `onError` | `(error: unknown) => void` | ✓ |  |
 | `shallow` | `boolean` | ✓ |  |
 | `initOnMounted` | `boolean` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

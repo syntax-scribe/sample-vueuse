@@ -2,17 +2,27 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 0 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 14 |
+| 📊 Variables & Constants | 5 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
-
-## 📊 Analysis Summary
-
-- **Functions**: 0
-- **Classes**: 0
-- **Imports**: 14
-- **Interfaces**: 0
-- **Type Aliases**: 0
+- [Variables & Constants](#variables-constants)
 
 ## 🛠️ File Location:
 📂 **`packages/shared/createInjectionState/index.test.ts`**
@@ -39,30 +49,22 @@
 
 ---
 
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `count` | `Ref<number> | undefined` | let/var | `*not shown*` | ✗ |
+| `count` | `Ref<number> | undefined` | let/var | `*not shown*` | ✗ |
+| `count2` | `Ref<number> | undefined` | let/var | `*not shown*` | ✗ |
+| `count` | `any` | const | `useCountState()!` | ✗ |
+| `count` | `any` | const | `injectLocal(KEY)!` | ✗ |
+
+
+---
+
 ## 🔧 Functions
 
 > No functions found in this file.
-
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

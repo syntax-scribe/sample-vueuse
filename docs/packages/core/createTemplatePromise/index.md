@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 12 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 9 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 2 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 8
-- **Classes**: 0
-- **Imports**: 9
-- **Interfaces**: 2
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/createTemplatePromise/index.ts`**
@@ -33,6 +44,47 @@
 | `h` | `vue` |
 | `shallowReactive` | `vue` |
 | `TransitionGroup` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `index` | `number` | let/var | `0` | ✗ |
+| `instances` | `Ref<TemplatePromiseProps<Return, Args>[]>` | const | `deepRef([]) as Ref<TemplatePromiseProps<Return, Args>[]>` | ✗ |
+| `props` | `TemplatePromiseProps<Return, Args>` | const | `shallowReactive({
+      key: index++,
+      args,
+      promise: undefined,
+      resolve: () => {},
+      reject: () => {},
+      isResolving: false,
+      options,
+    }) as TemplatePromiseProps<Return, Args>` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `createTemplatePromise` | *none* | new Promise<Return>((_resolve, _reject) => {
+      props.resolve = (v) => {
+        props.isResolving = true
+        return _resolve(v)
+      }
+      props.reject = _reject
+    }).finally, new Promise(...) |
+| promise-chain | `create` | *none* | new Promise<Return>((_resolve, _reject) => {
+      props.resolve = (v) => {
+        props.isResolving = true
+        return _resolve(v)
+      }
+      props.reject = _reject
+    }).finally, new Promise(...) |
 
 
 ---
@@ -232,6 +284,46 @@ function create(...args: Args) {
 </details>
 
 - **Return Type**: `void`
+### `resolve(): void`
+
+<details><summary>Code</summary>
+
+```ts
+() => {}
+```
+</details>
+
+- **Return Type**: `void`
+### `reject(): void`
+
+<details><summary>Code</summary>
+
+```ts
+() => {}
+```
+</details>
+
+- **Return Type**: `void`
+### `resolve(): void`
+
+<details><summary>Code</summary>
+
+```ts
+() => {}
+```
+</details>
+
+- **Return Type**: `void`
+### `reject(): void`
+
+<details><summary>Code</summary>
+
+```ts
+() => {}
+```
+</details>
+
+- **Return Type**: `void`
 ### `start(args: Args): any`
 
 <details><summary>Code</summary>
@@ -262,13 +354,6 @@ function start(...args: Args) {
 - **Return Type**: `any`
 - **Calls**:
   - `instances.value.map`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

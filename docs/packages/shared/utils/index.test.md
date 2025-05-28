@@ -2,19 +2,30 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 2 |
+| 📦 Imports | 27 |
+| 📊 Variables & Constants | 7 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 2 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Classes](#classes)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 2
-- **Imports**: 27
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/shared/utils/index.test.ts`**
@@ -50,6 +61,31 @@
 | `rand` | `./index` |
 | `throttleFilter` | `./index` |
 | `timestamp` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `obj` | `{ a: number; b: number; c: number; }` | const | `{ a: 1, b: 2, c: 3 }` | ✗ |
+| `value` | `number` | let/var | `await promise1` | ✗ |
+| `nine` | `any` | let/var | `*not shown*` | ✗ |
+| `warnSpy` | `MockInstance` | let/var | `*not shown*` | ✗ |
+| `obj1` | `any` | const | `{ a: 1 } as any` | ✗ |
+| `obj2` | `any` | const | `new Child() as any` | ✗ |
+| `obj3` | `any` | const | `new F() as any` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `createPromise` | *none* | Promise.resolve |
+| promise-chain | `createPromise` | *none* | Promise.resolve(0).then, Promise.resolve |
 
 
 ---
@@ -112,20 +148,6 @@ class Parent {a = 1}
 class Child extends Parent {}
 ```
 </details>
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

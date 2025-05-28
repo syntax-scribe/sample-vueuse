@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 10 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 12 |
+| 📊 Variables & Constants | 8 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 10
-- **Classes**: 0
-- **Imports**: 12
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/onClickOutside/index.ts`**
@@ -36,6 +46,47 @@
 | `defaultWindow` | `../_configurable` |
 | `unrefElement` | `../unrefElement` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `_iOSWorkaround` | `boolean` | let/var | `false` | ✗ |
+| `listenerOptions` | `{ passive: boolean; }` | const | `{ passive: true }` | ✗ |
+| `shouldListen` | `boolean` | let/var | `true` | ✗ |
+| `vm` | `ComponentPublicInstance` | const | `toValue(target) as ComponentPublicInstance` | ✗ |
+| `vm` | `ComponentPublicInstance` | const | `toValue(target) as ComponentPublicInstance` | ✗ |
+| `children` | `any` | const | `vm.$.subTree && vm.$.subTree.children` | ✗ |
+| `isProcessingClick` | `boolean` | let/var | `false` | ✗ |
+| `cleanup` | `Fn[]` | const | `[
+    useEventListener(window, 'click', (event: PointerEvent) => {
+      if (!isProcessingClick) {
+        isProcessingClick = true
+        setTimeout(() => {
+          isProcessingClick = false
+        }, 0)
+        listener(event)
+      }
+    }, { passive: true, capture }),
+    useEventListener(window, 'pointerdown', (e) => {
+      const el = unrefElement(target)
+      shouldListen = !shouldIgnore(e) && !!(el && !e.composedPath().includes(el))
+    }, { passive: true }),
+    detectIframe && useEventListener(window, 'blur', (event) => {
+      setTimeout(() => {
+        const el = unrefElement(target)
+        if (
+          window.document.activeElement?.tagName === 'IFRAME'
+          && !el?.contains(window.document.activeElement)
+        ) {
+          handler(event as any)
+        }
+      }, 0)
+    }, { passive: true }),
+  ].filter(Boolean) as Fn[]` | ✗ |
 
 
 ---
@@ -270,13 +321,6 @@ function checkMultipleRoots(target: MaybeElementRef, event: Event): boolean {
 - **Return Type**: `void`
 - **Calls**:
   - `listener`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

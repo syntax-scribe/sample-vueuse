@@ -2,19 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 6 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 2 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 6
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useClipboard/index.ts`**
@@ -34,6 +46,35 @@
 | `useEventListener` | `../useEventListener` |
 | `usePermission` | `../usePermission` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `useLegacy` | `boolean` | let/var | `!(isClipboardApiSupported.value && isAllowed(permissionRead.value))` | ✗ |
+| `useLegacy` | `boolean` | let/var | `!(isClipboardApiSupported.value && isAllowed(permissionWrite.value))` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| async-function | `updateText` | navigator!.clipboard.readText() | *none* |
+| async-function | `copy` | navigator!.clipboard.writeText(value) | *none* |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -182,13 +223,6 @@ function isAllowed(status: PermissionState | undefined) {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseClipboardOptions<Source>`
@@ -257,13 +291,6 @@ export interface UseClipboardReturn<Optional> {
 | `text` | `ComputedRef<string>` | ✗ |  |
 | `copied` | `ComputedRef<boolean>` | ✗ |  |
 | `copy` | `Optional extends true ? (text?: string) => Promise<void> : (text: string) => Promise<void>` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

@@ -1,0 +1,19 @@
+# 📁 `useSupported`
+
+## 📊 Analysis Summary For Folder
+
+| Metric | Count |
+|--------|-------|
+| 📁 Total Files | 1 |
+| 🔧 Functions | 1 |
+| 📦 Imports | 2 |
+| 📑 Type Aliases | 1 |
+| 🟢 Vue Composition | 1 |
+| 🔢 Line Count | 16 |
+
+
+## 📋 Files
+
+This section contains the following documentation files:
+
+- [`index`](./index.md)

@@ -2,18 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 5 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 7 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 5
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useScrollLock/index.ts`**
@@ -33,6 +44,31 @@
 | `watch` | `vue` |
 | `resolveElement` | `../_resolve-element` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `parent` | `Element` | const | `ele.parentNode as Element` | ✗ |
+| `e` | `Event` | const | `rawEvent || window.event` | ✗ |
+| `_target` | `Element` | const | `e.target as Element` | ✗ |
+| `elInitialOverflow` | `WeakMap<HTMLElement, string>` | const | `new WeakMap<HTMLElement, CSSStyleDeclaration['overflow']>()` | ✗ |
+| `stopTouchMoveListener` | `Fn | null` | let/var | `null` | ✗ |
+| `initialOverflow` | `CSSStyleDeclaration['overflow']` | let/var | `''` | ✗ |
+| `ele` | `HTMLElement` | const | `target as HTMLElement` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -269,26 +305,5 @@ export function useScrollLock(
   - `toValue (from vue)`
   - `stopTouchMoveListener`
   - `elInitialOverflow.delete`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

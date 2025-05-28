@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 5 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 6 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 5
-- **Classes**: 0
-- **Imports**: 6
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useCountdown/index.ts`**
@@ -29,6 +39,15 @@
 | `useIntervalFn` | `@vueuse/shared` |
 | `shallowRef` | `vue` |
 | `toValue` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `value` | `number` | const | `remaining.value - 1` | ✗ |
 
 
 ---
@@ -184,13 +203,6 @@ export function useCountdown(initialCountdown: MaybeRefOrGetter<number>, options
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseCountdownOptions`
@@ -264,13 +276,6 @@ export interface UseCountdownReturn extends Pausable {
 | `reset` | `(countdown?: MaybeRefOrGetter<number>) => void` | ✗ |  |
 | `stop` | `() => void` | ✗ |  |
 | `start` | `(countdown?: MaybeRefOrGetter<number>) => void` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

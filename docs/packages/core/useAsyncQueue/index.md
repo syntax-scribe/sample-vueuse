@@ -2,20 +2,32 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 4 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 2 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 3 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 4
-- **Interfaces**: 3
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/core/useAsyncQueue/index.ts`**
@@ -28,6 +40,70 @@
 | `noop` | `@vueuse/shared` |
 | `reactive` | `vue` |
 | `shallowRef` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `promiseState` | `Record<
+    UseAsyncQueueResult<T>['state'],
+    UseAsyncQueueResult<T>['state']
+  >` | const | `{
+    aborted: 'aborted',
+    fulfilled: 'fulfilled',
+    pending: 'pending',
+    rejected: 'rejected',
+  }` | ✗ |
+| `result` | `{ [P in keyof T]: UseAsyncQueueResult<T[P]>; }` | const | `reactive(initialResult) as { [P in keyof T]: UseAsyncQueueResult<T[P]> }` | ✗ |
+| `error` | `Error` | const | `new Error('aborted')` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `useAsyncQueue` | *none* | prev
+      .then((prevRes) => {
+        if (signal?.aborted) {
+          updateResult(promiseState.aborted, new Error('aborted'))
+          return
+        }
+
+        if (
+          result[activeIndex.value]?.state === promiseState.rejected
+          && interrupt
+        ) {
+          onFinished()
+          return
+        }
+
+        const done = curr(prevRes).then((currentRes: any) => {
+          updateResult(promiseState.fulfilled, currentRes)
+          if (activeIndex.value === tasks.length - 1)
+            onFinished()
+          return currentRes
+        })
+
+        if (!signal)
+          return done
+
+        return Promise.race([done, whenAborted(signal)])
+      }).catch, prev.then, curr(prevRes).then, Promise.race, Promise.resolve |
+| promise-chain | `whenAborted` | *none* | new Promise(...) |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `reactive` | reactive | *none* | *none* |
 
 
 ---
@@ -221,13 +297,6 @@ function whenAborted(signal: AbortSignal): Promise<never> {
 - **Calls**:
   - `reject`
   - `signal.addEventListener`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

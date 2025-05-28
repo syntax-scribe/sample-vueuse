@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 10 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 10
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useElementSize/index.ts`**
@@ -34,6 +45,29 @@
 | `defaultWindow` | `../_configurable` |
 | `unrefElement` | `../unrefElement` |
 | `useResizeObserver` | `../useResizeObserver` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `boxSize` | `readonly ResizeObserverSize[]` | const | `box === 'border-box'
+        ? entry.borderBoxSize
+        : box === 'content-box'
+          ? entry.contentBoxSize
+          : entry.devicePixelContentBoxSize` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -166,13 +200,6 @@ function stop() {
 - **Calls**:
   - `stop1`
   - `stop2`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

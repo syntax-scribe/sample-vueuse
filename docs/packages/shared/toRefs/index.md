@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 4 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 7
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/shared/toRefs/index.ts`**
@@ -30,6 +40,20 @@
 | `customRef` | `vue` |
 | `isRef` | `vue` |
 | `toValue` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `result` | `any` | const | `Array.isArray(objectRef.value)
+    ? Array.from({ length: objectRef.value.length })
+    : {}` | ✗ |
+| `replaceRef` | `any` | const | `toValue(options.replaceRef) ?? true` | ✗ |
+| `copy` | `any` | const | `[...objectRef.value]` | ✗ |
+| `newObject` | `any` | const | `{ ...objectRef.value, [key]: v }` | ✗ |
 
 
 ---
@@ -112,13 +136,6 @@ export function toRefs<T extends object>(
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `ToRefsOptions`
@@ -142,13 +159,6 @@ export interface ToRefsOptions {
 | Name | Type | Optional | Description |
 |------|------|----------|-------------|
 | `replaceRef` | `MaybeRefOrGetter<boolean>` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

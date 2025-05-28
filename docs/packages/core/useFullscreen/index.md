@@ -2,20 +2,32 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 7 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 10 |
+| 📊 Variables & Constants | 6 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 4 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 4 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 7
-- **Classes**: 0
-- **Imports**: 10
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useFullscreen/index.ts`**
@@ -34,6 +46,55 @@
 | `unrefElement` | `../unrefElement` |
 | `useEventListener` | `../useEventListener` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `eventHandlers` | `"fullscreenchange"[]` | const | `[
+  'fullscreenchange',
+  'webkitfullscreenchange',
+  'webkitendfullscreen',
+  'mozfullscreenchange',
+  'MSFullscreenChange',
+] as any as 'fullscreenchange'[]` | ✗ |
+| `fullscreenElementMethod` | `"fullscreenElement"` | const | `[
+    'fullscreenElement',
+    'webkitFullscreenElement',
+    'mozFullScreenElement',
+    'msFullscreenElement',
+  ].find(m => (document && m in document)) as 'fullscreenElement' | undefined` | ✗ |
+| `target` | `any` | const | `targetRef.value` | ✗ |
+| `target` | `any` | let/var | `targetRef.value` | ✗ |
+| `target` | `any` | let/var | `targetRef.value` | ✗ |
+| `listenerOptions` | `{ capture: boolean; passive: boolean; }` | const | `{ capture: false, passive: true }` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| await-expression | `useFullscreen` | document[exitMethod.value](), target[exitMethod.value](), exit(), target[requestMethod.value](), (isFullscreen.value ? exit() : enter()) | *none* |
+| async-function | `exit` | document[exitMethod.value](), target[exitMethod.value]() | *none* |
+| async-function | `enter` | exit(), target[requestMethod.value]() | *none* |
+| async-function | `toggle` | (isFullscreen.value ? exit() : enter()) | *none* |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -396,13 +457,6 @@ async function toggle() {
 - **Calls**:
   - `isElementFullScreen`
   - `isCurrentElementFullScreen`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

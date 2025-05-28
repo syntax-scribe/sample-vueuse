@@ -2,18 +2,29 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 10 |
+| 📊 Variables & Constants | 4 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 1 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 10
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useCountdown/index.test.ts`**
@@ -32,6 +43,32 @@
 | `effectScope` | `vue` |
 | `shallowRef` | `vue` |
 | `useCountdown` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `countdown` | `number` | let/var | `3` | ✗ |
+| `interval` | `number` | let/var | `100` | ✗ |
+| `immediate` | `true` | const | `true` | ✗ |
+| `options` | `UseCountdownOptions` | let/var | `{
+    interval,
+    onComplete: completeCallback,
+    onTick: tickCallback,
+    immediate,
+  }` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| async-function | `exec` | *none* | *none* |
 
 
 ---
@@ -79,26 +116,5 @@ async function exec({ isActive, pause, resume }: Pausable) {
   - `pause`
   - `expect(isActive.value).toBeFalsy`
   - `resume`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

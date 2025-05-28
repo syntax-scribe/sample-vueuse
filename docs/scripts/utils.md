@@ -2,18 +2,29 @@
 
 # 📄 `utils.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 13 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 12 |
+| 📊 Variables & Constants | 24 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 10 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 13
-- **Classes**: 0
-- **Imports**: 12
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`scripts/utils.ts`**
@@ -34,6 +45,73 @@
 | `yaml` | `yaml` |
 | `packages` | `../meta/packages` |
 | `getCategories` | `../packages/metadata/utils` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `DOCS_URL` | `"https://vueuse.org"` | const | `'https://vueuse.org'` | ✓ |
+| `types` | `string` | let/var | `await fs.readFile(typingFilepath, 'utf-8')` | ✗ |
+| `prettier` | `any` | let/var | `await import('prettier')` | ✗ |
+| `imports` | `string[]` | let/var | `*not shown*` | ✗ |
+| `arr` | `string[]` | const | `[]` | ✗ |
+| `list` | `string` | let/var | `''` | ✗ |
+| `desc` | `string` | const | `description ? ` — ${description}` : ''` | ✗ |
+| `START` | `string` | const | ``<!--${key}_STARTS-->`` | ✗ |
+| `END` | `string` | const | ``<!--${key}_ENDS-->`` | ✗ |
+| `regex` | `RegExp` | const | `new RegExp(`${START}[\\s\\S]*?${END}`, 'im')` | ✗ |
+| `target` | `string` | const | `value ? `${START}\n\n${value.trim()}\n\n${END}` : `${START}${END}`` | ✗ |
+| `readme` | `string` | let/var | `await fs.readFile(readmePath, 'utf-8')` | ✗ |
+| `readme` | `string` | let/var | `await fs.readFile('README.md', 'utf-8')` | ✗ |
+| `functionsCount` | `any` | let/var | `functions.filter(i => !i.internal).length` | ✗ |
+| `mdAddons` | `string` | let/var | `await fs.readFile('packages/add-ons.md', 'utf-8')` | ✗ |
+| `mdPath` | `string` | let/var | ``packages/${fn.package}/${fn.name}/index.md`` | ✗ |
+| `readme` | `string` | let/var | `await fs.readFile(mdPath, 'utf-8')` | ✗ |
+| `functionsCount` | `any` | let/var | `indexes.functions.filter(i => !i.internal).length` | ✗ |
+| `url` | `string` | let/var | ``https://img.shields.io/badge/-${functionsCount}%20functions-13708a`` | ✗ |
+| `data` | `any` | let/var | `await $fetch(url, { responseType: 'text' })` | ✗ |
+| `additional` | `string[]` | let/var | `['egoist', 'Tahul', 'BobbieGoede']` | ✗ |
+| `collaborators` | `string[]` | let/var | `[]` | ✗ |
+| `data` | `any` | let/var | `await $fetch<{ login: string }[]>(`https://api.github.com/repos/vueuse/vueuse/contributors?per_page=100&page=${page}`, {
+    method: 'get',
+    headers: {
+      'content-type': 'application/json',
+    },
+  }) || []` | ✗ |
+| `collaborators` | `string[]` | let/var | `await fetchContributors()` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| async-function | `getTypeDefinition` | fs.readFile(typingFilepath, 'utf-8'), import('prettier'), prettier
+    .format(
+      types,
+      {
+        semi: false,
+        parser: 'typescript',
+      },
+    ) | *none* |
+| async-function | `updateImport` | fs.writeFile(join(dir, 'index.ts'), `${imports.join('\n')}\n`), fs.rm(join(dir, 'index.mjs'), { force: true }) | *none* |
+| async-function | `updatePackageREADME` | fs.readFile(readmePath, 'utf-8'), fs.writeFile(readmePath, `${readme}\n`, 'utf-8') | *none* |
+| async-function | `updateIndexREADME` | fs.readFile('README.md', 'utf-8'), fs.writeFile('README.md', `${readme}\n`, 'utf-8') | *none* |
+| async-function | `updateFunctionsMD` | fs.readFile('packages/add-ons.md', 'utf-8'), fs.writeFile('packages/add-ons.md', mdAddons, 'utf-8') | *none* |
+| async-function | `updateFunctionREADME` | fs.readFile(mdPath, 'utf-8'), fs.writeFile(mdPath, `${readme}\n`, 'utf-8') | *none* |
+| async-function | `updateCountBadge` | $fetch(url, { responseType: 'text' }), fs.writeFile(join(DIR_ROOT, 'packages/public/badge-function-count.svg'), data, 'utf-8') | *none* |
+| async-function | `updatePackageJSON` | fs.readFile('package.json', { encoding: 'utf8' }), fs.readFile(packageJSONPath, { encoding: 'utf8' }), fs.writeFile(packageJSONPath, `${JSON.stringify(packageJSON, null, 2)}\n`) | *none* |
+| async-function | `fetchContributors` | $fetch<{ login: string }[]>(`https://api.github.com/repos/vueuse/vueuse/contributors?per_page=100&page=${page}`, {
+    method: 'get',
+    headers: {
+      'content-type': 'application/json',
+    },
+  }), fetchContributors(page + 1) | *none* |
+| async-function | `updateContributors` | fetchContributors(), fs.writeFile(join(DIR_SRC, './contributors.json'), `${JSON.stringify(collaborators, null, 2)}\n`, 'utf8') | *none* |
 
 
 ---
@@ -603,26 +681,5 @@ export async function updateContributors() {
   - `fs.writeFile`
   - `join (from node:path)`
   - `JSON.stringify`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

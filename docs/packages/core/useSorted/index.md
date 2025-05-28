@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 6 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 6
-- **Interfaces**: 1
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/core/useSorted/index.ts`**
@@ -30,6 +41,25 @@
 | `isRef` | `vue` |
 | `toValue` | `vue` |
 | `watchEffect` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `compareFn` | `UseSortedCompareFn` | let/var | `defaultCompare` | ✗ |
+| `options` | `UseSortedOptions` | let/var | `{}` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -86,13 +116,6 @@ export function useSorted<T = any>(source: MaybeRefOrGetter<T[]>, compareFn?: Us
   - `source: MaybeRefOrGetter<T[]>`
   - `compareFn: UseSortedCompareFn<T>`
 - **Return Type**: `Ref<T[]>`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

@@ -2,20 +2,32 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 7 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 6 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 5 |
+| 📐 Interfaces | 6 |
+| 📑 Type Aliases | 4 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 7
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 6
-- **Type Aliases**: 4
 
 ## 🛠️ File Location:
 📂 **`packages/core/useFileSystemAccess/index.ts`**
@@ -35,6 +47,44 @@
 | `watch` | `vue` |
 | `defaultWindow` | `../_configurable` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `window` | `FileSystemAccessWindow` | const | `_window as FileSystemAccessWindow` | ✗ |
+| `writableStream` | `any` | let/var | `await fileHandle.value.createWritable()` | ✗ |
+| `writableStream` | `any` | let/var | `await fileHandle.value.createWritable()` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| async-function | `open` | window.showOpenFilePicker({ ...toValue(options), ..._options }), updateData() | *none* |
+| async-function | `create` | (window as FileSystemAccessWindow).showSaveFilePicker({ ...options, ..._options }), updateData() | *none* |
+| async-function | `save` | fileHandle.value.createWritable(), writableStream.write(data.value), writableStream.close(), updateFile() | *none* |
+| async-function | `saveAs` | (window as FileSystemAccessWindow).showSaveFilePicker({ ...options, ..._options }), fileHandle.value.createWritable(), writableStream.write(data.value), writableStream.close(), updateFile() | *none* |
+| async-function | `updateFile` | fileHandle.value?.getFile() | *none* |
+| async-function | `updateData` | updateFile(), file.value?.text(), file.value?.arrayBuffer() | *none* |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -208,13 +258,6 @@ async function updateData() {
   - `toValue (from vue)`
   - `file.value?.text`
   - `file.value?.arrayBuffer`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

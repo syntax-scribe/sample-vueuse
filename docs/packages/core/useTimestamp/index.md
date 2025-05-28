@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 6 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 6
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useTimestamp/index.ts`**
@@ -30,6 +40,23 @@
 | `useIntervalFn` | `@vueuse/shared` |
 | `shallowRef` | `vue` |
 | `useRafFn` | `../useRafFn` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `cb` | `() => void` | const | `callback
+    ? () => {
+        update()
+        callback(ts.value)
+      }
+    : update` | ✗ |
+| `controls` | `Pausable` | const | `interval === 'requestAnimationFrame'
+    ? useRafFn(cb, { immediate })
+    : useIntervalFn(cb, interval, { immediate })` | ✗ |
 
 
 ---
@@ -68,13 +95,6 @@ export function useTimestamp(options?: UseTimestampOptions<false>): ShallowRef<n
 </details>
 
 - **Return Type**: `any`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

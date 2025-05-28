@@ -2,19 +2,29 @@
 
 # 📄 `contributors.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 1 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 1
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/contributors.ts`**
@@ -24,6 +34,105 @@
 | Name | Source |
 |------|--------|
 | `contributorsGenerated` | `./contributors.json` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `contributorsAvatars` | `Record<string, string>` | const | `{}` | ✗ |
+| `emeriti` | `TeamMember[]` | const | `[
+  {
+    avatar: contributorsAvatars.egoist,
+    name: 'EGOIST',
+    github: 'egoist',
+    twitter: '_egoistlily',
+    bluesky: 'egoist.dev',
+    sponsors: true,
+    description: '',
+    packages: ['head'],
+  },
+  {
+    avatar: contributorsAvatars.webfansplz,
+    name: 'webfansplz',
+    github: 'webfansplz',
+    twitter: 'webfansplz',
+    sponsors: false,
+    functions: [
+      'useDateFormat',
+      'useAsyncQueue',
+    ],
+    description: 'FE Developer<br>Love open source',
+  },
+  {
+    avatar: contributorsAvatars.anteriovieira,
+    name: 'anteriovieira',
+    github: 'anteriovieira',
+    twitter: 'anteriovieira',
+    sponsors: false,
+    description: '',
+  },
+  {
+    avatar: contributorsAvatars['cawa-93'],
+    name: 'Alex Kozack',
+    github: 'cawa-93',
+    twitter: 'alex_kozack',
+    bluesky: 'kozack.me',
+    sponsors: false,
+    functions: ['useMediaControls'],
+    description: 'Open Source Contributor from Ukraine',
+  },
+  {
+    avatar: contributorsAvatars.scottbedard,
+    name: 'Scott Bedard',
+    github: 'scottbedard',
+    bluesky: 'scottbedard.net',
+    sponsors: false,
+    functions: [
+      'useTransition',
+      'useDocumentVisibility',
+      'useElementVisibility',
+    ],
+    description: '',
+  },
+  {
+    avatar: contributorsAvatars.sibbng,
+    name: 'sibbng',
+    github: 'sibbng',
+    sponsors: false,
+    description: '',
+    functions: [
+      'onClickOutside',
+      'useStyleTag',
+    ],
+  },
+  {
+    avatar: contributorsAvatars.okxiaoliang4,
+    name: 'Jelf',
+    github: 'okxiaoliang4',
+    twitter: 'okxiaoliang4',
+    sponsors: false,
+    functions: [
+      'useElementByPoint',
+      'useScreenSafeArea',
+    ],
+    description: '',
+  },
+  {
+    avatar: contributorsAvatars.lstoeferle,
+    name: 'lstoeferle',
+    github: 'lstoeferle',
+    twitter: '54ku1',
+    sponsors: false,
+    functions: [
+      'useSwipe',
+      'useUrlSearchParams',
+    ],
+    description: '',
+  },
+]` | ✓ |
 
 
 ---
@@ -44,13 +153,6 @@ function getAvatarUrl(name: string) {
 - **Parameters**:
   - `name: string`
 - **Return Type**: `string`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 
@@ -107,13 +209,6 @@ export interface TeamMember {
 | `description` | `string` | ✗ |  |
 | `packages` | `string[]` | ✓ |  |
 | `functions` | `string[]` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

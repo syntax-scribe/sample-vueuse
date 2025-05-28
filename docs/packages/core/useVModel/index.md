@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 3 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useVModel/index.ts`**
@@ -34,6 +45,28 @@
 | `nextTick` | `vue` |
 | `watch` | `vue` |
 | `cloneFnJSON` | `../useCloned` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `_emit` | `any` | const | `emit || vm?.emit || vm?.$emit?.bind(vm) || vm?.proxy?.$emit?.bind(vm?.proxy)` | ✗ |
+| `event` | `string | undefined` | let/var | `eventName` | ✗ |
+| `isUpdating` | `boolean` | let/var | `false` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
+| `watch` | watch | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -114,13 +147,6 @@ export function useVModel<P extends object, K extends keyof P, Name extends stri
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseVModelOptions<T, Passive extends boolean = false>`
@@ -184,13 +210,6 @@ export interface UseVModelOptions<T, Passive extends boolean = false> {
 | `defaultValue` | `T` | ✓ |  |
 | `clone` | `boolean | CloneFn<T>` | ✓ |  |
 | `shouldEmit` | `(v: T) => boolean` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

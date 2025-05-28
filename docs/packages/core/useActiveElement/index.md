@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 6 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 6
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useActiveElement/index.ts`**
@@ -29,6 +39,20 @@
 | `defaultWindow` | `../_configurable` |
 | `onElementRemoval` | `../onElementRemoval` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `document` | `DocumentOrShadowRoot` | const | `options.document ?? window?.document` | ✗ |
+| `element` | `Element` | let/var | `document?.activeElement` | ✗ |
+| `listenerOptions` | `{ capture: boolean; passive: boolean; }` | const | `{
+      capture: true,
+      passive: true,
+    }` | ✗ |
 
 
 ---
@@ -152,13 +176,6 @@ export function useActiveElement<T extends HTMLElement>(
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseActiveElementOptions`
@@ -189,13 +206,6 @@ export interface UseActiveElementOptions extends ConfigurableWindow, Configurabl
 |------|------|----------|-------------|
 | `deep` | `boolean` | ✓ |  |
 | `triggerOnRemoval` | `boolean` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

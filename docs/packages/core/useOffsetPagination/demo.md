@@ -2,19 +2,30 @@
 
 # 📄 `demo.vue`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 3 |
+| 📊 Variables & Constants | 4 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 2 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 3
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useOffsetPagination/demo.vue`**
@@ -26,6 +37,28 @@
 | `useOffsetPagination` | `@vueuse/core` |
 | `deepRef` | `vue` |
 | `shallowRef` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `database` | `boolean` | let/var | `deepRef<User[]>([])` | ✗ |
+| `start` | `number` | let/var | `(page - 1) * pageSize` | ✗ |
+| `end` | `number` | let/var | `start + pageSize` | ✗ |
+| `data` | `boolean` | let/var | `deepRef<User[]>([])` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `fetch` | *none* | new Promise(...) |
+| promise-chain | `fetchData` | *none* | fetch(currentPage, currentPageSize).then |
 
 
 ---
@@ -78,13 +111,6 @@ function fetchData({ currentPage, currentPageSize }: { currentPage: number, curr
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `User`
@@ -105,13 +131,6 @@ interface User {
 |------|------|----------|-------------|
 | `id` | `number` | ✗ |  |
 | `name` | `string` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

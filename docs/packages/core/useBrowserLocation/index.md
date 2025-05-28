@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useBrowserLocation/index.ts`**
@@ -32,6 +43,38 @@
 | `watch` | `vue` |
 | `defaultWindow` | `../_configurable` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `WRITABLE_PROPERTIES` | `readonly ["hash", "host", "hostname", "href", "pathname", "port", "protocol", "search"]` | const | `[
+  'hash',
+  'host',
+  'hostname',
+  'href',
+  'pathname',
+  'port',
+  'protocol',
+  'search',
+] as const` | ✗ |
+| `refs` | `Record<"search" | "hash" | "host" | "hostname" | "href" | "pathname" | "port" | "protocol", Ref<string>>` | const | `Object.fromEntries(
+    WRITABLE_PROPERTIES.map(key => [key, deepRef()]),
+  ) as Record<typeof WRITABLE_PROPERTIES[number], Ref<string | undefined>>` | ✗ |
+| `listenerOptions` | `{ passive: boolean; }` | const | `{ passive: true }` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
+| `reactive` | reactive | *none* | *none* |
 
 
 ---
@@ -135,13 +178,6 @@ export function useBrowserLocation(options: ConfigurableWindow = {}) {
 - **Return Type**: `BrowserLocationState`
 - **Calls**:
   - `reactive (from vue)`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

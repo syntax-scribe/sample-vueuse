@@ -2,19 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 4 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 3 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 4 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 4
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useBase64/index.ts`**
@@ -31,6 +43,45 @@
 | `toValue` | `vue` |
 | `watch` | `vue` |
 | `getDefaultSerialization` | `./serialization` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `img` | `HTMLImageElement` | const | `_target.cloneNode(false) as HTMLImageElement` | ✗ |
+| `ctx` | `CanvasRenderingContext2D` | const | `canvas.getContext('2d')!` | ✗ |
+| `_serializeFn` | `any` | const | `options?.serializer || getDefaultSerialization(_target)` | ✗ |
+| `fr` | `FileReader` | const | `new FileReader()` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `execute` | *none* | new Promise(...), imgLoaded(img).then(() => {
+            const canvas = document.createElement('canvas')
+            const ctx = canvas.getContext('2d')!
+            canvas.width = img.width
+            canvas.height = img.height
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+            resolve(canvas.toDataURL(options?.type, options?.quality))
+          }).catch, imgLoaded(img).then, promise.value.then |
+| promise-chain | `imgLoaded` | *none* | new Promise(...) |
+| promise-chain | `blobToBase64` | *none* | new Promise(...) |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -190,13 +241,6 @@ function blobToBase64(blob: Blob) {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseBase64Options`
@@ -283,13 +327,6 @@ export interface UseBase64Return {
 | `base64` | `ShallowRef<string>` | ✗ |  |
 | `promise` | `ShallowRef<Promise<string>>` | ✗ |  |
 | `execute` | `() => Promise<string>` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

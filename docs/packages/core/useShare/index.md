@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 5 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 1 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 5
-- **Interfaces**: 2
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useShare/index.ts`**
@@ -29,6 +40,29 @@
 | `toValue` | `vue` |
 | `defaultNavigator` | `../_configurable` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `_navigator` | `NavigatorWithShare` | const | `navigator as NavigatorWithShare` | ✗ |
+| `data` | `any` | let/var | `{
+        ...toValue(shareOptions),
+        ...toValue(overrideOptions),
+      }` | ✗ |
+| `granted` | `boolean` | let/var | `true` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| async-function | `share` | *none* | *none* |
 
 
 ---
@@ -120,13 +154,6 @@ async (overrideOptions: MaybeRefOrGetter<UseShareOptions> = {}) => {
   - `toValue (from vue)`
   - `_navigator.canShare`
   - `complex_call_1273`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

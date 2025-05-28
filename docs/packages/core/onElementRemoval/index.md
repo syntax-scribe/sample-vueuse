@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/onElementRemoval/index.ts`**
@@ -34,6 +44,15 @@
 | `defaultWindow` | `../_configurable` |
 | `unrefElement` | `../unrefElement` |
 | `useMutationObserver` | `../useMutationObserver` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `stopFn` | `Fn | undefined` | let/var | `*not shown*` | ✗ |
 
 
 ---
@@ -175,13 +194,6 @@ export function onElementRemoval(
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `OnElementRemovalOptions`
@@ -193,13 +205,6 @@ export interface OnElementRemovalOptions
   extends ConfigurableWindow, ConfigurableDocumentOrShadowRoot, WatchOptionsBase { }
 ```
 </details>
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

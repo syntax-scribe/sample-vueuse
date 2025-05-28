@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 6 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 6
-- **Interfaces**: 1
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/core/useKeyModifier/index.ts`**
@@ -30,6 +40,16 @@
 | `shallowRef` | `vue` |
 | `defaultDocument` | `../_configurable` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `defaultEvents` | `WindowEventName[]` | const | `['mousedown', 'mouseup', 'keydown', 'keyup']` | ✗ |
+| `state` | `ShallowRef<boolean>` | const | `shallowRef(initial) as ShallowRef<boolean>` | ✗ |
 
 
 ---
@@ -73,13 +93,6 @@ export function useKeyModifier<Initial extends boolean | null>(modifier: KeyModi
   - `events.forEach`
   - `useEventListener (from ../useEventListener)`
   - `evt.getModifierState`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

@@ -2,18 +2,29 @@
 
 # 📄 `changelog.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 6 |
+| 📊 Variables & Constants | 5 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 3 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 6
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`scripts/changelog.ts`**
@@ -28,6 +39,39 @@
 | `Git` | `simple-git` |
 | `functions` | `../packages/metadata/metadata` |
 | `uniq` | `./utils` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `cache` | `CommitInfo[] | undefined` | let/var | `*not shown*` | ✗ |
+| `logs` | `CommitInfo[]` | let/var | `(await git.log({ maxCount: count })).all.filter((i) => {
+    return i.message.includes('chore: release')
+      || i.message.includes('!')
+      || i.message.startsWith('feat')
+      || i.message.startsWith('fix')
+  }) as CommitInfo[]` | ✗ |
+| `raw` | `any` | let/var | `await git.raw(['diff-tree', '--no-commit-id', '--name-only', '-r', log.hash])` | ✗ |
+| `map` | `Record<string, ContributorInfo>` | let/var | `{}` | ✗ |
+| `result` | `(readonly [string, ContributorInfo[]])[]` | let/var | `await Promise.all(functions.map(async (i) => {
+    return [i.name, await getContributorsAt(`packages/${i.package}/${i.name}`)] as const
+  }))` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| async-function | `getChangeLog` | git.log({ maxCount: count }), git.raw(['diff-tree', '--no-commit-id', '--name-only', '-r', log.hash]) | *none* |
+| async-function | `getContributorsAt` | git.raw(['log', '--pretty=format:"%an|%ae"', '--', path]) | *none* |
+| async-function | `getFunctionContributors` | Promise.all(functions.map(async (i) => {
+    return [i.name, await getContributorsAt(`packages/${i.package}/${i.name}`)] as const
+  })), getContributorsAt(`packages/${i.package}/${i.name}`) | Promise.all |
 
 
 ---
@@ -158,26 +202,5 @@ export async function getFunctionContributors() {
   - `functions.map`
   - `getContributorsAt`
   - `Object.fromEntries`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

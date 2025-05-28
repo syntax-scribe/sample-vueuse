@@ -2,20 +2,32 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 7 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 16 |
+| 📊 Variables & Constants | 8 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 2 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 4 |
+| 📐 Interfaces | 4 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 7
-- **Classes**: 0
-- **Imports**: 16
-- **Interfaces**: 4
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useMediaControls/index.ts`**
@@ -40,6 +52,47 @@
 | `watchEffect` | `vue` |
 | `defaultDocument` | `../_configurable` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `ranges` | `[number, number][]` | let/var | `[]` | ✗ |
+| `defaultOptions` | `UseMediaControlsOptions` | const | `{
+  src: '',
+  tracks: [],
+}` | ✗ |
+| `listenerOptions` | `{ passive: boolean; }` | const | `{ passive: true }` | ✗ |
+| `supportsPictureInPicture` | `boolean` | const | `document && 'pictureInPictureEnabled' in document` | ✗ |
+| `id` | `number` | const | `typeof track === 'number' ? track : track.id` | ✗ |
+| `id` | `number` | const | `typeof track === 'number' ? track : track.id` | ✗ |
+| `sources` | `UseMediaSource[]` | let/var | `[]` | ✗ |
+| `listeners` | `Fn[]` | const | `[]` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `useMediaControls` | *none* | new Promise(...), (el as any).requestPictureInPicture().then(resolve).catch, (el as any).requestPictureInPicture().then, (document as any).exitPictureInPicture().then(resolve).catch, (document as any).exitPictureInPicture().then, el.play().catch |
+| promise-chain | `togglePictureInPicture` | *none* | new Promise(...), (el as any).requestPictureInPicture().then(resolve).catch, (el as any).requestPictureInPicture().then, (document as any).exitPictureInPicture().then(resolve).catch, (document as any).exitPictureInPicture().then |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
+| `watch` | watch | *none* | *none* |
+| `watch` | watch | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -717,13 +770,6 @@ export function useMediaControls(target: MaybeRef<HTMLMediaElement | null | unde
   - `usingElRef`
   - `(el as any).requestPictureInPicture().then(resolve).catch`
   - `(document as any).exitPictureInPicture().then(resolve).catch`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

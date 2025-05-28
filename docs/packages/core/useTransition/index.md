@@ -2,20 +2,32 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 15 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 11 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 1 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 3 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 15
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 2
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/core/useTransition/index.ts`**
@@ -35,6 +47,74 @@
 | `deepRef` | `vue` |
 | `toValue` | `vue` |
 | `watch` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `_TransitionPresets` | `{ readonly easeInSine: readonly [0.12, 0, 0.39, 0]; readonly easeOutSine: readonly [0.61, 1, 0.88, 1]; readonly easeInOutSine: readonly [0.37, 0, 0.63, 1]; readonly easeInQuad: readonly [0.11, 0, 0.5, 0]; readonly easeOutQuad: readonly [...]; ... 18 more ...; readonly easeInOutBack: readonly [...]; }` | const | `{
+  easeInSine: [0.12, 0, 0.39, 0],
+  easeOutSine: [0.61, 1, 0.88, 1],
+  easeInOutSine: [0.37, 0, 0.63, 1],
+  easeInQuad: [0.11, 0, 0.5, 0],
+  easeOutQuad: [0.5, 1, 0.89, 1],
+  easeInOutQuad: [0.45, 0, 0.55, 1],
+  easeInCubic: [0.32, 0, 0.67, 0],
+  easeOutCubic: [0.33, 1, 0.68, 1],
+  easeInOutCubic: [0.65, 0, 0.35, 1],
+  easeInQuart: [0.5, 0, 0.75, 0],
+  easeOutQuart: [0.25, 1, 0.5, 1],
+  easeInOutQuart: [0.76, 0, 0.24, 1],
+  easeInQuint: [0.64, 0, 0.78, 0],
+  easeOutQuint: [0.22, 1, 0.36, 1],
+  easeInOutQuint: [0.83, 0, 0.17, 1],
+  easeInExpo: [0.7, 0, 0.84, 0],
+  easeOutExpo: [0.16, 1, 0.3, 1],
+  easeInOutExpo: [0.87, 0, 0.13, 1],
+  easeInCirc: [0.55, 0, 1, 0.45],
+  easeOutCirc: [0, 0.55, 0.45, 1],
+  easeInOutCirc: [0.85, 0, 0.15, 1],
+  easeInBack: [0.36, 0, 0.66, -0.56],
+  easeOutBack: [0.34, 1.56, 0.64, 1],
+  easeInOutBack: [0.68, -0.6, 0.32, 1.6],
+} as const` | ✗ |
+| `TransitionPresets` | `Record<"easeInSine" | "easeOutSine" | "easeInOutSine" | "easeInQuad" | "easeOutQuad" | "easeInOutQuad" | "easeInCubic" | "easeOutCubic" | "easeInOutCubic" | "easeInQuart" | "easeOutQuart" | ... 12 more ... | "easeInOutBack", CubicBezierPoints> & { ...; }` | const | `Object.assign({}, { linear }, _TransitionPresets) as Record<keyof typeof _TransitionPresets, CubicBezierPoints> & { linear: EasingFunction }` | ✓ |
+| `aGuessT` | `number` | let/var | `x` | ✗ |
+| `currentX` | `number` | const | `calcBezier(aGuessT, p0, p2) - x` | ✗ |
+| `duration` | `any` | const | `toValue(options.duration) ?? 1000` | ✗ |
+| `endAt` | `any` | const | `Date.now() + duration` | ✗ |
+| `trans` | `any` | const | `typeof options.transition === 'function'
+    ? options.transition
+    : (toValue(options.transition) ?? linear)` | ✗ |
+| `ease` | `any` | const | `typeof trans === 'function'
+    ? trans
+    : createEasingFunction(trans)` | ✗ |
+| `currentId` | `number` | let/var | `0` | ✗ |
+| `id` | `number` | let/var | `++currentId` | ✗ |
+| `toVal` | `any` | let/var | `Array.isArray(to) ? to.map(toValue<number>) : toValue(to)` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `executeTransition` | *none* | new Promise(...) |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
+| `watch` | watch | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -403,13 +483,6 @@ export function useTransition(source: MaybeRefOrGetter<number>, options?: UseTra
 </details>
 
 - **Return Type**: `any`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

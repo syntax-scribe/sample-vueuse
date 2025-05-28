@@ -2,19 +2,30 @@
 
 # 📄 `directive.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 4 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 4 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 4
-- **Interfaces**: 0
-- **Type Aliases**: 4
 
 ## 🛠️ File Location:
 📂 **`packages/core/useElementSize/directive.ts`**
@@ -27,6 +38,37 @@
 | `ElementSize` | `./index` |
 | `watch` | `vue` |
 | `useElementSize` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `handler` | `any` | const | `typeof binding.value === 'function' ? binding.value : binding.value?.[0]` | ✗ |
+| `options` | `[initialSize?: ElementSize, options?: UseResizeObserverOptions]` | const | `(typeof binding.value === 'function' ? [] : binding.value.slice(1)) as RemoveFirstFromTuple<BindingValueArray>` | ✗ |
+| `vElementSize` | `ObjectDirective<
+  HTMLElement,
+  BindingValueFunction | BindingValueArray
+>` | const | `{
+  mounted(el, binding) {
+    const handler = typeof binding.value === 'function' ? binding.value : binding.value?.[0]
+    const options = (typeof binding.value === 'function' ? [] : binding.value.slice(1)) as RemoveFirstFromTuple<BindingValueArray>
+
+    const { width, height } = useElementSize(el, ...options)
+    watch([width, height], ([width, height]) => handler({ width, height }))
+  },
+}` | ✓ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -57,20 +99,6 @@ mounted(el, binding) {
   - `useElementSize (from ./index)`
   - `watch (from vue)`
   - `handler`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

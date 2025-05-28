@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 4 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 4
-- **Interfaces**: 1
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/shared/reactifyObject/index.ts`**
@@ -28,6 +38,17 @@
 | `ReactifyOptions` | `../reactify` |
 | `AnyFn` | `../utils` |
 | `reactify` | `../reactify` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `keys` | `string[]` | let/var | `[]` | ✗ |
+| `options` | `ReactifyOptions<S> | undefined` | let/var | `*not shown*` | ✗ |
+| `value` | `T[keyof T]` | const | `obj[key as keyof T]` | ✗ |
 
 
 ---
@@ -54,13 +75,6 @@ export function reactifyObject<T extends object, Keys extends keyof T>(obj: T, k
   - `obj: T`
   - `keys: (keyof T)[]`
 - **Return Type**: `ReactifyObjectReturn<T, Keys, true>`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

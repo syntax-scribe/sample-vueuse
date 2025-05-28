@@ -2,18 +2,28 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/onStartTyping/index.test.ts`**
@@ -30,6 +40,17 @@
 | `vi` | `vitest` |
 | `shallowRef` | `vue` |
 | `onStartTyping` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `element` | `Ref<HTMLInputElement>` | let/var | `*not shown*` | ✗ |
+| `callBackFn` | `any` | let/var | `*not shown*` | ✗ |
+| `ev` | `KeyboardEvent` | const | `new KeyboardEvent('keydown', { keyCode })` | ✗ |
 
 
 ---
@@ -71,26 +92,5 @@ function range(size: number, startAt = 0) {
 - **Calls**:
   - `[...Array.from({ length: size }).keys()].map`
   - `Array.from({ length: size }).keys`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

@@ -2,18 +2,27 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 28 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 0 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 14
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useSSRWidth/index.test.ts`**
@@ -56,6 +65,120 @@
 </details>
 
 - **Return Type**: `string`
+### `render(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => ''
+```
+</details>
+
+- **Return Type**: `string`
+### `render(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => ''
+```
+</details>
+
+- **Return Type**: `string`
+### `setup(): () => any`
+
+<details><summary>Code</summary>
+
+```ts
+() => {
+      provideSSRWidth(700)
+      return () => h({ render: () => {
+        return useSSRWidth()
+      } })
+    }
+```
+</details>
+
+- **Return Type**: `() => any`
+- **Calls**:
+  - `provideSSRWidth (from ./index)`
+  - `h (from vue)`
+  - `useSSRWidth (from ./index)`
+### `render(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => {
+        return useSSRWidth()
+      }
+```
+</details>
+
+- **Return Type**: `number`
+- **Calls**:
+  - `useSSRWidth (from ./index)`
+### `render(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => {
+        return useSSRWidth()
+      }
+```
+</details>
+
+- **Return Type**: `number`
+- **Calls**:
+  - `useSSRWidth (from ./index)`
+### `setup(): () => any`
+
+<details><summary>Code</summary>
+
+```ts
+() => {
+      provideSSRWidth(700)
+      return () => h({ render: () => {
+        return useSSRWidth()
+      } })
+    }
+```
+</details>
+
+- **Return Type**: `() => any`
+- **Calls**:
+  - `provideSSRWidth (from ./index)`
+  - `h (from vue)`
+  - `useSSRWidth (from ./index)`
+### `render(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => {
+        return useSSRWidth()
+      }
+```
+</details>
+
+- **Return Type**: `number`
+- **Calls**:
+  - `useSSRWidth (from ./index)`
+### `render(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => {
+        return useSSRWidth()
+      }
+```
+</details>
+
+- **Return Type**: `number`
+- **Calls**:
+  - `useSSRWidth (from ./index)`
 ### `setup(): () => any`
 
 <details><summary>Code</summary>
@@ -238,26 +361,93 @@
 </details>
 
 - **Return Type**: `number`
+### `setup(): () => any`
 
----
+<details><summary>Code</summary>
 
-## Classes
+```ts
+() => {
+      provideSSRWidth(800)
+      const ssrWidth = useSSRWidth()
+      return () => h({ render: () => {
+        return ssrWidth
+      } })
+    }
+```
+</details>
 
-> No classes found in this file.
+- **Return Type**: `() => any`
+- **Calls**:
+  - `provideSSRWidth (from ./index)`
+  - `useSSRWidth (from ./index)`
+  - `h (from vue)`
+### `render(): number`
 
+<details><summary>Code</summary>
 
----
+```ts
+() => {
+        return ssrWidth
+      }
+```
+</details>
 
-## Interfaces
+- **Return Type**: `number`
+### `render(): number`
 
-> No interfaces found in this file.
+<details><summary>Code</summary>
 
+```ts
+() => {
+        return ssrWidth
+      }
+```
+</details>
 
----
+- **Return Type**: `number`
+### `setup(): () => any`
 
-## Type Aliases
+<details><summary>Code</summary>
 
-> No type aliases found in this file.
+```ts
+() => {
+      provideSSRWidth(800)
+      const ssrWidth = useSSRWidth()
+      return () => h({ render: () => {
+        return ssrWidth
+      } })
+    }
+```
+</details>
 
+- **Return Type**: `() => any`
+- **Calls**:
+  - `provideSSRWidth (from ./index)`
+  - `useSSRWidth (from ./index)`
+  - `h (from vue)`
+### `render(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => {
+        return ssrWidth
+      }
+```
+</details>
+
+- **Return Type**: `number`
+### `render(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => {
+        return ssrWidth
+      }
+```
+</details>
+
+- **Return Type**: `number`
 
 ---

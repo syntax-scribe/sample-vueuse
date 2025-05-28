@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 4 |
+| 📊 Variables & Constants | 0 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 4
-- **Interfaces**: 0
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/shared/useArrayJoin/index.ts`**
@@ -27,6 +37,15 @@
 | `MaybeRefOrGetter` | `vue` |
 | `computed` | `vue` |
 | `toValue` | `vue` |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -68,20 +87,6 @@ export function useArrayJoin(
   - `computed (from vue)`
   - `toValue(list).map(i => toValue(i)).join`
   - `toValue (from vue)`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

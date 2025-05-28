@@ -2,18 +2,28 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 12 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 5 |
+| 📊 Variables & Constants | 6 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 12
-- **Classes**: 0
-- **Imports**: 5
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useVirtualList/index.test.ts`**
@@ -27,6 +37,20 @@
 | `it` | `vitest` |
 | `deepRef` | `vue` |
 | `useVirtualList` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `div` | `{ clientHeight: number; align: string; addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLDivElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void; addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean...` | const | `{ ...document.createElement('div'), clientHeight: 50 }` | ✗ |
+| `div` | `{ clientHeight: number; align: string; addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLDivElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void; addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean...` | const | `{ ...document.createElement('div'), clientHeight: 50 }` | ✗ |
+| `div` | `{ clientWidth: number; align: string; addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLDivElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void; addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean ...` | const | `{ ...document.createElement('div'), clientWidth: 50 }` | ✗ |
+| `div` | `{ clientWidth: number; align: string; addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLDivElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void; addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean ...` | const | `{ ...document.createElement('div'), clientWidth: 50 }` | ✗ |
+| `mutableInput` | `string[]` | const | `['a', 'b', 'c', 'd', 'e', 'f']` | ✗ |
+| `readonlyInput` | `readonly string[]` | const | `['a', 'b', 'c', 'd', 'e', 'f']` | ✗ |
 
 
 ---
@@ -153,26 +177,5 @@
 </details>
 
 - **Return Type**: `number`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

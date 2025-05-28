@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 4 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 3 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 4
-- **Interfaces**: 2
-- **Type Aliases**: 3
 
 ## 🛠️ File Location:
 📂 **`packages/core/computedInject/index.ts`**
@@ -28,6 +39,25 @@
 | `InjectionKey` | `vue` |
 | `computed` | `vue` |
 | `inject` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `source` | `T` | let/var | `inject(key) as T | undefined` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -78,13 +108,6 @@ ctx => options.get(source, ctx)
 - **Return Type**: `K`
 - **Calls**:
   - `options.get`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 0
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/shared/refDebounced/index.ts`**
@@ -31,6 +42,24 @@
 | `toValue` | `vue` |
 | `watch` | `vue` |
 | `useDebounceFn` | `../useDebounceFn` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `debounced` | `Ref<T>` | const | `deepRef(toValue(value)) as Ref<T>` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -77,20 +106,6 @@ export function refDebounced<T>(value: Ref<T>, ms: MaybeRefOrGetter<number> = 20
   - `watch (from vue)`
   - `updater`
   - `shallowReadonly (from vue)`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 12 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 3 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 12
-- **Interfaces**: 0
-- **Type Aliases**: 3
 
 ## 🛠️ File Location:
 📂 **`packages/core/useTitle/index.ts`**
@@ -35,6 +46,26 @@
 | `watch` | `vue` |
 | `defaultDocument` | `../_configurable` |
 | `useMutationObserver` | `../useMutationObserver` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `originalTitle` | `string` | const | `document?.title ?? ''` | ✗ |
+| `isReadonly` | `boolean` | const | `!!(newTitle && typeof newTitle === 'function')` | ✗ |
+| `template` | `any` | const | `options.titleTemplate || '%s'` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -91,20 +122,6 @@ function format(t: string) {
 - **Calls**:
   - `template`
   - `toValue(template).replace`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

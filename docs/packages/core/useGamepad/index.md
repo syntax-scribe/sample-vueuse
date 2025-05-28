@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 6 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 5 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 6
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useGamepad/index.ts`**
@@ -35,6 +46,28 @@
 | `useEventListener` | `../useEventListener` |
 | `useRafFn` | `../useRafFn` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `hapticActuators` | `any[]` | const | `[]` | ✗ |
+| `vibrationActuator` | `any` | const | `'vibrationActuator' in gamepad ? (gamepad as any).vibrationActuator : null` | ✗ |
+| `_gamepads` | `Gamepad[]` | const | `navigator?.getGamepads() || []` | ✗ |
+| `listenerOptions` | `{ passive: boolean; }` | const | `{ passive: true }` | ✗ |
+| `_gamepads` | `Gamepad[]` | const | `navigator?.getGamepads() || []` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -334,13 +367,6 @@ export function useGamepad(options: UseGamepadOptions = {}) {
 - **Calls**:
   - `gamepads.value.filter`
   - `onDisconnectedHook.trigger`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

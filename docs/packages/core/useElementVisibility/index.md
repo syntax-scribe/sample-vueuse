@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 9 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 9
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useElementVisibility/index.ts`**
@@ -32,6 +42,16 @@
 | `toValue` | `vue` |
 | `defaultWindow` | `../_configurable` |
 | `useIntersectionObserver` | `../useIntersectionObserver` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `isIntersecting` | `any` | let/var | `elementIsVisible.value` | ✗ |
+| `latestTime` | `number` | let/var | `0` | ✗ |
 
 
 ---
@@ -117,13 +137,6 @@ export function useElementVisibility(
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseElementVisibilityOptions`
@@ -157,13 +170,6 @@ export interface UseElementVisibilityOptions extends ConfigurableWindow, Pick<Us
 | `rootMargin` | `MaybeRefOrGetter<string>` | ✓ |  |
 | `scrollTarget` | `MaybeRefOrGetter<HTMLElement | undefined | null>` | ✓ |  |
 | `once` | `boolean` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

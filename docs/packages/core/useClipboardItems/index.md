@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 10 |
+| 📊 Variables & Constants | 0 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 2 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 10
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useClipboardItems/index.ts`**
@@ -33,6 +43,16 @@
 | `defaultNavigator` | `../_configurable` |
 | `useEventListener` | `../useEventListener` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `updateContent` | *none* | navigator!.clipboard.read().then |
+| async-function | `copy` | navigator!.clipboard.write(value) | *none* |
 
 
 ---
@@ -105,13 +125,6 @@ async function copy(value = toValue(source)) {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseClipboardItemsOptions<Source>`
@@ -172,13 +185,6 @@ export interface UseClipboardItemsReturn<Optional> {
 | `content` | `ComputedRef<ClipboardItems>` | ✗ |  |
 | `copied` | `ComputedRef<boolean>` | ✗ |  |
 | `copy` | `Optional extends true ? (content?: ClipboardItems) => Promise<void> : (text: ClipboardItems) => Promise<void>` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

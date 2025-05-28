@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 5 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 13 |
+| 📊 Variables & Constants | 11 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 4 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 5
-- **Classes**: 0
-- **Imports**: 13
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useScroll/index.ts`**
@@ -37,6 +48,51 @@
 | `defaultWindow` | `../_configurable` |
 | `unrefElement` | `../unrefElement` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `ARRIVED_STATE_THRESHOLD_PIXELS` | `1` | const | `1` | ✗ |
+| `scrollContainer` | `Element` | const | `(_element as Window)?.document?.documentElement
+        || (_element as Document)?.documentElement
+        || (_element as Element)` | ✗ |
+| `el` | `Element` | const | `(
+      (target as Window)?.document?.documentElement
+      || (target as Document)?.documentElement
+      || unrefElement(target as HTMLElement | SVGElement)
+    ) as Element` | ✗ |
+| `directionMultipler` | `1 | -1` | const | `direction === 'rtl' ? -1 : 1` | ✗ |
+| `scrollLeft` | `number` | const | `el.scrollLeft` | ✗ |
+| `left` | `boolean` | const | `Math.abs(scrollLeft * directionMultipler) <= (offset.left || 0)` | ✗ |
+| `right` | `boolean` | const | `Math.abs(scrollLeft * directionMultipler)
+      + el.clientWidth >= el.scrollWidth
+      - (offset.right || 0)
+      - ARRIVED_STATE_THRESHOLD_PIXELS` | ✗ |
+| `scrollTop` | `number` | let/var | `el.scrollTop` | ✗ |
+| `top` | `boolean` | const | `Math.abs(scrollTop) <= (offset.top || 0)` | ✗ |
+| `bottom` | `boolean` | const | `Math.abs(scrollTop)
+      + el.clientHeight >= el.scrollHeight
+      - (offset.bottom || 0)
+      - ARRIVED_STATE_THRESHOLD_PIXELS` | ✗ |
+| `eventTarget` | `HTMLElement` | const | `(
+      (e.target as Document).documentElement ?? e.target
+    ) as HTMLElement` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `reactive` | reactive | *none* | *none* |
+| `reactive` | reactive | *none* | *none* |
 
 
 ---
@@ -498,13 +554,6 @@ function scrollTo(_x: number | undefined, _y: number | undefined) {
   - `setArrivedState`
   - `onScrollEndDebounced`
   - `onScroll`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

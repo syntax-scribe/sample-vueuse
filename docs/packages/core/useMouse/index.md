@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 21 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 9 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 4 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 13
-- **Classes**: 0
-- **Imports**: 7
-- **Interfaces**: 1
-- **Type Aliases**: 4
 
 ## 🛠️ File Location:
 📂 **`packages/core/useMouse/index.ts`**
@@ -35,8 +45,143 @@
 
 ---
 
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `UseMouseBuiltinExtractors` | `Record<UseMouseCoordType, UseMouseEventExtractor>` | const | `{
+  page: event => [event.pageX, event.pageY],
+  client: event => [event.clientX, event.clientY],
+  screen: event => [event.screenX, event.screenY],
+  movement: event => (event instanceof MouseEvent
+    ? [event.movementX, event.movementY]
+    : null
+  ),
+} as const` | ✗ |
+| `_prevMouseEvent` | `MouseEvent | null` | let/var | `null` | ✗ |
+| `_prevScrollX` | `number` | let/var | `0` | ✗ |
+| `_prevScrollY` | `number` | let/var | `0` | ✗ |
+| `extractor` | `UseMouseEventExtractor` | const | `typeof type === 'function'
+    ? type
+    : UseMouseBuiltinExtractors[type]` | ✗ |
+| `mouseHandlerWrapper` | `(event: MouseEvent) => any` | const | `eventFilter
+    ? (event: MouseEvent) => eventFilter(() => mouseHandler(event), {} as any)
+    : (event: MouseEvent) => mouseHandler(event)` | ✗ |
+| `touchHandlerWrapper` | `(event: TouchEvent) => any` | const | `eventFilter
+    ? (event: TouchEvent) => eventFilter(() => touchHandler(event), {} as any)
+    : (event: TouchEvent) => touchHandler(event)` | ✗ |
+| `scrollHandlerWrapper` | `() => any` | const | `eventFilter
+    ? () => eventFilter(() => scrollHandler(), {} as any)
+    : () => scrollHandler()` | ✗ |
+| `listenerOptions` | `{ passive: boolean; }` | const | `{ passive: true }` | ✗ |
+
+
+---
+
 ## Functions
 
+### `page(event: MouseEvent | Touch): [number, number]`
+
+<details><summary>Code</summary>
+
+```ts
+event => [event.pageX, event.pageY]
+```
+</details>
+
+- **Parameters**:
+  - `event: MouseEvent | Touch`
+- **Return Type**: `[number, number]`
+### `client(event: MouseEvent | Touch): [number, number]`
+
+<details><summary>Code</summary>
+
+```ts
+event => [event.clientX, event.clientY]
+```
+</details>
+
+- **Parameters**:
+  - `event: MouseEvent | Touch`
+- **Return Type**: `[number, number]`
+### `screen(event: MouseEvent | Touch): [number, number]`
+
+<details><summary>Code</summary>
+
+```ts
+event => [event.screenX, event.screenY]
+```
+</details>
+
+- **Parameters**:
+  - `event: MouseEvent | Touch`
+- **Return Type**: `[number, number]`
+### `movement(event: MouseEvent | Touch): [number, number]`
+
+<details><summary>Code</summary>
+
+```ts
+event => (event instanceof MouseEvent
+    ? [event.movementX, event.movementY]
+    : null
+  )
+```
+</details>
+
+- **Parameters**:
+  - `event: MouseEvent | Touch`
+- **Return Type**: `[number, number]`
+### `page(event: MouseEvent | Touch): [number, number]`
+
+<details><summary>Code</summary>
+
+```ts
+event => [event.pageX, event.pageY]
+```
+</details>
+
+- **Parameters**:
+  - `event: MouseEvent | Touch`
+- **Return Type**: `[number, number]`
+### `client(event: MouseEvent | Touch): [number, number]`
+
+<details><summary>Code</summary>
+
+```ts
+event => [event.clientX, event.clientY]
+```
+</details>
+
+- **Parameters**:
+  - `event: MouseEvent | Touch`
+- **Return Type**: `[number, number]`
+### `screen(event: MouseEvent | Touch): [number, number]`
+
+<details><summary>Code</summary>
+
+```ts
+event => [event.screenX, event.screenY]
+```
+</details>
+
+- **Parameters**:
+  - `event: MouseEvent | Touch`
+- **Return Type**: `[number, number]`
+### `movement(event: MouseEvent | Touch): [number, number]`
+
+<details><summary>Code</summary>
+
+```ts
+event => (event instanceof MouseEvent
+    ? [event.movementX, event.movementY]
+    : null
+  )
+```
+</details>
+
+- **Parameters**:
+  - `event: MouseEvent | Touch`
+- **Return Type**: `[number, number]`
 ### `page(event: MouseEvent | Touch): [number, number]`
 
 <details><summary>Code</summary>
@@ -346,13 +491,6 @@ export function useMouse(options: UseMouseOptions = {}) {
 </details>
 
 - **Return Type**: `void`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

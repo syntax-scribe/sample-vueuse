@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 15 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 15
-- **Interfaces**: 1
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/firebase/useFirestore/index.ts`**
@@ -39,6 +50,28 @@
 | `deepRef` | `vue` |
 | `isRef` | `vue` |
 | `watch` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `refOfDocRef` | `any` | const | `isRef(maybeDocRef)
+    ? maybeDocRef
+    : computed(() => maybeDocRef)` | ✗ |
+| `data` | `Ref<T | T[]>` | const | `deepRef(initialValue) as Ref<T | T[] | null | undefined>` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -118,13 +151,6 @@ export function useFirestore<T extends DocumentData>(
 </details>
 
 - **Return Type**: `void`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

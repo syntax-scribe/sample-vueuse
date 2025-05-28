@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 4 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 2
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/usePointer/index.ts`**
@@ -35,6 +45,29 @@
 | `shallowRef` | `vue` |
 | `defaultWindow` | `../_configurable` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `defaultState` | `UsePointerState` | const | `{
+  x: 0,
+  y: 0,
+  pointerId: 0,
+  pressure: 0,
+  tiltX: 0,
+  tiltY: 0,
+  width: 0,
+  height: 0,
+  twist: 0,
+  pointerType: null,
+}` | ✗ |
+| `keys` | `(keyof UsePointerState)[]` | const | `Object.keys(defaultState) as (keyof UsePointerState)[]` | ✗ |
+| `state` | `Ref<UsePointerState>` | const | `deepRef(options.initialValue || {}) as unknown as Ref<UsePointerState>` | ✗ |
+| `listenerOptions` | `{ passive: boolean; }` | const | `{ passive: true }` | ✗ |
 
 
 ---
@@ -119,13 +152,6 @@ export function usePointer(options: UsePointerOptions = {}) {
 - **Calls**:
   - `options.pointerTypes.includes`
   - `objectPick (from @vueuse/shared)`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

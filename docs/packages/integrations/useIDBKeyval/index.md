@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 14 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 4 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 14
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/integrations/useIDBKeyval/index.ts`**
@@ -37,6 +48,28 @@
 | `shallowRef` | `vue` |
 | `toRaw` | `vue` |
 | `toValue` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `data` | `Ref<T>` | const | `(shallow ? shallowRef : deepRef)(initialValue) as Ref<T>` | ✗ |
+| `rawValue` | `any` | let/var | `await get<T>(key)` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| await-expression | `useIDBKeyval` | get<T>(key), set(key, rawInit), del(key), update(key, () => toRaw(data.value)), write() | *none* |
+| async-function | `read` | get<T>(key), set(key, rawInit) | *none* |
+| async-function | `write` | del(key), update(key, () => toRaw(data.value)) | *none* |
+| async-function | `setData` | write() | *none* |
 
 
 ---
@@ -245,13 +278,6 @@ async function setData(value: T): Promise<void> {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseIDBOptions`
@@ -319,13 +345,6 @@ export interface UseIDBKeyvalReturn<T> {
 | `data` | `RemovableRef<T>` | ✗ |  |
 | `isFinished` | `ShallowRef<boolean>` | ✗ |  |
 | `set` | `(value: T) => Promise<void>` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

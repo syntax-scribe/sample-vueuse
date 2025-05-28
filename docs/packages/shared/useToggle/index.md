@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 7
-- **Interfaces**: 1
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/shared/useToggle/index.ts`**
@@ -31,6 +41,15 @@
 | `isRef` | `vue` |
 | `shallowRef` | `vue` |
 | `toValue` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `_value` | `ShallowRef<boolean>` | const | `shallowRef(initialValue) as ShallowRef<boolean>` | ✗ |
 
 
 ---
@@ -81,13 +100,6 @@ function toggle(value?: boolean) {
 ```
 // has arguments
 ```
-
-
----
-
-## Classes
-
-> No classes found in this file.
 
 
 ---

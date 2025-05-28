@@ -2,18 +2,29 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 9 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 9 |
+| 📊 Variables & Constants | 7 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 8 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 9
-- **Classes**: 0
-- **Imports**: 9
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/onLongPress/index.test.ts`**
@@ -31,6 +42,37 @@
 | `shallowRef` | `vue` |
 | `useEventListener` | `../useEventListener` |
 | `onLongPress` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `element` | `Ref<HTMLElement>` | let/var | `*not shown*` | ✗ |
+| `parentElement` | `Ref<HTMLElement>` | let/var | `*not shown*` | ✗ |
+| `childElement` | `Ref<HTMLElement>` | let/var | `*not shown*` | ✗ |
+| `pointerdownEvent` | `PointerEvent` | let/var | `*not shown*` | ✗ |
+| `pointerUpEvent` | `PointerEvent` | let/var | `*not shown*` | ✗ |
+| `moveWithinThresholdEvent` | `PointerEvent` | let/var | `new PointerEvent('pointermove', { cancelable: true, bubbles: true, clientX: 17, clientY: 25 })` | ✗ |
+| `moveOutsideThresholdEvent` | `PointerEvent` | let/var | `new PointerEvent('pointermove', { cancelable: true, bubbles: true, clientX: 4, clientY: 30 })` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| async-function | `triggerCallback` | vi.advanceTimersByTimeAsync(500) | *none* |
+| async-function | `triggerCallbackWithDelay` | vi.advanceTimersByTimeAsync(500), vi.advanceTimersByTimeAsync(500), vi.advanceTimersByTimeAsync(1000) | *none* |
+| async-function | `notTriggerCallbackOnChildLongPress` | vi.advanceTimersByTimeAsync(500) | *none* |
+| async-function | `workOnceAndPreventModifiers` | vi.advanceTimersByTimeAsync(500), vi.advanceTimersByTimeAsync(500) | *none* |
+| async-function | `stopPropagation` | vi.advanceTimersByTimeAsync(500) | *none* |
+| async-function | `stopEventListeners` | vi.advanceTimersByTimeAsync(500), vi.advanceTimersByTimeAsync(500) | *none* |
+| async-function | `triggerCallbackWithThreshold` | vi.advanceTimersByTimeAsync(500), vi.advanceTimersByTimeAsync(500), vi.advanceTimersByTimeAsync(500), vi.advanceTimersByTimeAsync(500), vi.advanceTimersByTimeAsync(500) | *none* |
+| async-function | `triggerOnMouseUp` | vi.advanceTimersByTimeAsync(250), vi.advanceTimersByTimeAsync(500), vi.advanceTimersByTimeAsync(500) | *none* |
 
 
 ---
@@ -419,26 +461,5 @@ function suites(isRef: boolean) {
   - `stopEventListeners`
   - `triggerCallbackWithThreshold`
   - `triggerOnMouseUp`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

@@ -2,18 +2,28 @@
 
 # 📄 `_configurable.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 0 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 1 |
+| 📊 Variables & Constants | 4 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 6 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 0
-- **Classes**: 0
-- **Imports**: 1
-- **Interfaces**: 6
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/_configurable.ts`**
@@ -27,16 +37,21 @@
 
 ---
 
-## 🔧 Functions
+## Variables & Constants
 
-> No functions found in this file.
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `defaultWindow` | `Window & typeof globalThis` | const | `isClient ? window : undefined` | ✓ |
+| `defaultDocument` | `Document` | const | `isClient ? window.document : undefined` | ✓ |
+| `defaultNavigator` | `Navigator` | const | `isClient ? window.navigator : undefined` | ✓ |
+| `defaultLocation` | `Location` | const | `isClient ? window.location : undefined` | ✓ |
 
 
 ---
 
-## Classes
+## 🔧 Functions
 
-> No classes found in this file.
+> No functions found in this file.
 
 
 ---
@@ -164,13 +179,6 @@ export interface ConfigurableDeepRefs<D extends boolean> {
 | Name | Type | Optional | Description |
 |------|------|----------|-------------|
 | `deepRefs` | `D` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

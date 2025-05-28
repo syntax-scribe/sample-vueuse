@@ -2,18 +2,30 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 14 |
+| 📊 Variables & Constants | 14 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 1 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 14
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useEventListener/index.test.ts`**
@@ -36,6 +48,47 @@
 | `nextTick` | `vue` |
 | `shallowRef` | `vue` |
 | `useEventListener` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `options` | `{ capture: boolean; }` | const | `{ capture: true }` | ✗ |
+| `stop` | `Fn` | let/var | `*not shown*` | ✗ |
+| `target` | `HTMLDivElement` | let/var | `*not shown*` | ✗ |
+| `removeSpy` | `MockInstance` | let/var | `*not shown*` | ✗ |
+| `addSpy` | `MockInstance` | let/var | `*not shown*` | ✗ |
+| `event` | `"click"` | const | `'click'` | ✗ |
+| `events` | `string[]` | const | `['click', 'scroll', 'blur', 'resize']` | ✗ |
+| `listeners` | `any[]` | const | `[vi.fn(), vi.fn(), vi.fn()]` | ✗ |
+| `event` | `"click"` | const | `'click'` | ✗ |
+| `listeners` | `any[]` | const | `[vi.fn(), vi.fn(), vi.fn()]` | ✗ |
+| `events` | `string[]` | const | `['click', 'scroll', 'blur', 'resize', 'custom-event']` | ✗ |
+| `target` | `Ref<HTMLDivElement | null>` | let/var | `*not shown*` | ✗ |
+| `listener` | `() => any` | let/var | `*not shown*` | ✗ |
+| `el` | `any` | let/var | `target.value` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| await-expression | `testTarget` | nextTick(), nextTick(), nextTick() | *none* |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -154,27 +207,6 @@ function testTarget(useTarget: boolean) {
 ```
 // @ts-expect-error mock different args (x7)
 ```
-
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

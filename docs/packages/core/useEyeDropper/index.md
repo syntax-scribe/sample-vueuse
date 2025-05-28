@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 2 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 2 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 3 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 2
-- **Interfaces**: 3
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useEyeDropper/index.ts`**
@@ -26,6 +37,26 @@
 |------|--------|
 | `shallowRef` | `vue` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `eyeDropper` | `EyeDropper` | let/var | `new (window as any).EyeDropper()` | ✗ |
+| `result` | `{ sRGBHex: string; }` | let/var | `await eyeDropper.open(openOptions)` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| await-expression | `useEyeDropper` | eyeDropper.open(openOptions) | *none* |
+| async-function | `open` | eyeDropper.open(openOptions) | *none* |
 
 
 ---
@@ -93,13 +124,6 @@ async function open(openOptions?: EyeDropperOpenOptions) {
 - **Return Type**: `Promise<{ sRGBHex: string; }>`
 - **Calls**:
   - `eyeDropper.open`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

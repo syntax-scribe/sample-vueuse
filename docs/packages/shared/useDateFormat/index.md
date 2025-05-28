@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 222 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 4 |
+| 📊 Variables & Constants | 9 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 114
-- **Classes**: 0
-- **Imports**: 4
-- **Interfaces**: 1
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/shared/useDateFormat/index.ts`**
@@ -28,6 +39,69 @@
 | `MaybeRefOrGetter` | `vue` |
 | `computed` | `vue` |
 | `toValue` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `REGEX_PARSE` | `RegExp` | const | `/^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[T\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/i` | ✗ |
+| `REGEX_FORMAT` | `RegExp` | const | `/[YMDHhms]o|\[([^\]]+)\]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a{1,2}|A{1,2}|m{1,2}|s{1,2}|Z{1,2}|z{1,4}|SSS/g` | ✗ |
+| `m` | `string` | let/var | `(hours < 12 ? 'AM' : 'PM')` | ✗ |
+| `suffixes` | `string[]` | const | `['th', 'st', 'nd', 'rd']` | ✗ |
+| `v` | `number` | const | `num % 100` | ✗ |
+| `meridiem` | `(hours: number, minutes: number, isLowercase?: boolean, hasPeriod?: boolean) => string` | const | `options.customMeridiem ?? defaultMeridiem` | ✗ |
+| `matches` | `Record<string, () => string | number>` | const | `{
+    Yo: () => formatOrdinal(years),
+    YY: () => String(years).slice(-2),
+    YYYY: () => years,
+    M: () => month + 1,
+    Mo: () => formatOrdinal(month + 1),
+    MM: () => `${month + 1}`.padStart(2, '0'),
+    MMM: () => date.toLocaleDateString(toValue(options.locales), { month: 'short' }),
+    MMMM: () => date.toLocaleDateString(toValue(options.locales), { month: 'long' }),
+    D: () => String(days),
+    Do: () => formatOrdinal(days),
+    DD: () => `${days}`.padStart(2, '0'),
+    H: () => String(hours),
+    Ho: () => formatOrdinal(hours),
+    HH: () => `${hours}`.padStart(2, '0'),
+    h: () => `${hours % 12 || 12}`.padStart(1, '0'),
+    ho: () => formatOrdinal(hours % 12 || 12),
+    hh: () => `${hours % 12 || 12}`.padStart(2, '0'),
+    m: () => String(minutes),
+    mo: () => formatOrdinal(minutes),
+    mm: () => `${minutes}`.padStart(2, '0'),
+    s: () => String(seconds),
+    so: () => formatOrdinal(seconds),
+    ss: () => `${seconds}`.padStart(2, '0'),
+    SSS: () => `${milliseconds}`.padStart(3, '0'),
+    d: () => day,
+    dd: () => date.toLocaleDateString(toValue(options.locales), { weekday: 'narrow' }),
+    ddd: () => date.toLocaleDateString(toValue(options.locales), { weekday: 'short' }),
+    dddd: () => date.toLocaleDateString(toValue(options.locales), { weekday: 'long' }),
+    A: () => meridiem(hours, minutes),
+    AA: () => meridiem(hours, minutes, false, true),
+    a: () => meridiem(hours, minutes, true),
+    aa: () => meridiem(hours, minutes, true, true),
+    z: () => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'shortOffset' })),
+    zz: () => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'shortOffset' })),
+    zzz: () => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'shortOffset' })),
+    zzzz: () => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'longOffset' })),
+  }` | ✗ |
+| `d` | `any` | const | `date.match(REGEX_PARSE) as any` | ✗ |
+| `m` | `number` | const | `d[2] - 1 || 0` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -1459,6 +1533,1284 @@ export function formatDate(date: Date, formatStr: string, options: UseDateFormat
 - **Return Type**: `string`
 - **Calls**:
   - `stripTimeZone`
+### `Yo(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(years)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `YY(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(years).slice(-2)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String(years).slice`
+### `YYYY(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => years
+```
+</details>
+
+- **Return Type**: `number`
+### `M(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => month + 1
+```
+</details>
+
+- **Return Type**: `number`
+### `Mo(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(month + 1)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `MM(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${month + 1}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${month + 1}`.padStart`
+### `MMM(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { month: 'short' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `MMMM(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { month: 'long' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `D(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(days)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `Do(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(days)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `DD(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${days}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${days}`.padStart`
+### `H(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(hours)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `Ho(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(hours)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `HH(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${hours}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${hours}`.padStart`
+### `h(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${hours % 12 || 12}`.padStart(1, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${hours % 12 || 12}`.padStart`
+### `ho(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(hours % 12 || 12)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `hh(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${hours % 12 || 12}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${hours % 12 || 12}`.padStart`
+### `m(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(minutes)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `mo(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(minutes)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `mm(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${minutes}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${minutes}`.padStart`
+### `s(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(seconds)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `so(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(seconds)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `ss(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${seconds}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${seconds}`.padStart`
+### `SSS(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${milliseconds}`.padStart(3, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${milliseconds}`.padStart`
+### `d(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => day
+```
+</details>
+
+- **Return Type**: `number`
+### `dd(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { weekday: 'narrow' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `ddd(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { weekday: 'short' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `dddd(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { weekday: 'long' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `A(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => meridiem(hours, minutes)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `meridiem`
+### `AA(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => meridiem(hours, minutes, false, true)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `meridiem`
+### `a(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => meridiem(hours, minutes, true)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `meridiem`
+### `aa(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => meridiem(hours, minutes, true, true)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `meridiem`
+### `z(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'shortOffset' }))
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `stripTimeZone`
+### `zz(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'shortOffset' }))
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `stripTimeZone`
+### `zzz(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'shortOffset' }))
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `stripTimeZone`
+### `zzzz(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'longOffset' }))
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `stripTimeZone`
+### `Yo(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(years)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `YY(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(years).slice(-2)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String(years).slice`
+### `YYYY(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => years
+```
+</details>
+
+- **Return Type**: `number`
+### `M(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => month + 1
+```
+</details>
+
+- **Return Type**: `number`
+### `Mo(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(month + 1)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `MM(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${month + 1}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${month + 1}`.padStart`
+### `MMM(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { month: 'short' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `MMMM(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { month: 'long' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `D(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(days)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `Do(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(days)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `DD(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${days}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${days}`.padStart`
+### `H(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(hours)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `Ho(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(hours)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `HH(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${hours}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${hours}`.padStart`
+### `h(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${hours % 12 || 12}`.padStart(1, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${hours % 12 || 12}`.padStart`
+### `ho(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(hours % 12 || 12)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `hh(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${hours % 12 || 12}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${hours % 12 || 12}`.padStart`
+### `m(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(minutes)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `mo(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(minutes)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `mm(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${minutes}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${minutes}`.padStart`
+### `s(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(seconds)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `so(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(seconds)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `ss(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${seconds}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${seconds}`.padStart`
+### `SSS(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${milliseconds}`.padStart(3, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${milliseconds}`.padStart`
+### `d(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => day
+```
+</details>
+
+- **Return Type**: `number`
+### `dd(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { weekday: 'narrow' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `ddd(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { weekday: 'short' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `dddd(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { weekday: 'long' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `A(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => meridiem(hours, minutes)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `meridiem`
+### `AA(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => meridiem(hours, minutes, false, true)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `meridiem`
+### `a(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => meridiem(hours, minutes, true)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `meridiem`
+### `aa(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => meridiem(hours, minutes, true, true)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `meridiem`
+### `z(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'shortOffset' }))
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `stripTimeZone`
+### `zz(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'shortOffset' }))
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `stripTimeZone`
+### `zzz(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'shortOffset' }))
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `stripTimeZone`
+### `zzzz(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'longOffset' }))
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `stripTimeZone`
+### `Yo(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(years)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `YY(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(years).slice(-2)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String(years).slice`
+### `YYYY(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => years
+```
+</details>
+
+- **Return Type**: `number`
+### `M(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => month + 1
+```
+</details>
+
+- **Return Type**: `number`
+### `Mo(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(month + 1)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `MM(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${month + 1}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${month + 1}`.padStart`
+### `MMM(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { month: 'short' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `MMMM(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { month: 'long' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `D(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(days)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `Do(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(days)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `DD(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${days}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${days}`.padStart`
+### `H(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(hours)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `Ho(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(hours)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `HH(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${hours}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${hours}`.padStart`
+### `h(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${hours % 12 || 12}`.padStart(1, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${hours % 12 || 12}`.padStart`
+### `ho(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(hours % 12 || 12)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `hh(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${hours % 12 || 12}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${hours % 12 || 12}`.padStart`
+### `m(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(minutes)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `mo(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(minutes)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `mm(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${minutes}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${minutes}`.padStart`
+### `s(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => String(seconds)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `String`
+### `so(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => formatOrdinal(seconds)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `formatOrdinal`
+### `ss(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${seconds}`.padStart(2, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${seconds}`.padStart`
+### `SSS(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => `${milliseconds}`.padStart(3, '0')
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - ``${milliseconds}`.padStart`
+### `d(): number`
+
+<details><summary>Code</summary>
+
+```ts
+() => day
+```
+</details>
+
+- **Return Type**: `number`
+### `dd(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { weekday: 'narrow' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `ddd(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { weekday: 'short' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `dddd(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => date.toLocaleDateString(toValue(options.locales), { weekday: 'long' })
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `date.toLocaleDateString`
+### `A(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => meridiem(hours, minutes)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `meridiem`
+### `AA(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => meridiem(hours, minutes, false, true)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `meridiem`
+### `a(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => meridiem(hours, minutes, true)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `meridiem`
+### `aa(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => meridiem(hours, minutes, true, true)
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `meridiem`
+### `z(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'shortOffset' }))
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `stripTimeZone`
+### `zz(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'shortOffset' }))
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `stripTimeZone`
+### `zzz(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'shortOffset' }))
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `stripTimeZone`
+### `zzzz(): string`
+
+<details><summary>Code</summary>
+
+```ts
+() => stripTimeZone(date.toLocaleDateString(toValue(options.locales), { timeZoneName: 'longOffset' }))
+```
+</details>
+
+- **Return Type**: `string`
+- **Calls**:
+  - `stripTimeZone`
 ### `normalizeDate(date: DateLike): Date`
 
 <details><summary>Code</summary>
@@ -1526,13 +2878,6 @@ export function useDateFormat(date: MaybeRefOrGetter<DateLike>, formatStr: Maybe
   - `formatDate`
   - `normalizeDate`
   - `toValue (from vue)`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

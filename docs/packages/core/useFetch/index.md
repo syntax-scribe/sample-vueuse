@@ -2,20 +2,32 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 26 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 18 |
+| 📊 Variables & Constants | 23 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 5 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 4 |
+| 📐 Interfaces | 7 |
+| 📑 Type Aliases | 3 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 17
-- **Classes**: 0
-- **Imports**: 18
-- **Interfaces**: 7
-- **Type Aliases**: 3
 
 ## 🛠️ File Location:
 📂 **`packages/core/useFetch/index.ts`**
@@ -42,6 +54,226 @@
 | `toValue` | `vue` |
 | `watch` | `vue` |
 | `defaultWindow` | `../_configurable` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `payloadMapping` | `Record<string, string>` | const | `{
+  json: 'application/json',
+  text: 'text/plain',
+}` | ✗ |
+| `reAbsolute` | `RegExp` | const | `/^(?:[a-z][a-z\d+\-.]*:)?\/\//i` | ✗ |
+| `callback` | `any` | let/var | `*not shown*` | ✗ |
+| `_combination` | `Combination` | const | `config.combination || 'chain' as Combination` | ✗ |
+| `_options` | `UseFetchOptions` | const | `config.options || {}` | ✗ |
+| `_fetchOptions` | `RequestInit` | const | `config.fetchOptions || {}` | ✗ |
+| `options` | `UseFetchOptions` | let/var | `_options` | ✗ |
+| `fetchOptions` | `RequestInit` | let/var | `_fetchOptions` | ✗ |
+| `supportsAbort` | `boolean` | const | `typeof AbortController === 'function'` | ✗ |
+| `fetchOptions` | `RequestInit` | let/var | `{}` | ✗ |
+| `options` | `UseFetchOptions` | let/var | `{
+    immediate: true,
+    refetch: false,
+    timeout: 0,
+    updateDataOnError: false,
+  }` | ✗ |
+| `config` | `InternalConfig` | const | `{
+    method: 'GET',
+    type: 'text' as DataType,
+    payload: undefined as unknown,
+  }` | ✗ |
+| `controller` | `AbortController | undefined` | let/var | `*not shown*` | ✗ |
+| `timer` | `Stoppable | undefined` | let/var | `*not shown*` | ✗ |
+| `executeCounter` | `number` | let/var | `0` | ✗ |
+| `currentExecuteCounter` | `number` | let/var | `executeCounter` | ✗ |
+| `defaultFetchOptions` | `RequestInit` | let/var | `{
+      method: config.method,
+      headers: {},
+    }` | ✗ |
+| `headers` | `Record<string, string>` | let/var | `headersToObject(defaultFetchOptions.headers) as Record<string, string>` | ✗ |
+| `isCanceled` | `boolean` | let/var | `false` | ✗ |
+| `context` | `BeforeFetchContext` | let/var | `{
+      url: toValue(url),
+      options: {
+        ...defaultFetchOptions,
+        ...fetchOptions,
+      },
+      cancel: () => { isCanceled = true },
+    }` | ✗ |
+| `responseData` | `any` | let/var | `null` | ✗ |
+| `errorData` | `any` | let/var | `fetchError.message || fetchError.name` | ✗ |
+| `shell` | `UseFetchReturn<T>` | const | `{
+    isFinished: readonly(isFinished),
+    isFetching: readonly(isFetching),
+    statusCode,
+    response,
+    error,
+    data,
+    canAbort,
+    aborted,
+    abort,
+    execute,
+
+    onFetchResponse: responseEvent.on,
+    onFetchError: errorEvent.on,
+    onFetchFinally: finallyEvent.on,
+    // method
+    get: setMethod('GET'),
+    put: setMethod('PUT'),
+    post: setMethod('POST'),
+    delete: setMethod('DELETE'),
+    patch: setMethod('PATCH'),
+    head: setMethod('HEAD'),
+    options: setMethod('OPTIONS'),
+    // type
+    json: setType('json'),
+    text: setType('text'),
+    blob: setType('blob'),
+    arrayBuffer: setType('arrayBuffer'),
+    formData: setType('formData'),
+  }` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| await-expression | `combineCallbacks` | callback(ctx), callback(ctx) | *none* |
+| async-function | `execute` | options.beforeFetch(context), fetchResponse.clone()[config.type](), options.afterFetch({
+            data: responseData,
+            response: fetchResponse,
+            context,
+            execute,
+          }), options.onFetchError({
+            data: responseData,
+            error: fetchError,
+            response: response.value,
+            context,
+            execute,
+          }) | Promise.resolve, fetch(
+      context.url,
+      {
+        ...defaultFetchOptions,
+        ...context.options,
+        headers: {
+          ...headersToObject(defaultFetchOptions.headers),
+          ...headersToObject(context.options?.headers),
+        },
+      },
+    )
+      .then(async (fetchResponse) => {
+        response.value = fetchResponse
+        statusCode.value = fetchResponse.status
+
+        responseData = await fetchResponse.clone()[config.type]()
+
+        // see: https://www.tjvantoll.com/2015/09/13/fetch-and-errors/
+        if (!fetchResponse.ok) {
+          data.value = initialData || null
+          throw new Error(fetchResponse.statusText)
+        }
+
+        if (options.afterFetch) {
+          ({ data: responseData } = await options.afterFetch({
+            data: responseData,
+            response: fetchResponse,
+            context,
+            execute,
+          }))
+        }
+        data.value = responseData
+
+        responseEvent.trigger(fetchResponse)
+        return fetchResponse
+      })
+      .catch(async (fetchError) => {
+        let errorData = fetchError.message || fetchError.name
+
+        if (options.onFetchError) {
+          ({ error: errorData, data: responseData } = await options.onFetchError({
+            data: responseData,
+            error: fetchError,
+            response: response.value,
+            context,
+            execute,
+          }))
+        }
+
+        error.value = errorData
+        if (options.updateDataOnError)
+          data.value = responseData
+
+        errorEvent.trigger(fetchError)
+        if (throwOnFailed)
+          throw fetchError
+        return null
+      }).finally, fetch(
+      context.url,
+      {
+        ...defaultFetchOptions,
+        ...context.options,
+        headers: {
+          ...headersToObject(defaultFetchOptions.headers),
+          ...headersToObject(context.options?.headers),
+        },
+      },
+    )
+      .then(async (fetchResponse) => {
+        response.value = fetchResponse
+        statusCode.value = fetchResponse.status
+
+        responseData = await fetchResponse.clone()[config.type]()
+
+        // see: https://www.tjvantoll.com/2015/09/13/fetch-and-errors/
+        if (!fetchResponse.ok) {
+          data.value = initialData || null
+          throw new Error(fetchResponse.statusText)
+        }
+
+        if (options.afterFetch) {
+          ({ data: responseData } = await options.afterFetch({
+            data: responseData,
+            response: fetchResponse,
+            context,
+            execute,
+          }))
+        }
+        data.value = responseData
+
+        responseEvent.trigger(fetchResponse)
+        return fetchResponse
+      }).catch, fetch(
+      context.url,
+      {
+        ...defaultFetchOptions,
+        ...context.options,
+        headers: {
+          ...headersToObject(defaultFetchOptions.headers),
+          ...headersToObject(context.options?.headers),
+        },
+      },
+    ).then |
+| promise-chain | `setMethod` | *none* | waitUntilFinished().then |
+| promise-chain | `waitUntilFinished` | *none* | new Promise(...), until(isFinished).toBe(true).then(() => resolve(shell)).catch, until(isFinished).toBe(true).then |
+| promise-chain | `setType` | *none* | waitUntilFinished().then |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `watch` | watch | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -605,6 +837,96 @@ async (throwOnFailed = false) => {
 </details>
 
 - **Return Type**: `void`
+### `cancel(): void`
+
+<details><summary>Code</summary>
+
+```ts
+() => { isCanceled = true }
+```
+</details>
+
+- **Return Type**: `void`
+### `cancel(): void`
+
+<details><summary>Code</summary>
+
+```ts
+() => { isCanceled = true }
+```
+</details>
+
+- **Return Type**: `void`
+### `cancel(): void`
+
+<details><summary>Code</summary>
+
+```ts
+() => { isCanceled = true }
+```
+</details>
+
+- **Return Type**: `void`
+### `cancel(): void`
+
+<details><summary>Code</summary>
+
+```ts
+() => { isCanceled = true }
+```
+</details>
+
+- **Return Type**: `void`
+### `cancel(): void`
+
+<details><summary>Code</summary>
+
+```ts
+() => { isCanceled = true }
+```
+</details>
+
+- **Return Type**: `void`
+### `cancel(): void`
+
+<details><summary>Code</summary>
+
+```ts
+() => { isCanceled = true }
+```
+</details>
+
+- **Return Type**: `void`
+### `cancel(): void`
+
+<details><summary>Code</summary>
+
+```ts
+() => { isCanceled = true }
+```
+</details>
+
+- **Return Type**: `void`
+### `cancel(): void`
+
+<details><summary>Code</summary>
+
+```ts
+() => { isCanceled = true }
+```
+</details>
+
+- **Return Type**: `void`
+### `cancel(): void`
+
+<details><summary>Code</summary>
+
+```ts
+() => { isCanceled = true }
+```
+</details>
+
+- **Return Type**: `void`
 ### `setMethod(method: HttpMethod): (payload?: unknown, payloadType?: string) => any`
 
 <details><summary>Code</summary>
@@ -730,13 +1052,6 @@ function joinPaths(start: string, end: string): string {
   - `start.endsWith`
   - `end.startsWith`
   - `start.slice`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

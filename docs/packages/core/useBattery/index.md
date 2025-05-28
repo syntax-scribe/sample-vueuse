@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 5 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 1 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 5
-- **Interfaces**: 1
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/core/useBattery/index.ts`**
@@ -29,6 +40,26 @@
 | `defaultNavigator` | `../_configurable` |
 | `useEventListener` | `../useEventListener` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `events` | `string[]` | const | `['chargingchange', 'chargingtimechange', 'dischargingtimechange', 'levelchange']` | ✗ |
+| `battery` | `BatteryManager | null` | let/var | `*not shown*` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `useBattery` | *none* | (navigator as NavigatorWithBattery)
+      .getBattery().then |
 
 
 ---
@@ -118,13 +149,6 @@ function updateBatteryInfo(this: BatteryManager) {
 - **Parameters**:
   - `this: BatteryManager`
 - **Return Type**: `void`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

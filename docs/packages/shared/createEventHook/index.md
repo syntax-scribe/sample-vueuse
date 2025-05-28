@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 6 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 2 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 2 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 5 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 6
-- **Classes**: 0
-- **Imports**: 2
-- **Interfaces**: 1
-- **Type Aliases**: 5
 
 ## 🛠️ File Location:
 📂 **`packages/shared/createEventHook/index.ts`**
@@ -26,6 +37,25 @@
 |------|--------|
 | `IsAny` | `../utils/types` |
 | `tryOnScopeDispose` | `../tryOnScopeDispose` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `fns` | `Set<Callback<T>>` | const | `new Set()` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `createEventHook` | *none* | Promise.all |
+| promise-chain | `trigger` | *none* | Promise.all |
 
 
 ---
@@ -177,13 +207,6 @@ export function createEventHook<T = any>(): EventHookReturn<T> {
   - `Promise.all`
   - `Array.from(fns).map`
   - `fn`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

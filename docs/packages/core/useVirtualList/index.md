@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 15 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 10 |
+| 📊 Variables & Constants | 11 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 6 |
+| 📐 Interfaces | 8 |
+| 📑 Type Aliases | 7 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 15
-- **Classes**: 0
-- **Imports**: 10
-- **Interfaces**: 8
-- **Type Aliases**: 7
 
 ## 🛠️ File Location:
 📂 **`packages/core/useVirtualList/index.ts`**
@@ -34,6 +45,42 @@
 | `shallowRef` | `vue` |
 | `watch` | `vue` |
 | `useElementSize` | `../useElementSize` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `sum` | `number` | let/var | `0` | ✗ |
+| `capacity` | `number` | let/var | `0` | ✗ |
+| `sum` | `number` | let/var | `0` | ✗ |
+| `offset` | `number` | let/var | `0` | ✗ |
+| `element` | `any` | const | `containerRef.value` | ✗ |
+| `from` | `number` | const | `offset - overscan` | ✗ |
+| `to` | `number` | const | `offset + viewCapacity + overscan` | ✗ |
+| `size` | `number` | const | `index * itemSize` | ✗ |
+| `scrollToDictionaryForElementScrollKey` | `{ readonly horizontal: "scrollLeft"; readonly vertical: "scrollTop"; }` | const | `{
+  horizontal: 'scrollLeft',
+  vertical: 'scrollTop',
+} as const` | ✗ |
+| `containerStyle` | `StyleValue` | const | `{ overflowX: 'auto' }` | ✗ |
+| `containerStyle` | `StyleValue` | const | `{ overflowY: 'auto' }` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -511,13 +558,6 @@ function useVerticalVirtualList<T>(options: UseVerticalVirtualListOptions, list:
   - `createComputedTotalSize`
   - `useWatchForSizes`
   - `createScrollTo`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

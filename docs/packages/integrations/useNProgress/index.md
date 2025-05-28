@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 11 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 7
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 0
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/integrations/useNProgress/index.ts`**
@@ -31,6 +42,24 @@
 | `nprogress` | `nprogress` |
 | `computed` | `vue` |
 | `watchEffect` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `setProgress` | `any` | const | `nprogress.set` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -149,6 +178,50 @@ load => load ? nprogress.start() : nprogress.done()
 </details>
 
 - **Return Type**: `boolean`
+### `set(load: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+load => load ? nprogress.start() : nprogress.done()
+```
+</details>
+
+- **Parameters**:
+  - `load: any`
+- **Return Type**: `any`
+### `get(): boolean`
+
+<details><summary>Code</summary>
+
+```ts
+() => typeof progress.value === 'number' && progress.value < 1
+```
+</details>
+
+- **Return Type**: `boolean`
+### `set(load: any): any`
+
+<details><summary>Code</summary>
+
+```ts
+load => load ? nprogress.start() : nprogress.done()
+```
+</details>
+
+- **Parameters**:
+  - `load: any`
+- **Return Type**: `any`
+### `get(): boolean`
+
+<details><summary>Code</summary>
+
+```ts
+() => typeof progress.value === 'number' && progress.value < 1
+```
+</details>
+
+- **Return Type**: `boolean`
 ### `remove(): void`
 
 <details><summary>Code</summary>
@@ -179,20 +252,6 @@ load => load ? nprogress.start() : nprogress.done()
 - **Return Type**: `void`
 - **Calls**:
   - `nprogress.remove`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

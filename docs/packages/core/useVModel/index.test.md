@@ -2,19 +2,29 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 1 |
+| 📦 Imports | 6 |
+| 📊 Variables & Constants | 14 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Classes](#classes)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 1
-- **Imports**: 6
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useVModel/index.test.ts`**
@@ -29,6 +39,68 @@
 | `vi` | `vitest` |
 | `nextTick` | `vue` |
 | `useVModel` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `defaultKey` | `"modelValue"` | const | `'modelValue'` | ✗ |
+| `defaultValue` | `"default"` | const | `'default'` | ✗ |
+| `props` | `{ data: string; modelValue: string; }` | const | `{
+      ...defaultProps(),
+      data: 'data',
+    }` | ✗ |
+| `props` | `{ age: number; modelValue: string; }` | let/var | `{
+      ...defaultProps(),
+      age: 18,
+    }` | ✗ |
+| `props` | `{ data: { age: number; }; modelValue: string; }` | let/var | `{
+      ...defaultProps(),
+      data: {
+        age: 18,
+      },
+    }` | ✗ |
+| `props` | `{ data: { hobbies: string[]; }; modelValue: string; }` | let/var | `{
+      ...defaultProps(),
+      data: {
+        hobbies: ['coding'],
+      },
+    }` | ✗ |
+| `props` | `Record<string, unknown>` | const | `{
+      ...defaultProps(),
+      a: 0,
+      b: '',
+      c: false,
+      d: null,
+      e: undefined,
+    }` | ✗ |
+| `props` | `Record<string, unknown>` | const | `{
+      ...defaultProps(),
+      a: 0,
+      b: '',
+      c: false,
+      d: null as string | null,
+      e: undefined as string | undefined,
+    }` | ✗ |
+| `props` | `{ cl: SomeClass; }` | let/var | `{ cl: new SomeClass() }` | ✗ |
+| `emitValue` | `any` | let/var | `emitMock.mock.calls[0][1]` | ✗ |
+| `props` | `{ person: { age: number; child: { age: number; }; }; }` | let/var | `{
+      person: {
+        age: 18,
+        child: { age: 2 },
+      },
+    }` | ✗ |
+| `props` | `{ person: { age: number; child: { age: number; }; }; }` | let/var | `{
+      person: {
+        age: 18,
+        child: { age: 2 },
+      },
+    }` | ✗ |
+| `res` | `string` | let/var | `''` | ✗ |
+| `res` | `string` | let/var | `''` | ✗ |
 
 
 ---
@@ -121,20 +193,6 @@ class SomeClass {
 someMethod() {}
 ```
 </details>
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

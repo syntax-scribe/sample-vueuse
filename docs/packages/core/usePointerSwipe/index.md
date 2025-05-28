@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 5 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 13 |
+| 📊 Variables & Constants | 5 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 6 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 5
-- **Classes**: 0
-- **Imports**: 13
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/usePointerSwipe/index.ts`**
@@ -36,6 +47,70 @@
 | `readonly` | `vue` |
 | `shallowRef` | `vue` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `isReleasingButton` | `boolean` | const | `e.buttons === 0` | ✗ |
+| `isPrimaryButton` | `boolean` | const | `e.buttons === 1` | ✗ |
+| `listenerOptions` | `{ passive: boolean; }` | const | `{ passive: true }` | ✗ |
+| `eventTarget` | `HTMLElement` | const | `e.target as HTMLElement | undefined` | ✗ |
+| `stops` | `(() => void)[]` | const | `[
+    useEventListener(target, 'pointerdown', (e: PointerEvent) => {
+      if (!eventIsAllowed(e))
+        return
+      isPointerDown.value = true
+      // Future pointer events will be retargeted to target until pointerup/cancel
+      const eventTarget = e.target as HTMLElement | undefined
+      eventTarget?.setPointerCapture(e.pointerId)
+      const { clientX: x, clientY: y } = e
+      updatePosStart(x, y)
+      updatePosEnd(x, y)
+      onSwipeStart?.(e)
+    }, listenerOptions),
+
+    useEventListener(target, 'pointermove', (e: PointerEvent) => {
+      if (!eventIsAllowed(e))
+        return
+      if (!isPointerDown.value)
+        return
+
+      const { clientX: x, clientY: y } = e
+      updatePosEnd(x, y)
+      if (!isSwiping.value && isThresholdExceeded.value)
+        isSwiping.value = true
+      if (isSwiping.value)
+        onSwipe?.(e)
+    }, listenerOptions),
+
+    useEventListener(target, 'pointerup', (e: PointerEvent) => {
+      if (!eventIsAllowed(e))
+        return
+      if (isSwiping.value)
+        onSwipeEnd?.(e, direction.value)
+
+      isPointerDown.value = false
+      isSwiping.value = false
+    }, listenerOptions),
+  ]` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `reactive` | reactive | *none* | *none* |
+| `reactive` | reactive | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -279,13 +354,6 @@ export function usePointerSwipe(
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UsePointerSwipeOptions`
@@ -370,13 +438,6 @@ export interface UsePointerSwipeReturn {
 | `distanceX` | `Readonly<ComputedRef<number>>` | ✗ |  |
 | `distanceY` | `Readonly<ComputedRef<number>>` | ✗ |  |
 | `stop` | `() => void` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

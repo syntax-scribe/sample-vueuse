@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 5 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 4 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 4
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useDark/index.ts`**
@@ -27,6 +38,25 @@
 | `UseColorModeOptions` | `../useColorMode` |
 | `computed` | `vue` |
 | `useColorMode` | `../useColorMode` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `modeVal` | `"light" | "dark"` | const | `v ? 'dark' : 'light'` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -138,13 +168,48 @@ export function useDark(options: UseDarkOptions = {}) {
 - **Calls**:
   - `options.onChanged`
   - `defaultHandler`
+### `onChanged(mode: BasicColorMode | "auto", defaultHandler: (mode: BasicColorMode | "auto") => void): void`
 
----
+<details><summary>Code</summary>
 
-## Classes
+```ts
+(mode, defaultHandler) => {
+      if (options.onChanged)
+        options.onChanged?.(mode === 'dark', defaultHandler, mode)
+      else
+        defaultHandler(mode)
+    }
+```
+</details>
 
-> No classes found in this file.
+- **Parameters**:
+  - `mode: BasicColorMode | "auto"`
+  - `defaultHandler: (mode: BasicColorMode | "auto") => void`
+- **Return Type**: `void`
+- **Calls**:
+  - `options.onChanged`
+  - `defaultHandler`
+### `onChanged(mode: BasicColorMode | "auto", defaultHandler: (mode: BasicColorMode | "auto") => void): void`
 
+<details><summary>Code</summary>
+
+```ts
+(mode, defaultHandler) => {
+      if (options.onChanged)
+        options.onChanged?.(mode === 'dark', defaultHandler, mode)
+      else
+        defaultHandler(mode)
+    }
+```
+</details>
+
+- **Parameters**:
+  - `mode: BasicColorMode | "auto"`
+  - `defaultHandler: (mode: BasicColorMode | "auto") => void`
+- **Return Type**: `void`
+- **Calls**:
+  - `options.onChanged`
+  - `defaultHandler`
 
 ---
 
@@ -188,13 +253,6 @@ export interface UseDarkOptions extends Omit<UseColorModeOptions<BasicColorSchem
 | `valueDark` | `string` | ✓ |  |
 | `valueLight` | `string` | ✓ |  |
 | `onChanged` | `(isDark: boolean, defaultHandler: ((mode: BasicColorSchema) => void), mode: BasicColorSchema) => void` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

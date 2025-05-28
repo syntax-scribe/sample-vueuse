@@ -2,19 +2,30 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 6 |
+| 🧱 Classes | 1 |
+| 📦 Imports | 21 |
+| 📊 Variables & Constants | 5 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 4 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Classes](#classes)
-
-## 📊 Analysis Summary
-
-- **Functions**: 6
-- **Classes**: 1
-- **Imports**: 21
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/rxjs/watchExtractedObservable/index.test.ts`**
@@ -44,6 +55,31 @@
 | `reactive` | `vue` |
 | `shallowRef` | `vue` |
 | `watchExtractedObservable` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `numRef` | `Ref<number | undefined>` | let/var | `*not shown*` | ✗ |
+| `obj` | `ComputedRef<TestWrapper | null>` | let/var | `*not shown*` | ✗ |
+| `extractor` | `MockedFunction<(wrapper: TestWrapper) => Observable<number>>` | let/var | `*not shown*` | ✗ |
+| `callback` | `MockedFunction<(num: number) => void>` | let/var | `*not shown*` | ✗ |
+| `error` | `Error` | let/var | `new Error('Odd number')` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `reactive` | reactive | *none* | *none* |
+| `reactive` | reactive | *none* | *none* |
+| `reactive` | reactive | *none* | *none* |
 
 
 ---
@@ -178,20 +214,6 @@ incr() {
   }
 ```
 </details>
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

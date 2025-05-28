@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 9 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 16 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 9
-- **Classes**: 0
-- **Imports**: 16
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/integrations/useDrauu/index.ts`**
@@ -40,6 +51,26 @@
 | `deepRef` | `vue` |
 | `shallowRef` | `vue` |
 | `watch` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `disposables` | `Fn[]` | let/var | `[]` | ✗ |
+| `instance` | `any` | const | `drauuInstance.value` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -315,13 +346,6 @@ export function useDrauu(
 - **Calls**:
   - `drauuInstance.value.canUndo`
   - `drauuInstance.value.canRedo`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

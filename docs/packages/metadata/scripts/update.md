@@ -2,18 +2,29 @@
 
 # 📄 `update.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 14 |
+| 📊 Variables & Constants | 12 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 3 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 14
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/metadata/scripts/update.ts`**
@@ -36,6 +47,143 @@
 | `ecosystemFunctions` | `../../../meta/ecosystem-functions` |
 | `packages` | `../../../meta/packages` |
 | `getCategories` | `../utils` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `DOCS_URL` | `"https://vueuse.org"` | const | `'https://vueuse.org'` | ✓ |
+| `files` | `any` | let/var | `await glob('*', {
+    onlyDirectories: true,
+    cwd: dir,
+    ignore: [
+      '_*',
+      'dist',
+      'node_modules',
+      ...ignore,
+    ],
+  })` | ✗ |
+| `indexes` | `PackageIndexes` | let/var | `{
+    packages: {},
+    categories: [],
+    functions: [
+      ...ecosystemFunctions,
+    ],
+  }` | ✗ |
+| `functions` | `any` | let/var | `await listFunctions(dir)` | ✗ |
+| `pkg` | `VueUsePackage` | let/var | `{
+      ...info,
+      dir: relative(DIR_ROOT, dir).replace(/\\/g, '/'),
+      docs: info.addon ? `${DOCS_URL}/${info.name}/README.html` : undefined,
+    }` | ✗ |
+| `fn` | `VueUseFunction` | let/var | `{
+        name: fnName,
+        package: pkg.name,
+        lastUpdated: +await git.raw(['log', '-1', '--format=%at', tsPath]) * 1000,
+      }` | ✗ |
+| `mdRaw` | `string` | let/var | `await fs.readFile(mdPath, 'utf-8')` | ✗ |
+| `category` | `any` | let/var | `frontmatter.category` | ✗ |
+| `alias` | `any` | let/var | `frontmatter.alias` | ✗ |
+| `related` | `any` | let/var | `frontmatter.related` | ✗ |
+| `description` | `any` | let/var | `(
+        md
+          // normalize newlines
+          .replace(/\r\n/g, '\n')
+          // remove ::: tip blocks
+          .replace(/(:{3,}(?=[^:\n]*\n))[^\n]*\n[\s\S]*?\1 *(?=\n)/g, '')
+          // remove headers
+          .match(/#(?=\s).*\n+(.+?)(?:, |\. |\n|\.\n)/) || []
+      )[1] || ''` | ✗ |
+| `indexes` | `PackageIndexes` | let/var | `await readMetadata()` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| async-function | `listFunctions` | glob('*', {
+    onlyDirectories: true,
+    cwd: dir,
+    ignore: [
+      '_*',
+      'dist',
+      'node_modules',
+      ...ignore,
+    ],
+  }) | *none* |
+| async-function | `readMetadata` | listFunctions(dir), Promise.all(functions.map(async (fnName) => {
+      const mdPath = join(dir, fnName, 'index.md')
+      const tsPath = join(dir, fnName, 'index.ts')
+
+      const fn: VueUseFunction = {
+        name: fnName,
+        package: pkg.name,
+        lastUpdated: +await git.raw(['log', '-1', '--format=%at', tsPath]) * 1000,
+      }
+
+      if (existsSync(join(dir, fnName, 'component.ts')))
+        fn.component = true
+      if (existsSync(join(dir, fnName, 'directive.ts')))
+        fn.directive = true
+
+      if (!existsSync(mdPath)) {
+        fn.internal = true
+        indexes.functions.push(fn)
+        return
+      }
+
+      fn.docs = `${DOCS_URL}/${pkg.name}/${fnName}/`
+
+      const mdRaw = await fs.readFile(mdPath, 'utf-8')
+
+      const { content: md, data: frontmatter } = matter(mdRaw)
+      const category = frontmatter.category
+
+      let alias = frontmatter.alias
+      if (typeof alias === 'string')
+        alias = alias.split(',').map(s => s.trim()).filter(Boolean)
+      let related = frontmatter.related
+      if (typeof related === 'string')
+        related = related.split(',').map(s => s.trim()).filter(Boolean)
+      else if (Array.isArray(related))
+        related = related.map(s => s.trim()).filter(Boolean)
+
+      let description = (
+        md
+          // normalize newlines
+          .replace(/\r\n/g, '\n')
+          // remove ::: tip blocks
+          .replace(/(:{3,}(?=[^:\n]*\n))[^\n]*\n[\s\S]*?\1 *(?=\n)/g, '')
+          // remove headers
+          .match(/#(?=\s).*\n+(.+?)(?:, |\. |\n|\.\n)/) || []
+      )[1] || ''
+
+      description = description.trim()
+      description = description.charAt(0).toLowerCase() + description.slice(1)
+
+      fn.category = ['core', 'shared'].includes(pkg.name) ? category : `@${pkg.display}`
+      fn.description = description
+
+      if (description.includes('DEPRECATED') || frontmatter.deprecated)
+        fn.deprecated = true
+
+      if (alias?.length)
+        fn.alias = alias
+
+      if (related?.length)
+        fn.related = related
+
+      if (pkg.submodules)
+        fn.importPath = `${pkg.name}/${fn.name}`
+
+      indexes.functions.push(fn)
+    })), git.raw(['log', '-1', '--format=%at', tsPath]), fs.readFile(mdPath, 'utf-8') | Promise.all |
+| async-function | `run` | readMetadata(), fs.writeFile(join(DIR_PACKAGE, 'index.json'), `${JSON.stringify(indexes, null, 2)}\n`) | *none* |
 
 
 ---
@@ -258,26 +406,5 @@ async function run() {
   - `fs.writeFile`
   - `join (from node:path)`
   - `JSON.stringify`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

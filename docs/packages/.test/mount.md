@@ -2,19 +2,29 @@
 
 # 📄 `mount.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 7
-- **Interfaces**: 0
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/.test/mount.ts`**
@@ -30,6 +40,15 @@
 | `h` | `vue` |
 | `provide` | `vue` |
 | `shallowRef` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `comp` | `VM<V>` | const | `app.mount(el) as any as VM<V>` | ✗ |
 
 
 ---
@@ -135,20 +154,6 @@ export function useInjectedSetup<V>(setup: () => V) {
   - `provide (from vue)`
   - `shallowRef (from vue)`
   - `mount`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

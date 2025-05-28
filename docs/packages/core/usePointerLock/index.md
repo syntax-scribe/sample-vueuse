@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 9 |
+| 📊 Variables & Constants | 5 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 3 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 9
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/usePointerLock/index.ts`**
@@ -33,6 +44,30 @@
 | `unrefElement` | `../unrefElement` |
 | `useEventListener` | `../useEventListener` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `targetElement` | `MaybeElement` | let/var | `*not shown*` | ✗ |
+| `listenerOptions` | `{ passive: boolean; }` | const | `{ passive: true }` | ✗ |
+| `currentElement` | `any` | const | `document!.pointerLockElement ?? element.value` | ✗ |
+| `currentElement` | `any` | const | `document!.pointerLockElement ?? element.value` | ✗ |
+| `action` | `"release" | "acquire"` | const | `document!.pointerLockElement ? 'release' : 'acquire'` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| await-expression | `usePointerLock` | until(element).toBe(targetElement), until(element).toBeNull() | *none* |
+| async-function | `lock` | until(element).toBe(targetElement) | *none* |
+| async-function | `unlock` | until(element).toBeNull() | *none* |
 
 
 ---
@@ -188,13 +223,6 @@ async function unlock() {
 - **Calls**:
   - `document!.exitPointerLock`
   - `until(element).toBeNull`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

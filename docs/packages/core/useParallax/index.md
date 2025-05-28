@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 9 |
+| 📊 Variables & Constants | 4 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 5 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 9
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useParallax/index.ts`**
@@ -32,6 +43,31 @@
 | `useDeviceOrientation` | `../useDeviceOrientation` |
 | `useMouseInElement` | `../useMouseInElement` |
 | `useScreenOrientation` | `../useScreenOrientation` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `value` | `number` | let/var | `*not shown*` | ✗ |
+| `value` | `number` | const | `-(y.value - height.value / 2) / height.value` | ✗ |
+| `value` | `number` | let/var | `*not shown*` | ✗ |
+| `value` | `number` | const | `(x.value - width.value / 2) / width.value` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `reactive` | reactive | *none* | *none* |
+| `reactive` | reactive | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -160,13 +196,6 @@ export function useParallax(
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseParallaxOptions`
@@ -221,13 +250,6 @@ export interface UseParallaxReturn {
 | `roll` | `ComputedRef<number>` | ✗ |  |
 | `tilt` | `ComputedRef<number>` | ✗ |  |
 | `source` | `ComputedRef<'deviceOrientation' | 'mouse'>` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

@@ -2,20 +2,32 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 10 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 1 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Re-exports](#re-exports)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 8
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 1
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/core/useBreakpoints/index.ts`**
@@ -35,6 +47,35 @@
 | `defaultWindow` | `../_configurable` |
 | `useMediaQuery` | `../useMediaQuery` |
 | `useSSRWidth` | `../useSSRWidth` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `ssrSupport` | `boolean` | const | `typeof ssrWidth === 'number'` | ✗ |
+| `mounted` | `any` | const | `ssrSupport ? shallowRef(false) : { value: true }` | ✗ |
+
+
+---
+
+## Re-exports
+
+| Type | Source | Exported Names |
+|------|--------|----------------|
+| namespace | `./breakpoints` | * |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -288,6 +329,30 @@ function match(query: 'min' | 'max', size: string): boolean {
 </details>
 
 - **Return Type**: `any`
+### `get(): any`
+
+<details><summary>Code</summary>
+
+```ts
+() => strategy === 'min-width'
+          ? greaterOrEqual(k)
+          : smallerOrEqual(k)
+```
+</details>
+
+- **Return Type**: `any`
+### `get(): any`
+
+<details><summary>Code</summary>
+
+```ts
+() => strategy === 'min-width'
+          ? greaterOrEqual(k)
+          : smallerOrEqual(k)
+```
+</details>
+
+- **Return Type**: `any`
 ### `current(): any`
 
 <details><summary>Code</summary>
@@ -309,13 +374,6 @@ function current() {
       .sort`
   - `computed (from vue)`
   - `points.filter(([, v]) => v.value).map`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

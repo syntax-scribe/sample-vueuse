@@ -2,18 +2,28 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 0 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 0
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/rxjs/useObservable/index.test.ts`**
@@ -34,16 +44,19 @@
 
 ---
 
-## 🔧 Functions
+## Variables & Constants
 
-> No functions found in this file.
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `testDataSource` | `BehaviorSubject<TestPerson>` | let/var | `*not shown*` | ✗ |
+| `delayedEmissionStream` | `Observable<TestPerson>` | let/var | `*not shown*` | ✗ |
 
 
 ---
 
-## Classes
+## 🔧 Functions
 
-> No classes found in this file.
+> No functions found in this file.
 
 
 ---
@@ -66,13 +79,6 @@ interface TestPerson {
 | Name | Type | Optional | Description |
 |------|------|----------|-------------|
 | `fullName` | `string` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

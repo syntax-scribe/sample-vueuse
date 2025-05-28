@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 9 |
+| 📊 Variables & Constants | 6 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 3 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 9
-- **Interfaces**: 3
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/shared/computedWithControl/index.ts`**
@@ -33,6 +44,46 @@
 | `customRef` | `vue` |
 | `shallowRef` | `vue` |
 | `watch` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `v` | `T` | let/var | `undefined!` | ✗ |
+| `track` | `Fn` | let/var | `*not shown*` | ✗ |
+| `trigger` | `Fn` | let/var | `*not shown*` | ✗ |
+| `get` | `any` | const | `typeof fn === 'function' ? fn : fn.get` | ✗ |
+| `set` | `any` | const | `typeof fn === 'function' ? undefined : fn.set` | ✗ |
+| `result` | `ComputedRefWithControl<T>` | const | `customRef<T>((_track, _trigger) => {
+    track = _track
+    trigger = _trigger
+
+    return {
+      get() {
+        if (dirty.value) {
+          v = get(v)
+          dirty.value = false
+        }
+        track()
+        return v
+      },
+      set(v) {
+        set?.(v)
+      },
+    }
+  }) as ComputedRefWithControl<T>` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -70,13 +121,6 @@ export function computedWithControl<T, S>(
 - **Return Type**: `void`
 - **Calls**:
   - `trigger`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

@@ -2,18 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 5 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 5
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/shared/toReactive/index.ts`**
@@ -27,6 +38,51 @@
 | `isRef` | `vue` |
 | `reactive` | `vue` |
 | `unref` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `proxy` | `{}` | const | `new Proxy({}, {
+    get(_, p, receiver) {
+      return unref(Reflect.get(objectRef.value, p, receiver))
+    },
+    set(_, p, value) {
+      if (isRef((objectRef.value as any)[p]) && !isRef(value))
+        (objectRef.value as any)[p].value = value
+      else
+        (objectRef.value as any)[p] = value
+      return true
+    },
+    deleteProperty(_, p) {
+      return Reflect.deleteProperty(objectRef.value, p)
+    },
+    has(_, p) {
+      return Reflect.has(objectRef.value, p)
+    },
+    ownKeys() {
+      return Object.keys(objectRef.value)
+    },
+    getOwnPropertyDescriptor() {
+      return {
+        enumerable: true,
+        configurable: true,
+      }
+    },
+  })` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `reactive` | reactive | *none* | *none* |
+| `reactive` | reactive | *none* | *none* |
 
 
 ---
@@ -98,26 +154,5 @@ export function toReactive<T extends object>(
   - `Reflect.deleteProperty`
   - `Reflect.has`
   - `Object.keys`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

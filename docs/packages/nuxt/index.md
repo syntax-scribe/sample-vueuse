@@ -2,18 +2,28 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 0 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 3 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 0
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 3
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/nuxt/index.ts`**
@@ -34,16 +44,42 @@
 
 ---
 
-## 🔧 Functions
+## Variables & Constants
 
-> No functions found in this file.
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `disabledFunctions` | `string[]` | const | `[
+  // Vue 3 built-in
+  'toRefs',
+  'toRef',
+  'toValue',
+
+  // Nuxt built-in
+  'useFetch',
+  'useCookie',
+  'useHead',
+  'useStorage',
+  'useImage',
+]` | ✗ |
+| `packages` | `string[]` | const | `[
+  'core',
+  'shared',
+  'components',
+  'motion',
+  'firebase',
+  'rxjs',
+  'sound',
+  'math',
+  'router',
+]` | ✗ |
+| `names` | `any[]` | const | `[i.name, ...i.alias || []]` | ✗ |
 
 
 ---
 
-## Classes
+## 🔧 Functions
 
-> No classes found in this file.
+> No functions found in this file.
 
 
 ---
@@ -110,13 +146,6 @@ interface NuxtOptions {
 | Name | Type | Optional | Description |
 |------|------|----------|-------------|
 | `vueuse` | `VueUseNuxtOptions` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

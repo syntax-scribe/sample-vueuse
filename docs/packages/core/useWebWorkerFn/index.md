@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 5 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 6 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 3 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 5
-- **Classes**: 0
-- **Imports**: 6
-- **Interfaces**: 1
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/core/useWebWorkerFn/index.ts`**
@@ -30,6 +41,26 @@
 | `shallowRef` | `vue` |
 | `defaultWindow` | `../_configurable` |
 | `createWorkerBlobUrl` | `./lib/createWorkerBlobUrl` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `newWorker` | `Worker & { _url?: string }` | const | `new Worker(blobUrl)` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `useWebWorkerFn` | *none* | new Promise(...), Promise.reject |
+| promise-chain | `callWorker` | *none* | new Promise(...) |
+| promise-chain | `workerFn` | *none* | Promise.reject |
 
 
 ---
@@ -305,13 +336,6 @@ export function useWebWorkerFn<T extends (...fnArgs: any[]) => any>(fn: T, optio
 ```
 /* eslint-disable-next-line prefer-promise-reject-errors */
 ```
-
-
----
-
-## Classes
-
-> No classes found in this file.
 
 
 ---

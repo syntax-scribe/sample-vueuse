@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 9 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 14 |
+| 📊 Variables & Constants | 10 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 9
-- **Classes**: 0
-- **Imports**: 14
-- **Interfaces**: 2
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/core/useWebSocket/index.ts`**
@@ -38,6 +49,35 @@
 | `toValue` | `vue` |
 | `watch` | `vue` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `DEFAULT_PING_MESSAGE` | `"ping"` | const | `'ping'` | ✗ |
+| `heartbeatPause` | `Fn | undefined` | let/var | `*not shown*` | ✗ |
+| `heartbeatResume` | `Fn | undefined` | let/var | `*not shown*` | ✗ |
+| `explicitlyClosed` | `boolean` | let/var | `false` | ✗ |
+| `retried` | `number` | let/var | `0` | ✗ |
+| `bufferedData` | `(string | ArrayBuffer | Blob)[]` | let/var | `[]` | ✗ |
+| `retryTimeout` | `ReturnType<typeof setTimeout> | undefined` | let/var | `*not shown*` | ✗ |
+| `pongTimeoutWait` | `ReturnType<typeof setTimeout> | undefined` | let/var | `*not shown*` | ✗ |
+| `ws` | `WebSocket` | const | `new WebSocket(urlRef.value, protocols)` | ✗ |
+| `checkRetires` | `(retried: number) => boolean` | const | `typeof retries === 'function'
+          ? retries
+          : () => typeof retries === 'number' && (retries < 0 || retried < retries)` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -521,13 +561,6 @@ export function useWebSocket<Data = any>(
 - **Calls**:
   - `close`
   - `_init`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

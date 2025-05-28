@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 7 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 7
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useRefHistory/index.ts`**
@@ -31,6 +41,15 @@
 | `pausableFilter` | `@vueuse/shared` |
 | `watchIgnorable` | `@vueuse/shared` |
 | `useManualRefHistory` | `../useManualRefHistory` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `canceled` | `boolean` | let/var | `false` | ✗ |
 
 
 ---
@@ -318,13 +337,6 @@ function dispose() {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseRefHistoryOptions<Raw, Serialized = Raw>`
@@ -434,13 +446,6 @@ export interface UseRefHistoryReturn<Raw, Serialized> extends UseManualRefHistor
 | `resume` | `(commit?: boolean) => void` | ✗ |  |
 | `batch` | `(fn: (cancel: Fn) => void) => void` | ✗ |  |
 | `dispose` | `() => void` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

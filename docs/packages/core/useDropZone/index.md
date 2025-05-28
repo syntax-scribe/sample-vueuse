@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 6 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 7 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 6
-- **Classes**: 0
-- **Imports**: 7
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useDropZone/index.ts`**
@@ -30,6 +40,21 @@
 | `shallowRef` | `vue` |
 | `unref` | `vue` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `counter` | `number` | let/var | `0` | ✗ |
+| `isValid` | `boolean` | let/var | `true` | ✗ |
+| `_options` | `UseDropZoneOptions` | const | `typeof options === 'function' ? { onDrop: options } : options` | ✗ |
+| `multiple` | `boolean` | const | `_options.multiple ?? true` | ✗ |
+| `preventDefaultForUnhandled` | `boolean` | const | `_options.preventDefaultForUnhandled ?? false` | ✗ |
+| `multipleFilesValid` | `boolean` | const | `multiple || items.length <= 1` | ✗ |
+| `dataTransferItemList` | `DataTransferItemList` | const | `event.dataTransfer?.items` | ✗ |
 
 
 ---
@@ -334,13 +359,6 @@ export function useDropZone(
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseDropZoneReturn`
@@ -400,13 +418,6 @@ export interface UseDropZoneOptions {
 | `onOver` | `(files: File[] | null, event: DragEvent) => void` | ✓ |  |
 | `multiple` | `boolean` | ✓ |  |
 | `preventDefaultForUnhandled` | `boolean` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 9 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 3 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 9
-- **Interfaces**: 2
-- **Type Aliases**: 3
 
 ## 🛠️ File Location:
 📂 **`packages/core/usePermission/index.ts`**
@@ -33,6 +43,17 @@
 | `defaultNavigator` | `../_configurable` |
 | `useEventListener` | `../useEventListener` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `desc` | `PermissionDescriptor` | const | `typeof permissionDesc === 'string'
+    ? { name: permissionDesc } as PermissionDescriptor
+    : permissionDesc as PermissionDescriptor` | ✗ |
 
 
 ---
@@ -76,13 +97,6 @@ export function usePermission(
 </details>
 
 - **Return Type**: `void`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

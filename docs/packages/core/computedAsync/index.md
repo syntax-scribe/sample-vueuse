@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 9 |
+| 📊 Variables & Constants | 6 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 9
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/computedAsync/index.ts`**
@@ -33,6 +44,37 @@
 | `isRef` | `vue` |
 | `shallowRef` | `vue` |
 | `watchEffect` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `options` | `AsyncComputedOptions` | let/var | `*not shown*` | ✗ |
+| `current` | `Ref<T>` | const | `(shallow ? shallowRef(initialState) : deepRef(initialState)) as Ref<T>` | ✗ |
+| `counter` | `number` | let/var | `0` | ✗ |
+| `counterAtBeginning` | `number` | let/var | `counter` | ✗ |
+| `hasFinished` | `boolean` | let/var | `false` | ✗ |
+| `result` | `Awaited<T>` | let/var | `await evaluationCallback((cancelCallback) => {
+        onInvalidate(() => {
+          if (evaluating)
+            evaluating.value = false
+
+          if (!hasFinished)
+            cancelCallback()
+        })
+      })` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -69,13 +111,6 @@ export function computedAsync<T>(
   - `initialState: T`
   - `optionsOrRef: AsyncComputedOptions & { lazy: true }`
 - **Return Type**: `ComputedRef<T>`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

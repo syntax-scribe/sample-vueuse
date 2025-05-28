@@ -2,20 +2,32 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 10 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 4 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 4 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 10
-- **Interfaces**: 1
-- **Type Aliases**: 4
 
 ## 🛠️ File Location:
 📂 **`packages/core/useWakeLock/index.ts`**
@@ -34,6 +46,36 @@
 | `useDocumentVisibility` | `../useDocumentVisibility` |
 | `useEventListener` | `../useEventListener` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `s` | `any` | let/var | `sentinel.value` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| await-expression | `useWakeLock` | sentinel.value?.release(), (navigator as NavigatorWithWakeLock).wakeLock.request(type), forceRequest(type), s?.release() | *none* |
+| async-function | `forceRequest` | sentinel.value?.release(), (navigator as NavigatorWithWakeLock).wakeLock.request(type) | *none* |
+| async-function | `request` | forceRequest(type) | *none* |
+| async-function | `release` | s?.release() | *none* |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -183,13 +225,6 @@ async function release() {
 - **Return Type**: `Promise<void>`
 - **Calls**:
   - `s?.release`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 9 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 21 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 9 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 3 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 9
-- **Classes**: 0
-- **Imports**: 21
-- **Interfaces**: 2
-- **Type Aliases**: 3
 
 ## 🛠️ File Location:
 📂 **`packages/core/useAnimate/index.ts`**
@@ -45,6 +56,34 @@
 | `useEventListener` | `../useEventListener` |
 | `useRafFn` | `../useRafFn` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `config` | `UseAnimateOptions` | let/var | `*not shown*` | ✗ |
+| `animateOptions` | `undefined | number | KeyframeAnimationOptions` | let/var | `*not shown*` | ✗ |
+| `listenerOptions` | `{ passive: boolean; }` | const | `{ passive: true }` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `watch` | watch | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -555,13 +594,6 @@ function syncPause() {
 - **Return Type**: `void`
 - **Calls**:
   - `window.requestAnimationFrame`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

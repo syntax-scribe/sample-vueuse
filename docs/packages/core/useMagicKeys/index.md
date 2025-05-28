@@ -2,20 +2,32 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 10 |
+| 📊 Variables & Constants | 6 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 1 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 3 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Re-exports](#re-exports)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 10
-- **Interfaces**: 2
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useMagicKeys/index.ts`**
@@ -34,6 +46,68 @@
 | `defaultWindow` | `../_configurable` |
 | `useEventListener` | `../useEventListener` |
 | `DefaultMagicKeysAliasMap` | `./aliasMap` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `obj` | `{ toJSON(): {}; current: any; }` | const | `{
+    toJSON() { return {} },
+    current,
+  }` | ✗ |
+| `refs` | `Record<string, any>` | const | `useReactive ? reactive(obj) : obj` | ✗ |
+| `metaDeps` | `Set<string>` | const | `new Set<string>()` | ✗ |
+| `shiftDeps` | `Set<string>` | const | `new Set<string>()` | ✗ |
+| `usedKeys` | `Set<string>` | const | `new Set<string>()` | ✗ |
+| `proxy` | `Record<string, any>` | const | `new Proxy(
+    refs,
+    {
+      get(target, prop, rec) {
+        if (typeof prop !== 'string')
+          return Reflect.get(target, prop, rec)
+
+        prop = prop.toLowerCase()
+        // alias
+        if (prop in aliasMap)
+          prop = aliasMap[prop]
+        // create new tracking
+        if (!(prop in refs)) {
+          if (/[+_-]/.test(prop)) {
+            const keys = prop.split(/[+_-]/g).map(i => i.trim())
+            refs[prop] = computed(() => keys.map(key => toValue(proxy[key])).every(Boolean))
+          }
+          else {
+            refs[prop] = shallowRef(false)
+          }
+        }
+        const r = Reflect.get(target, prop, rec)
+        return useReactive ? toValue(r) : r
+      },
+    },
+  )` | ✗ |
+
+
+---
+
+## Re-exports
+
+| Type | Source | Exported Names |
+|------|--------|----------------|
+| named | `./aliasMap` | DefaultMagicKeysAliasMap |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `reactive` | reactive | *none* | *none* |
+| `reactive` | reactive | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -176,13 +250,6 @@ function updateRefs(e: KeyboardEvent, value: boolean) {
 // We track it's combination and release manually
 // Meta key released (x4)
 ```
-
-
----
-
-## Classes
-
-> No classes found in this file.
 
 
 ---

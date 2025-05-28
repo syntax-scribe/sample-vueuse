@@ -2,18 +2,28 @@
 
 # 📄 `rollup.config.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 8 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`rollup.config.ts`**
@@ -33,6 +43,32 @@
 | `esbuild` | `rollup-plugin-esbuild` |
 | `pure` | `rollup-plugin-pure` |
 | `globSync` | `tinyglobby` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `functions` | `PackageIndexes` | const | `metadata.functions as PackageIndexes['functions']` | ✗ |
+| `configs` | `RollupOptions[]` | const | `[]` | ✗ |
+| `externals` | `(string | RegExp)[]` | const | `[
+  'vue',
+  /@vueuse\/.*/,
+]` | ✗ |
+| `iifeGlobals` | `any` | const | `{
+    'vue': 'Vue',
+    '@vueuse/shared': 'VueUse',
+    '@vueuse/core': 'VueUse',
+    ...(globals || {}),
+  }` | ✗ |
+| `iifeName` | `"VueUse"` | const | `'VueUse'` | ✗ |
+| `functionNames` | `string[]` | const | `['index']` | ✗ |
+| `input` | `string` | const | `fn === 'index'
+      ? `index.ts`
+      : `${fn}/index.ts`` | ✗ |
+| `output` | `OutputOptions[]` | const | `[]` | ✗ |
 
 
 ---
@@ -60,7 +96,7 @@ function esbuildMinifier(options: ESBuildOptions) {
 - **Return Type**: `{ name: string; renderChunk: any; }`
 - **Calls**:
   - `esbuild (from rollup-plugin-esbuild)`
-### `createRollupConfig(pkg: PackageManifest, cwd: any): RollupOptions[]`
+### `createRollupConfig(pkg: PackageManifest, cwd: string): RollupOptions[]`
 
 <details><summary>Code</summary>
 
@@ -205,7 +241,7 @@ export function createRollupConfig(
 
 - **Parameters**:
   - `pkg: PackageManifest`
-  - `cwd: any`
+  - `cwd: string`
 - **Return Type**: `RollupOptions[]`
 - **Calls**:
   - `functionNames.push`
@@ -220,26 +256,5 @@ export function createRollupConfig(
   - `configs.push`
   - `esbuild (from rollup-plugin-esbuild)`
   - `json (from @rollup/plugin-json)`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

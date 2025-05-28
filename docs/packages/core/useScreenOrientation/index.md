@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 6 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 2 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 3 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 6
-- **Interfaces**: 1
-- **Type Aliases**: 3
 
 ## 🛠️ File Location:
 📂 **`packages/core/useScreenOrientation/index.ts`**
@@ -30,6 +41,25 @@
 | `defaultWindow` | `../_configurable` |
 | `useEventListener` | `../useEventListener` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `screenOrientation` | `ScreenOrientation` | const | `(isSupported.value ? window!.screen.orientation : {}) as ScreenOrientation` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `useScreenOrientation` | *none* | Promise.reject |
+| promise-chain | `lockOrientation` | *none* | Promise.reject |
 
 
 ---
@@ -138,13 +168,6 @@ export function useScreenOrientation(options: ConfigurableWindow = {}) {
 - **Return Type**: `void`
 - **Calls**:
   - `screenOrientation.unlock`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

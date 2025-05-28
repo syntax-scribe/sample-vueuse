@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 6 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 6
-- **Classes**: 0
-- **Imports**: 7
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/electron/useIpcRenderer/index.ts`**
@@ -30,6 +40,15 @@
 | `shallowRef` | `vue` |
 | `useIpcRendererInvoke` | `../useIpcRendererInvoke` |
 | `useIpcRendererOn` | `../useIpcRendererOn` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `result` | `ShallowRef<T>` | const | `shallowRef<T | null>(null) as ShallowRef<T | null>` | ✗ |
 
 
 ---
@@ -176,13 +195,6 @@ export function useIpcRenderer(ipcRenderer?: IpcRenderer): UseIpcRendererReturn 
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseIpcRendererReturn`
@@ -282,13 +294,6 @@ export interface UseIpcRendererReturn {
 | `postMessage` | `(channel: string, message: any, transfer?: MessagePort[]) => void` | ✗ |  |
 | `sendTo` | `(webContentsId: number, channel: string, ...args: any[]) => void` | ✗ |  |
 | `sendToHost` | `(channel: string, ...args: any[]) => void` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

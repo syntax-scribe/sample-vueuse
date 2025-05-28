@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 5 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 7
-- **Interfaces**: 1
-- **Type Aliases**: 5
 
 ## 🛠️ File Location:
 📂 **`packages/core/createReusableTemplate/index.ts`**
@@ -31,6 +41,40 @@
 | `makeDestructurable` | `@vueuse/shared` |
 | `defineComponent` | `vue` |
 | `shallowRef` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `define` | `any` | const | `defineComponent({
+    setup(_, { slots }) {
+      return () => {
+        render.value = slots.default
+      }
+    },
+  }) as unknown as DefineTemplateComponent<Bindings, MapSlotNameToSlotProps>` | ✗ |
+| `reuse` | `any` | const | `defineComponent({
+    inheritAttrs,
+    props: options.props,
+    setup(props, { attrs, slots }) {
+      return () => {
+        if (!render.value && process.env.NODE_ENV !== 'production')
+          throw new Error('[VueUse] Failed to find the definition of reusable template')
+        const vnode = render.value?.({
+          ...(options.props == null
+            ? keysToCamelKebabCase(attrs)
+            : props),
+          $slots: slots,
+        })
+
+        return (inheritAttrs && vnode?.length === 1) ? vnode[0] : vnode
+      }
+    },
+  }) as unknown as ReuseTemplateComponent<Bindings, MapSlotNameToSlotProps>` | ✗ |
+| `newObj` | `typeof obj` | const | `{}` | ✗ |
 
 
 ---
@@ -127,13 +171,6 @@ function keysToCamelKebabCase(obj: Record<string, any>) {
 - **Return Type**: `Record<string, any>`
 - **Calls**:
   - `camelize (from @vueuse/shared)`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

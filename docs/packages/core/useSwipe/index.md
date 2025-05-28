@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 6 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 9 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 6 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 6
-- **Classes**: 0
-- **Imports**: 9
-- **Interfaces**: 2
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useSwipe/index.ts`**
@@ -33,6 +44,54 @@
 | `reactive` | `vue` |
 | `shallowRef` | `vue` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `listenerOptions` | `{ passive: boolean; capture: boolean; }` | const | `{ passive, capture: !passive }` | ✗ |
+| `stops` | `(() => void)[]` | const | `[
+    useEventListener(target, 'touchstart', (e: TouchEvent) => {
+      if (e.touches.length !== 1)
+        return
+      const [x, y] = getTouchEventCoords(e)
+      updateCoordsStart(x, y)
+      updateCoordsEnd(x, y)
+      onSwipeStart?.(e)
+    }, listenerOptions),
+
+    useEventListener(target, 'touchmove', (e: TouchEvent) => {
+      if (e.touches.length !== 1)
+        return
+      const [x, y] = getTouchEventCoords(e)
+      updateCoordsEnd(x, y)
+      if (listenerOptions.capture && !listenerOptions.passive && Math.abs(diffX.value) > Math.abs(diffY.value))
+        e.preventDefault()
+      if (!isSwiping.value && isThresholdExceeded.value)
+        isSwiping.value = true
+      if (isSwiping.value)
+        onSwipe?.(e)
+    }, listenerOptions),
+
+    useEventListener(target, ['touchend', 'touchcancel'], onTouchEnd, listenerOptions),
+  ]` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `reactive` | reactive | *none* | *none* |
+| `reactive` | reactive | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -260,13 +319,6 @@ export function useSwipe(
 - **Return Type**: `void`
 - **Calls**:
   - `stops.forEach`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

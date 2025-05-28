@@ -2,19 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 4 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 3 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 3 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useDevicesList/index.ts`**
@@ -34,6 +46,40 @@
 | `useEventListener` | `../useEventListener` |
 | `usePermission` | `../usePermission` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `devices` | `Ref<MediaDeviceInfo[]>` | const | `deepRef([]) as Ref<MediaDeviceInfo[]>` | ✗ |
+| `stream` | `MediaStream | null` | let/var | `*not shown*` | ✗ |
+| `deviceName` | `"camera" | "microphone"` | let/var | `constraints.video ? 'camera' : 'microphone'` | ✗ |
+| `granted` | `boolean` | let/var | `true` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| await-expression | `useDevicesList` | navigator!.mediaDevices.enumerateDevices(), query(), navigator!.mediaDevices.getUserMedia(constraints) | *none* |
+| async-function | `update` | navigator!.mediaDevices.enumerateDevices() | *none* |
+| async-function | `ensurePermissions` | query(), navigator!.mediaDevices.getUserMedia(constraints) | *none* |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -224,13 +270,6 @@ async function ensurePermissions() {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseDevicesListOptions`
@@ -296,13 +335,6 @@ export interface UseDevicesListReturn {
 | `permissionGranted` | `ShallowRef<boolean>` | ✗ |  |
 | `ensurePermissions` | `() => Promise<boolean>` | ✗ |  |
 | `isSupported` | `ComputedRef<boolean>` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 6 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 5 |
+| 📊 Variables & Constants | 12 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 6
-- **Classes**: 0
-- **Imports**: 5
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/onLongPress/index.ts`**
@@ -28,6 +39,42 @@
 | `computed` | `vue` |
 | `unrefElement` | `../unrefElement` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `DEFAULT_DELAY` | `500` | const | `500` | ✗ |
+| `DEFAULT_THRESHOLD` | `10` | const | `10` | ✗ |
+| `timeout` | `ReturnType<typeof setTimeout> | undefined` | let/var | `*not shown*` | ✗ |
+| `posStart` | `Position | undefined` | let/var | `*not shown*` | ✗ |
+| `startTimestamp` | `number | undefined` | let/var | `*not shown*` | ✗ |
+| `hasLongPressed` | `boolean` | let/var | `false` | ✗ |
+| `dx` | `number` | const | `ev.x - _posStart.x` | ✗ |
+| `dy` | `number` | const | `ev.y - _posStart.y` | ✗ |
+| `dx` | `number` | const | `ev.x - posStart.x` | ✗ |
+| `dy` | `number` | const | `ev.y - posStart.y` | ✗ |
+| `listenerOptions` | `AddEventListenerOptions` | const | `{
+    capture: options?.modifiers?.capture,
+    once: options?.modifiers?.once,
+  }` | ✗ |
+| `cleanup` | `(() => void)[]` | const | `[
+    useEventListener(elementRef, 'pointerdown', onDown, listenerOptions),
+    useEventListener(elementRef, 'pointermove', onMove, listenerOptions),
+    useEventListener(elementRef, ['pointerup', 'pointerleave'], onRelease, listenerOptions),
+  ]` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -316,13 +363,6 @@ function onMove(ev: PointerEvent) {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `OnLongPressOptions`
@@ -391,13 +431,6 @@ export interface OnLongPressModifiers {
 | `prevent` | `boolean` | ✓ |  |
 | `capture` | `boolean` | ✓ |  |
 | `self` | `boolean` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

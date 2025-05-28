@@ -2,19 +2,30 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 5 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 0
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useTimeAgo/index.test.ts`**
@@ -34,6 +45,36 @@
 | `computed` | `vue` |
 | `shallowRef` | `vue` |
 | `useTimeAgo` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `UNITS` | `{ max: number; value: number; name: string; }[]` | const | `[
+  { max: 60000, value: 1000, name: 'second' },
+  { max: 2760000, value: 60000, name: 'minute' },
+  { max: 72000000, value: 3600000, name: 'hour' },
+  { max: 518400000, value: 86400000, name: 'day' },
+  { max: 2419200000, value: 604800000, name: 'week' },
+  { max: 28512000000, value: 2592000000, name: 'month' },
+  { max: Number.POSITIVE_INFINITY, value: 31536000000, name: 'year' },
+]` | ✗ |
+| `baseTime` | `number` | let/var | `*not shown*` | ✗ |
+| `changeTime` | `ComputedRef<number>` | let/var | `*not shown*` | ✗ |
+| `text` | `"past" | "future"` | const | `isFuture ? 'future' : 'past'` | ✗ |
+| `nextTime` | `number` | const | `getNeededTimeChange('minute', 1, -1) * (isFuture ? 1 : -1)` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -147,20 +188,6 @@ function testSecond(isFuture: boolean) {
   - `expect(useTimeAgo(changeTime, { showSecond: true, max: 10000 }).value).toBe`
   - `fullDateFormatter`
   - `expect(useTimeAgo(changeTime, { showSecond: true, max: 'second' }).value).toBe`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

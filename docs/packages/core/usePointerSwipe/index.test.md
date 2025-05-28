@@ -2,18 +2,28 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 6 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 7 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 6
-- **Classes**: 0
-- **Imports**: 7
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/usePointerSwipe/index.test.ts`**
@@ -29,6 +39,26 @@
 | `it` | `vitest` |
 | `vi` | `vitest` |
 | `usePointerSwipe` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `threshold` | `30` | const | `30` | ✗ |
+| `onSwipeStart` | `any` | let/var | `*not shown*` | ✗ |
+| `onSwipe` | `any` | let/var | `*not shown*` | ✗ |
+| `onSwipeEnd` | `any` | let/var | `*not shown*` | ✗ |
+| `directionTests` | `(string | number[][])[][]` | const | `[
+    ['up', [[0, 2 * threshold], [0, threshold], [0, threshold]]],
+    ['down', [[0, 0], [0, threshold], [0, threshold]]],
+    ['left', [[2 * threshold, 0], [threshold, 0], [threshold, 0]]],
+    ['right', [[0, 0], [threshold, 0], [threshold, 0]]],
+  ]` | ✗ |
+| `_direction` | `string | number[][]` | const | `config[0]` | ✗ |
+| `coords` | `number[][]` | const | `config[1] as unknown as number[][]` | ✗ |
 
 
 ---
@@ -147,26 +177,5 @@ function mockPointerEvents(target: Element, coords: Array<number[]>) {
 </details>
 
 - **Return Type**: `UsePointerSwipeOptions`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

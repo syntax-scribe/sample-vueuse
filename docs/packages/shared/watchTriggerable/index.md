@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 7 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 7
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 1
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/shared/watchTriggerable/index.ts`**
@@ -32,6 +42,17 @@
 | `isReactive` | `vue` |
 | `toValue` | `vue` |
 | `watchIgnorable` | `../watchIgnorable` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `cleanupFn` | `(() => void) | undefined` | let/var | `*not shown*` | ✗ |
+| `fn` | `() => void` | const | `cleanupFn` | ✗ |
+| `res` | `any` | let/var | `*not shown*` | ✗ |
 
 
 ---
@@ -182,13 +203,6 @@ function getOldValue(source: any) {
 - **Calls**:
   - `Array.isArray`
   - `source.map`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

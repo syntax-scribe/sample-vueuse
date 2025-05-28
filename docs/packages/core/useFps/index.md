@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 3 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 3
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useFps/index.ts`**
@@ -26,6 +36,17 @@
 | `ShallowRef` | `vue` |
 | `shallowRef` | `vue` |
 | `useRafFn` | `../useRafFn` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `every` | `number` | const | `options?.every ?? 10` | ✗ |
+| `ticks` | `number` | let/var | `0` | ✗ |
+| `diff` | `number` | const | `now - last` | ✗ |
 
 
 ---
@@ -73,13 +94,6 @@ export function useFps(options?: UseFpsOptions): ShallowRef<number> {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseFpsOptions`
@@ -102,13 +116,6 @@ export interface UseFpsOptions {
 | Name | Type | Optional | Description |
 |------|------|----------|-------------|
 | `every` | `number` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

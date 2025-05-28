@@ -2,19 +2,30 @@
 
 # 📄 `component.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 12 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 4 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 12
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useDraggable/component.ts`**
@@ -35,6 +46,36 @@
 | `reactive` | `vue` |
 | `shallowRef` | `vue` |
 | `toValue` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `storageValue` | `any` | const | `props.storageKey && useStorage(
+      props.storageKey,
+      toValue(props.initialValue) || { x: 0, y: 0 },
+      isClient
+        ? props.storageType === 'session'
+          ? sessionStorage
+          : localStorage
+        : undefined,
+    )` | ✗ |
+| `initialValue` | `any` | const | `storageValue || props.initialValue || { x: 0, y: 0 }` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `reactive` | reactive | *none* | *none* |
 
 
 ---
@@ -62,13 +103,6 @@
 - **Return Type**: `void`
 - **Calls**:
   - `props.onEnd`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 
@@ -101,13 +135,6 @@ export interface UseDraggableProps extends UseDraggableOptions, RenderableCompon
 |------|------|----------|-------------|
 | `storageKey` | `string` | ✓ |  |
 | `storageType` | `'local' | 'session'` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

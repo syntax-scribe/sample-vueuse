@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 5 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 3 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useFocus/index.ts`**
@@ -31,6 +42,26 @@
 | `watch` | `vue` |
 | `unrefElement` | `../unrefElement` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `listenerOptions` | `{ passive: boolean; }` | const | `{ passive: true }` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -122,13 +153,26 @@ export function useFocus(target: MaybeElementRef, options: UseFocusOptions = {})
 </details>
 
 - **Return Type**: `any`
+### `get(): any`
 
----
+<details><summary>Code</summary>
 
-## Classes
+```ts
+() => innerFocused.value
+```
+</details>
 
-> No classes found in this file.
+- **Return Type**: `any`
+### `get(): any`
 
+<details><summary>Code</summary>
+
+```ts
+() => innerFocused.value
+```
+</details>
+
+- **Return Type**: `any`
 
 ---
 
@@ -192,13 +236,6 @@ export interface UseFocusReturn {
 | Name | Type | Optional | Description |
 |------|------|----------|-------------|
 | `focused` | `WritableComputedRef<boolean>` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

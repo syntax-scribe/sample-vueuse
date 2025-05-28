@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 5 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 5
-- **Interfaces**: 0
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/shared/reactivePick/index.ts`**
@@ -28,6 +38,16 @@
 | `toValue` | `vue` |
 | `reactiveComputed` | `../reactiveComputed` |
 | `toRef` | `../toRef` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `flatKeys` | `K[]` | const | `keys.flat() as K[]` | ✗ |
+| `predicate` | `ReactivePickPredicate<T>` | const | `flatKeys[0] as unknown as ReactivePickPredicate<T>` | ✗ |
 
 
 ---
@@ -50,20 +70,6 @@ export function reactivePick<T extends object, K extends keyof T>(
   - `obj: T`
   - `keys: (K | K[])[]`
 - **Return Type**: `ReactivePickReturn<T, K>`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 6 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 9 |
+| 📊 Variables & Constants | 7 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 6
-- **Classes**: 0
-- **Imports**: 9
-- **Interfaces**: 2
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useCycleList/index.ts`**
@@ -32,6 +43,33 @@
 | `shallowRef` | `vue` |
 | `toValue` | `vue` |
 | `watch` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `state` | `ShallowRef<T>` | const | `shallowRef(getInitialValue()) as ShallowRef<T>` | ✗ |
+| `targetList` | `any` | const | `listRef.value` | ✗ |
+| `index` | `any` | let/var | `options?.getIndexOf
+        ? options.getIndexOf(state.value, targetList)
+        : targetList.indexOf(state.value)` | ✗ |
+| `targetList` | `any` | const | `listRef.value` | ✗ |
+| `length` | `any` | const | `targetList.length` | ✗ |
+| `index` | `number` | const | `(i % length + length) % length` | ✗ |
+| `value` | `any` | const | `targetList[index]` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -211,13 +249,6 @@ function getInitialValue() {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseCycleListOptions<T>`
@@ -280,13 +311,6 @@ export interface UseCycleListReturn<T> {
 | `next` | `(n?: number) => T` | ✗ |  |
 | `prev` | `(n?: number) => T` | ✗ |  |
 | `go` | `(i: number) => T` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

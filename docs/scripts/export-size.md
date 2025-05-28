@@ -2,18 +2,29 @@
 
 # 📄 `export-size.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 1 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`scripts/export-size.ts`**
@@ -30,6 +41,31 @@
 | `markdownTable` | `markdown-table` |
 | `packages` | `../meta/packages` |
 | `version` | `../package.json` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `md` | `string` | let/var | `'# Export size\n\n'` | ✗ |
+| `mdJSON` | `{ [name: string]: string; }` | let/var | `<{ [name: string]: string }>{}` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| async-function | `run` | fs.writeFile(join(packagesRoot, 'shared/index.mjs'), 'export * from "./dist/index.mjs"', 'utf-8'), fs.writeFile(join(packagesRoot, 'core/index.mjs'), 'export * from "./dist/index.mjs"', 'utf-8'), getExportsSize({
+      pkg: `./packages/${pkg.name}/dist`,
+      output: false,
+      bundler: 'rollup',
+      external: ['vue', ...(pkg.external || [])],
+      includes: ['@vueuse/shared'],
+    }), fs.rm(join(packagesRoot, 'shared/index.mjs'), { force: true }), fs.rm(join(packagesRoot, 'core/index.mjs'), { force: true }), fs.writeFile('packages/export-size.md', md, 'utf-8'), fs.writeFile('packages/export-size.json', `${JSON.stringify(mdJSON, null, 2)}\n`) | *none* |
 
 
 ---
@@ -109,27 +145,6 @@ async function run() {
 ```
 // made shared library imported can resolve correctly (x2)
 ```
-
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

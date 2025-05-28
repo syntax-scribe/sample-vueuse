@@ -2,19 +2,29 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 5 |
+| 📊 Variables & Constants | 10 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 5
-- **Interfaces**: 0
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/shared/createEventHook/index.test.ts`**
@@ -28,6 +38,24 @@
 | `it` | `vitest` |
 | `vi` | `vitest` |
 | `createEventHook` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `message` | `string` | let/var | `''` | ✗ |
+| `timesFired` | `number` | let/var | `0` | ✗ |
+| `timesFired` | `number` | let/var | `0` | ✗ |
+| `values` | `Falsy[]` | const | `[false, 0, '', null, undefined]` | ✗ |
+| `results` | `Falsy[]` | const | `[]` | ✗ |
+| `message` | `string` | let/var | `''` | ✗ |
+| `result` | `unknown[]` | let/var | `await exec()` | ✗ |
+| `count` | `number` | let/var | `0` | ✗ |
+| `id` | `string` | let/var | `''` | ✗ |
+| `list` | `unknown[]` | const | `[]` | ✗ |
 
 
 ---
@@ -98,20 +126,6 @@
 - **Return Type**: `Promise<unknown[]>`
 - **Calls**:
   - `resultEvent.trigger`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

@@ -2,20 +2,32 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 11 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 10 |
+| 📊 Variables & Constants | 9 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 3 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 4 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 11
-- **Classes**: 0
-- **Imports**: 10
-- **Interfaces**: 4
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/shared/until/index.ts`**
@@ -34,6 +46,104 @@
 | `toValue` | `vue` |
 | `watch` | `vue` |
 | `promiseTimeout` | `../utils` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `stop` | `(() => void) | null` | let/var | `null` | ✗ |
+| `watcher` | `Promise<T>` | const | `new Promise<T>((resolve) => {
+      stop = watch(
+        r,
+        (v) => {
+          if (condition(v) !== isNot) {
+            if (stop)
+              stop()
+            else
+              nextTick(() => stop?.())
+            resolve(v)
+          }
+        },
+        {
+          flush,
+          deep,
+          immediate: true,
+        },
+      )
+    })` | ✗ |
+| `promises` | `Promise<T>[]` | const | `[watcher]` | ✗ |
+| `stop` | `(() => void) | null` | let/var | `null` | ✗ |
+| `watcher` | `Promise<T>` | const | `new Promise<T>((resolve) => {
+      stop = watch(
+        [r, value],
+        ([v1, v2]) => {
+          if (isNot !== (v1 === v2)) {
+            if (stop)
+              stop()
+            else
+              nextTick(() => stop?.())
+            resolve(v1)
+          }
+        },
+        {
+          flush,
+          deep,
+          immediate: true,
+        },
+      )
+    })` | ✗ |
+| `promises` | `Promise<T>[]` | const | `[watcher]` | ✗ |
+| `count` | `number` | let/var | `-1` | ✗ |
+| `instance` | `UntilArrayInstance<T>` | const | `{
+      toMatch: toMatch as any,
+      toContains,
+      changed,
+      changedTimes,
+      get not() {
+        return createUntil(r, !isNot) as UntilArrayInstance<T>
+      },
+    }` | ✗ |
+| `instance` | `UntilValueInstance<T, boolean>` | const | `{
+      toMatch: toMatch as any,
+      toBe,
+      toBeTruthy: toBeTruthy as any,
+      toBeNull: toBeNull as any,
+      toBeNaN,
+      toBeUndefined: toBeUndefined as any,
+      changed,
+      changedTimes,
+      get not() {
+        return createUntil(r, !isNot) as UntilValueInstance<T, boolean>
+      },
+    }` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `createUntil` | *none* | new Promise(...), promiseTimeout(timeout, throwOnTimeout)
+          .then(() => toValue(r)).finally, promiseTimeout(timeout, throwOnTimeout).then, Promise.race, new Promise(...), promiseTimeout(timeout, throwOnTimeout)
+          .then(() => toValue(r)).finally, promiseTimeout(timeout, throwOnTimeout).then, Promise.race |
+| promise-chain | `toMatch` | *none* | new Promise(...), promiseTimeout(timeout, throwOnTimeout)
+          .then(() => toValue(r)).finally, promiseTimeout(timeout, throwOnTimeout).then, Promise.race |
+| promise-chain | `toBe` | *none* | new Promise(...), promiseTimeout(timeout, throwOnTimeout)
+          .then(() => toValue(r)).finally, promiseTimeout(timeout, throwOnTimeout).then, Promise.race |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -501,13 +611,6 @@ export function until<T extends unknown[]>(r: WatchSource<T> | MaybeRefOrGetter<
 - **Parameters**:
   - `r: WatchSource<T> | MaybeRefOrGetter<T>`
 - **Return Type**: `UntilArrayInstance<T>`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

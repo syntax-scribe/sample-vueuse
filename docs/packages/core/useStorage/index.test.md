@@ -2,18 +2,28 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 16 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 16 |
+| 📊 Variables & Constants | 8 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 8
-- **Classes**: 0
-- **Imports**: 16
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useStorage/index.test.ts`**
@@ -38,6 +48,31 @@
 | `customStorageEventName` | `./index` |
 | `StorageSerializers` | `./index` |
 | `useStorage` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `KEY` | `"custom-key"` | const | `'custom-key'` | ✗ |
+| `ANOTHER_KEY` | `"another-key"` | const | `'another-key'` | ✗ |
+| `storageState` | `Map<string, string | number>` | const | `new Map<string, string | number | undefined>()` | ✗ |
+| `storageMock` | `{ getItem: any; setItem: any; removeItem: any; clear: any; }` | const | `{
+    getItem: vi.fn(x => storageState.get(x)),
+    setItem: vi.fn((x, v) => storageState.set(x, v)),
+    removeItem: vi.fn(x => storageState.delete(x)),
+    clear: vi.fn(() => storageState.clear()),
+  }` | ✗ |
+| `storage` | `Storage` | const | `storageMock as any as Storage` | ✗ |
+| `call` | `[CustomEvent<any>]` | let/var | `eventFn.mock.calls[0] as [CustomEvent]` | ✗ |
+| `call2` | `[CustomEvent<any>]` | let/var | `eventFn.mock.calls[1] as [CustomEvent]` | ✗ |
+| `customStorage` | `{ getItem: (key: string) => string; setItem: (key: string, value: string) => void; removeItem: (key: string) => void; }` | let/var | `{
+      getItem: storage.getItem,
+      setItem: storage.setItem,
+      removeItem: storage.removeItem,
+    }` | ✗ |
 
 
 ---
@@ -70,6 +105,58 @@
   - `value: string`
   - `initial: string`
 - **Return Type**: `string[]`
+### `mergeDefaults(value: string, initial: string): string[]`
+
+<details><summary>Code</summary>
+
+```ts
+(value, initial) => [...initial, ...value]
+```
+</details>
+
+- **Parameters**:
+  - `value: string`
+  - `initial: string`
+- **Return Type**: `string[]`
+### `mergeDefaults(value: string, initial: string): string[]`
+
+<details><summary>Code</summary>
+
+```ts
+(value, initial) => [...initial, ...value]
+```
+</details>
+
+- **Parameters**:
+  - `value: string`
+  - `initial: string`
+- **Return Type**: `string[]`
+### `mergeDefaults(value: string, initial: string): string`
+
+<details><summary>Code</summary>
+
+```ts
+(value, initial) => value + initial
+```
+</details>
+
+- **Parameters**:
+  - `value: string`
+  - `initial: string`
+- **Return Type**: `string`
+### `mergeDefaults(value: string, initial: string): string`
+
+<details><summary>Code</summary>
+
+```ts
+(value, initial) => value + initial
+```
+</details>
+
+- **Parameters**:
+  - `value: string`
+  - `initial: string`
+- **Return Type**: `string`
 ### `mergeDefaults(value: string, initial: string): string`
 
 <details><summary>Code</summary>
@@ -136,26 +223,45 @@
 </details>
 
 - **Return Type**: `never`
+### `getItem(): any`
 
----
+<details><summary>Code</summary>
 
-## Classes
+```ts
+() => null
+```
+</details>
 
-> No classes found in this file.
+- **Return Type**: `any`
+### `setItem(): never`
 
+<details><summary>Code</summary>
 
----
+```ts
+() => { throw new Error('write item error') }
+```
+</details>
 
-## Interfaces
+- **Return Type**: `never`
+### `getItem(): any`
 
-> No interfaces found in this file.
+<details><summary>Code</summary>
 
+```ts
+() => null
+```
+</details>
 
----
+- **Return Type**: `any`
+### `setItem(): never`
 
-## Type Aliases
+<details><summary>Code</summary>
 
-> No type aliases found in this file.
+```ts
+() => { throw new Error('write item error') }
+```
+</details>
 
+- **Return Type**: `never`
 
 ---

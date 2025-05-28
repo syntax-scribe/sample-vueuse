@@ -2,18 +2,28 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 6 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 9 |
+| 📊 Variables & Constants | 5 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 6
-- **Classes**: 0
-- **Imports**: 9
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/integrations/useIDBKeyval/index.test.ts`**
@@ -31,6 +41,19 @@
 | `vi` | `vitest` |
 | `nextTick` | `vue` |
 | `useIDBKeyval` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `cache` | `any` | const | `{} as any` | ✗ |
+| `KEY1` | `"vue-use-idb-keyval-1"` | const | `'vue-use-idb-keyval-1'` | ✗ |
+| `KEY2` | `"vue-use-idb-keyval-2"` | const | `'vue-use-idb-keyval-2'` | ✗ |
+| `KEY3` | `"vue-use-idb-keyval-3"` | const | `'vue-use-idb-keyval-3'` | ✗ |
+| `KEY4` | `"vue-use-idb-keyval-4"` | const | `'vue-use-idb-keyval-4'` | ✗ |
 
 
 ---
@@ -139,26 +162,5 @@
 - **Parameters**:
   - `key: string`
 - **Return Type**: `void`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

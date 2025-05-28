@@ -2,19 +2,29 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 6 |
+| 🧱 Classes | 2 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 4 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Classes](#classes)
-
-## 📊 Analysis Summary
-
-- **Functions**: 6
-- **Classes**: 2
-- **Imports**: 7
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useWakeLock/index.test.ts`**
@@ -30,6 +40,18 @@
 | `vi` | `vitest` |
 | `nextTick` | `vue` |
 | `useWakeLock` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `sentinel` | `MockWakeLockSentinel` | const | `new MockWakeLockSentinel()` | ✗ |
+| `mockDocument` | `MockDocument` | let/var | `new MockDocument()` | ✗ |
+| `mockDocument` | `MockDocument` | let/var | `new MockDocument()` | ✗ |
+| `mockDocument` | `MockDocument` | let/var | `new MockDocument()` | ✗ |
 
 
 ---
@@ -154,20 +176,6 @@ class MockDocument extends EventTarget {
 }
 ```
 </details>
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

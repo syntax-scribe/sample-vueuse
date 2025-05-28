@@ -2,19 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 14 |
+| 📊 Variables & Constants | 4 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 1 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 14
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useStorageAsync/index.ts`**
@@ -37,6 +48,27 @@
 | `useEventListener` | `../useEventListener` |
 | `StorageSerializers` | `../useStorage` |
 | `guessSerializerType` | `../useStorage/guess` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `data` | `RemovableRef<T>` | const | `(shallow ? shallowRef : deepRef)(toValue(initialValue)) as RemovableRef<T>` | ✗ |
+| `serializer` | `SerializerAsync<T>` | const | `options.serializer ?? StorageSerializers[type]` | ✗ |
+| `rawValue` | `any` | let/var | `event ? event.newValue : await storage.getItem(key)` | ✗ |
+| `value` | `Awaitable<T>` | let/var | `await serializer.read(rawValue)` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| async-function | `read` | storage.getItem(key), storage.setItem(key, await serializer.write(rawInit)), serializer.write(rawInit), serializer.read(rawValue), serializer.read(rawValue) | *none* |
 
 
 ---
@@ -107,13 +139,6 @@ async function read(event?: StorageEvent) {
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `UseStorageAsyncOptions<T>`
@@ -135,13 +160,6 @@ export interface UseStorageAsyncOptions<T> extends Omit<UseStorageOptions<T>, 's
 | Name | Type | Optional | Description |
 |------|------|----------|-------------|
 | `serializer` | `SerializerAsync<T>` | ✓ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

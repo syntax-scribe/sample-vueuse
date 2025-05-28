@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 13 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 13 |
+| 📊 Variables & Constants | 6 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 10
-- **Classes**: 0
-- **Imports**: 13
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/integrations/useSortable/index.ts`**
@@ -41,6 +51,24 @@
 
 ---
 
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `sortable` | `Sortable | undefined` | let/var | `*not shown*` | ✗ |
+| `defaultOptions` | `Options` | const | `{
+    onUpdate: (e) => {
+      moveArrayElement(list, e.oldIndex!, e.newIndex!, e)
+    },
+  }` | ✗ |
+| `target` | `any` | const | `(typeof el === 'string' ? document?.querySelector(el) : unrefElement(el))` | ✗ |
+| `refElement` | `Element` | const | `parentElement.children[index]` | ✗ |
+| `array` | `any` | const | `_valueIsRef ? [...toValue(list)] : toValue(list)` | ✗ |
+| `element` | `any` | const | `array.splice(from, 1)[0]` | ✗ |
+
+
+---
+
 ## Functions
 
 ### `useSortable(selector: string, list: MaybeRefOrGetter<T[]>, options: UseSortableOptions): UseSortableReturn`
@@ -58,6 +86,54 @@ export function useSortable<T>(selector: string, list: MaybeRefOrGetter<T[]>,
   - `list: MaybeRefOrGetter<T[]>`
   - `options: UseSortableOptions`
 - **Return Type**: `UseSortableReturn`
+### `onUpdate(e: any): void`
+
+<details><summary>Code</summary>
+
+```ts
+(e) => {
+      moveArrayElement(list, e.oldIndex!, e.newIndex!, e)
+    }
+```
+</details>
+
+- **Parameters**:
+  - `e: any`
+- **Return Type**: `void`
+- **Calls**:
+  - `moveArrayElement`
+### `onUpdate(e: any): void`
+
+<details><summary>Code</summary>
+
+```ts
+(e) => {
+      moveArrayElement(list, e.oldIndex!, e.newIndex!, e)
+    }
+```
+</details>
+
+- **Parameters**:
+  - `e: any`
+- **Return Type**: `void`
+- **Calls**:
+  - `moveArrayElement`
+### `onUpdate(e: any): void`
+
+<details><summary>Code</summary>
+
+```ts
+(e) => {
+      moveArrayElement(list, e.oldIndex!, e.newIndex!, e)
+    }
+```
+</details>
+
+- **Parameters**:
+  - `e: any`
+- **Return Type**: `void`
+- **Calls**:
+  - `moveArrayElement`
 ### `onUpdate(e: any): void`
 
 <details><summary>Code</summary>
@@ -270,13 +346,6 @@ export function moveArrayElement<T>(
 // When the list is a ref, make a shallow copy of it to avoid repeatedly triggering side effects when moving elements (x2)
 // When list is ref, assign array to list.value
 ```
-
-
----
-
-## Classes
-
-> No classes found in this file.
 
 
 ---

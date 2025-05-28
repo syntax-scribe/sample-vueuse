@@ -2,20 +2,32 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 5 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 4 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 5
-- **Classes**: 0
-- **Imports**: 7
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useDisplayMedia/index.ts`**
@@ -31,6 +43,38 @@
 | `defaultNavigator` | `../_configurable` |
 | `useEventListener` | `../useEventListener` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `video` | `boolean | MediaTrackConstraints` | const | `options.video` | ✗ |
+| `audio` | `boolean | MediaTrackConstraints` | const | `options.audio` | ✗ |
+| `constraint` | `MediaStreamConstraints` | const | `{ audio, video }` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| await-expression | `useDisplayMedia` | navigator!.mediaDevices.getDisplayMedia(constraint), _start() | *none* |
+| async-function | `_start` | navigator!.mediaDevices.getDisplayMedia(constraint) | *none* |
+| async-function | `_stop` | *none* | *none* |
+| async-function | `start` | _start() | *none* |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -191,13 +235,6 @@ async function start() {
 - **Return Type**: `Promise<any>`
 - **Calls**:
   - `_start`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

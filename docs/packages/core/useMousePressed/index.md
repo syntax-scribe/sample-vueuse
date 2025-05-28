@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useMousePressed/index.ts`**
@@ -32,6 +43,24 @@
 | `defaultWindow` | `../_configurable` |
 | `unrefElement` | `../unrefElement` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `listenerOptions` | `{ passive: boolean; capture: boolean; }` | const | `{ passive: true, capture }` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -124,7 +153,7 @@ export function useMousePressed(options: MousePressedOptions = {}) {
   - `unrefElement (from ../unrefElement)`
   - `useEventListener (from ../useEventListener)`
   - `onPressed`
-### `onPressed(srcType: UseMouseSourceType): (event: MouseEvent | DragEvent | TouchEvent) => void`
+### `onPressed(srcType: UseMouseSourceType): (event: MouseEvent | TouchEvent | DragEvent) => void`
 
 <details><summary>Code</summary>
 
@@ -139,7 +168,7 @@ export function useMousePressed(options: MousePressedOptions = {}) {
 
 - **Parameters**:
   - `srcType: UseMouseSourceType`
-- **Return Type**: `(event: MouseEvent | DragEvent | TouchEvent) => void`
+- **Return Type**: `(event: MouseEvent | TouchEvent | DragEvent) => void`
 ### `onReleased(event: MouseEvent | TouchEvent | DragEvent): void`
 
 <details><summary>Code</summary>
@@ -158,13 +187,6 @@ export function useMousePressed(options: MousePressedOptions = {}) {
 - **Return Type**: `void`
 - **Calls**:
   - `options.onReleased`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

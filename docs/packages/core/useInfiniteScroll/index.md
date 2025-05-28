@@ -2,20 +2,32 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 14 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 2 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 4 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 14
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useInfiniteScroll/index.ts`**
@@ -38,6 +50,45 @@
 | `resolveElement` | `../_resolve-element` |
 | `useElementVisibility` | `../useElementVisibility` |
 | `useScroll` | `../useScroll` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `isNarrower` | `boolean` | const | `(direction === 'bottom' || direction === 'top')
+      ? scrollHeight <= clientHeight
+      : scrollWidth <= clientWidth` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `useInfiniteScroll` | *none* | Promise.all([
+          onLoadMore(state),
+          new Promise(resolve => setTimeout(resolve, interval)),
+        ]).finally, Promise.all, new Promise(...) |
+| promise-chain | `checkAndLoad` | *none* | Promise.all([
+          onLoadMore(state),
+          new Promise(resolve => setTimeout(resolve, interval)),
+        ]).finally, Promise.all, new Promise(...) |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `reactive` | reactive | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -205,13 +256,6 @@ function checkAndLoad() {
           .finally`
   - `nextTick (from vue)`
   - `checkAndLoad`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

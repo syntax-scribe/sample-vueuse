@@ -2,17 +2,27 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 0 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 9 |
+| 📊 Variables & Constants | 13 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
-
-## 📊 Analysis Summary
-
-- **Functions**: 0
-- **Classes**: 0
-- **Imports**: 9
-- **Interfaces**: 0
-- **Type Aliases**: 0
+- [Variables & Constants](#variables-constants)
 
 ## 🛠️ File Location:
 📂 **`packages/integrations/useAsyncValidator/index.test.ts`**
@@ -34,30 +44,131 @@
 
 ---
 
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `form` | `{
+    name: string
+    age: number
+  }` | let/var | `*not shown*` | ✗ |
+| `rules` | `Rules` | const | `{
+      name: {
+        type: 'string',
+      },
+      age: {
+        type: 'number',
+      },
+    }` | ✗ |
+| `rules` | `Rules` | let/var | `{
+      name: {
+        type: 'string',
+      },
+      age: {
+        type: 'number',
+      },
+    }` | ✗ |
+| `rules` | `Rules` | let/var | `{
+      name: {
+        type: 'string',
+      },
+      age: {
+        type: 'number',
+      },
+    }` | ✗ |
+| `rules` | `Rules` | let/var | `{
+      name: {
+        type: 'string',
+      },
+      age: {
+        type: 'number',
+      },
+    }` | ✗ |
+| `rules` | `Rules` | let/var | `{
+      name: {
+        type: 'string',
+      },
+      age: {
+        type: 'number',
+      },
+    }` | ✗ |
+| `rules` | `Rules` | let/var | `{
+      name: {
+        type: 'string',
+        min: 5,
+        max: 20,
+        message: 'name length must be 5-20',
+      },
+      age: {
+        type: 'number',
+      },
+    }` | ✗ |
+| `rules` | `Rules` | let/var | `{
+      name: {
+        type: 'string',
+        min: 5,
+        max: 20,
+        message: 'name length must be 5-20',
+      },
+      age: {
+        type: 'number',
+      },
+    }` | ✗ |
+| `rules` | `Ref<Rules>` | let/var | `deepRef({
+      name: {
+        type: 'string',
+        min: 5,
+        max: 20,
+        message: 'name length must be 5-20',
+      },
+      age: {
+        type: 'number',
+      },
+    }) as Ref<Rules>` | ✗ |
+| `form` | `{
+    name: string
+    age: number
+  }` | let/var | `*not shown*` | ✗ |
+| `rules` | `Rules` | let/var | `{
+      name: {
+        type: 'string',
+        min: 5,
+        max: 20,
+        message: 'name length must be 5-20',
+      },
+      age: {
+        type: 'number',
+      },
+    }` | ✗ |
+| `rules` | `Rules` | let/var | `{
+      name: {
+        type: 'string',
+        min: 5,
+        max: 20,
+        message: 'name length must be 5-20',
+      },
+      age: {
+        type: 'number',
+      },
+    }` | ✗ |
+| `rules` | `Ref<Rules>` | let/var | `deepRef({
+      name: {
+        type: 'string',
+        min: 5,
+        max: 20,
+        message: 'name length must be 5-20',
+      },
+      age: {
+        type: 'number',
+      },
+    }) as Ref<Rules>` | ✗ |
+
+
+---
+
 ## 🔧 Functions
 
 > No functions found in this file.
-
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

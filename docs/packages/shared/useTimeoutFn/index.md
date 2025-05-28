@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 4 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 4
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 1
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/shared/useTimeoutFn/index.ts`**
@@ -32,6 +42,15 @@
 | `toValue` | `vue` |
 | `tryOnScopeDispose` | `../tryOnScopeDispose` |
 | `isClient` | `../utils` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `timer` | `ReturnType<typeof setTimeout> | null` | let/var | `null` | ✗ |
 
 
 ---
@@ -185,13 +204,6 @@ function start(...args: Parameters<CallbackFn> | []) {
   - `clear`
   - `setTimeout`
   - `toValue (from vue)`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

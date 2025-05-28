@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 10 |
+| 📊 Variables & Constants | 2 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 3 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 10
-- **Interfaces**: 2
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useDeviceMotion/index.ts`**
@@ -34,6 +45,27 @@
 | `defaultWindow` | `../_configurable` |
 | `useEventListener` | `../useEventListener` |
 | `useSupported` | `../useSupported` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `requestPermission` | `() => Promise<"denied" | "granted">` | let/var | `(DeviceMotionEvent as unknown as DeviceMotionEventiOS).requestPermission` | ✗ |
+| `response` | `"denied" | "granted"` | let/var | `await requestPermission()` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `useDeviceMotion` | *none* | ensurePermissions().then |
+| await-expression | `useDeviceMotion` | requestPermission() | *none* |
+| async-function | `ensurePermissions` | requestPermission() | *none* |
 
 
 ---
@@ -233,13 +265,6 @@ async () => {
   - `requestPermission`
   - `init`
   - `console.error`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

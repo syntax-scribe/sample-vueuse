@@ -2,18 +2,28 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 9 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 14 |
+| 📊 Variables & Constants | 20 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 9
-- **Classes**: 0
-- **Imports**: 14
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useFetch/index.test.ts`**
@@ -36,6 +46,34 @@
 | `isBelowNode18` | `../../.test` |
 | `createFetch` | `./index` |
 | `useFetch` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `jsonMessage` | `{ hello: string; }` | const | `{ hello: 'world' }` | ✗ |
+| `jsonUrl` | `string` | const | ``https://example.com?json=${encodeURI(JSON.stringify(jsonMessage))}`` | ✗ |
+| `myHeaders` | `Headers` | let/var | `new Headers()` | ✗ |
+| `count` | `number` | let/var | `0` | ✗ |
+| `options` | `any` | let/var | `*not shown*` | ✗ |
+| `options` | `any` | let/var | `*not shown*` | ✗ |
+| `payload` | `number[]` | let/var | `[1, 2]` | ✗ |
+| `options` | `{ immediate: boolean; }` | let/var | `{ immediate: false }` | ✗ |
+| `error1` | `any` | let/var | `await useFetch('https://example.com?status=400', options).execute(true).catch(err => err)` | ✗ |
+| `error2` | `any` | let/var | `await useFetch('https://example.com?status=600', options).execute(true).catch(err => err)` | ✗ |
+| `baseUrl` | `"https://example.com"` | let/var | `'https://example.com'` | ✗ |
+| `targetUrl` | `"https://example.com/test"` | let/var | ``${baseUrl}/test`` | ✗ |
+| `fetchHeaders` | `{ Authorization: string; }` | let/var | `{ Authorization: 'test' }` | ✗ |
+| `requestHeaders` | `{ 'Accept-Language': string; }` | let/var | `{ 'Accept-Language': 'en-US' }` | ✗ |
+| `allHeaders` | `{ 'Accept-Language': string; Authorization: string; }` | let/var | `{ ...fetchHeaders, ...requestHeaders }` | ✗ |
+| `requestOptions` | `{ headers: { 'Accept-Language': string; }; }` | let/var | `{ headers: requestHeaders }` | ✗ |
+| `count` | `number` | let/var | `0` | ✗ |
+| `options` | `Partial<AfterFetchContext>` | let/var | `{}` | ✗ |
+| `count` | `number` | let/var | `0` | ✗ |
+| `options` | `Partial<OnFetchErrorContext>` | let/var | `{}` | ✗ |
 
 
 ---
@@ -188,26 +226,5 @@ function fetchSpyHeaders(idx = 0) {
 - **Return Type**: `OnFetchErrorContext<any, any>`
 - **Calls**:
   - `ctx.execute`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

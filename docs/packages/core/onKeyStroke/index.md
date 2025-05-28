@@ -2,20 +2,30 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 6 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 4 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 3 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 6
-- **Classes**: 0
-- **Imports**: 4
-- **Interfaces**: 1
-- **Type Aliases**: 3
 
 ## 🛠️ File Location:
 📂 **`packages/core/onKeyStroke/index.ts`**
@@ -28,6 +38,17 @@
 | `toValue` | `vue` |
 | `defaultWindow` | `../_configurable` |
 | `useEventListener` | `../useEventListener` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `key` | `KeyFilter` | let/var | `*not shown*` | ✗ |
+| `handler` | `(event: KeyboardEvent) => void` | let/var | `*not shown*` | ✗ |
+| `options` | `OnKeyStrokeOptions` | let/var | `{}` | ✗ |
 
 
 ---
@@ -195,13 +216,6 @@ export function onKeyUp(key: KeyFilter, handler: (event: KeyboardEvent) => void,
 - **Return Type**: `() => void`
 - **Calls**:
   - `onKeyStroke`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

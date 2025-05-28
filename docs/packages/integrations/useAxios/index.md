@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 15 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 11 |
+| 📊 Variables & Constants | 15 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 2 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 5 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 11
-- **Classes**: 0
-- **Imports**: 11
-- **Interfaces**: 5
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/integrations/useAxios/index.ts`**
@@ -35,6 +46,79 @@
 | `axios` | `axios` |
 | `deepRef` | `vue` |
 | `shallowRef` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `url` | `string | undefined` | const | `typeof args[0] === 'string' ? args[0] : undefined` | ✗ |
+| `argsPlaceholder` | `0 | 1` | const | `typeof url === 'string' ? 1 : 0` | ✗ |
+| `defaultOptions` | `UseAxiosOptions<T>` | const | `{
+    immediate: !!argsPlaceholder,
+    shallow: true,
+    abortPrevious: true,
+  }` | ✗ |
+| `defaultConfig` | `AxiosRequestConfig<D>` | let/var | `{}` | ✗ |
+| `instance` | `AxiosInstance` | let/var | `axios` | ✗ |
+| `options` | `UseAxiosOptions<T>` | let/var | `defaultOptions` | ✗ |
+| `initialData` | `T` | const | `(options as UseAxiosOptionsWithInitialData<T>).initialData` | ✗ |
+| `data` | `Ref<T>` | const | `(shallow ? shallowRef : deepRef)<T>(initialData!) as Ref<T>` | ✗ |
+| `abortController` | `AbortController` | let/var | `new AbortController()` | ✗ |
+| `promise` | `Promise<OverallUseAxiosReturn<T, R, D>>` | const | `{
+    then: (...args) => waitUntilFinished().then(...args),
+    catch: (...args) => waitUntilFinished().catch(...args),
+  } as Promise<OverallUseAxiosReturn<T, R, D>>` | ✗ |
+| `executeCounter` | `number` | let/var | `0` | ✗ |
+| `_url` | `any` | const | `typeof executeUrl === 'string'
+      ? executeUrl
+      : url ?? config.url` | ✗ |
+| `currentExecuteCounter` | `number` | const | `executeCounter` | ✗ |
+| `result` | `any` | const | `r.data` | ✗ |
+| `result` | `OverallUseAxiosReturn<T, R, D>` | const | `{
+    response,
+    data,
+    error,
+    isFinished,
+    isLoading,
+    cancel: abort,
+    isAborted,
+    isCanceled: isAborted,
+    abort,
+    execute,
+  } as OverallUseAxiosReturn<T, R, D>` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `waitUntilFinished` | *none* | new Promise(...), until(isFinished).toBe(true).then |
+| promise-chain | `execute` | *none* | instance(_url, { ...defaultConfig, ...typeof executeUrl === 'object' ? executeUrl : config, signal: abortController.signal })
+      .then((r: any) => {
+        if (isAborted.value)
+          return
+        response.value = r
+        const result = r.data
+        data.value = result
+        onSuccess(result)
+      })
+      .catch((e: any) => {
+        error.value = e
+        onError(e)
+      }).finally, instance(_url, { ...defaultConfig, ...typeof executeUrl === 'object' ? executeUrl : config, signal: abortController.signal })
+      .then((r: any) => {
+        if (isAborted.value)
+          return
+        response.value = r
+        const result = r.data
+        data.value = result
+        onSuccess(result)
+      }).catch, instance(_url, { ...defaultConfig, ...typeof executeUrl === 'object' ? executeUrl : config, signal: abortController.signal }).then |
 
 
 ---
@@ -190,6 +274,62 @@ export function useAxios<T = any, R = AxiosResponse<T>, D = any, O extends UseAx
 - **Return Type**: `Promise<OverallUseAxiosReturn<T, R, D> | TResult>`
 - **Calls**:
   - `waitUntilFinished().catch`
+### `then(args: [onfulfilled?: (value: OverallUseAxiosReturn<T, R, D>) => TResult1 | PromiseLike<TResult1>, onrejected?: (reason: any) => TResult2 | PromiseLike<...>]): Promise<TResult1 | TResult2>`
+
+<details><summary>Code</summary>
+
+```ts
+(...args) => waitUntilFinished().then(...args)
+```
+</details>
+
+- **Parameters**:
+  - `args: [onfulfilled?: (value: OverallUseAxiosReturn<T, R, D>) => TResult1 | PromiseLike<TResult1>, onrejected?: (reason: any) => TResult2 | PromiseLike<...>]`
+- **Return Type**: `Promise<TResult1 | TResult2>`
+- **Calls**:
+  - `waitUntilFinished().then`
+### `catch(args: [onrejected?: (reason: any) => TResult | PromiseLike<TResult>]): Promise<OverallUseAxiosReturn<T, R, D> | TResult>`
+
+<details><summary>Code</summary>
+
+```ts
+(...args) => waitUntilFinished().catch(...args)
+```
+</details>
+
+- **Parameters**:
+  - `args: [onrejected?: (reason: any) => TResult | PromiseLike<TResult>]`
+- **Return Type**: `Promise<OverallUseAxiosReturn<T, R, D> | TResult>`
+- **Calls**:
+  - `waitUntilFinished().catch`
+### `then(args: [onfulfilled?: (value: OverallUseAxiosReturn<T, R, D>) => TResult1 | PromiseLike<TResult1>, onrejected?: (reason: any) => TResult2 | PromiseLike<...>]): Promise<TResult1 | TResult2>`
+
+<details><summary>Code</summary>
+
+```ts
+(...args) => waitUntilFinished().then(...args)
+```
+</details>
+
+- **Parameters**:
+  - `args: [onfulfilled?: (value: OverallUseAxiosReturn<T, R, D>) => TResult1 | PromiseLike<TResult1>, onrejected?: (reason: any) => TResult2 | PromiseLike<...>]`
+- **Return Type**: `Promise<TResult1 | TResult2>`
+- **Calls**:
+  - `waitUntilFinished().then`
+### `catch(args: [onrejected?: (reason: any) => TResult | PromiseLike<TResult>]): Promise<OverallUseAxiosReturn<T, R, D> | TResult>`
+
+<details><summary>Code</summary>
+
+```ts
+(...args) => waitUntilFinished().catch(...args)
+```
+</details>
+
+- **Parameters**:
+  - `args: [onrejected?: (reason: any) => TResult | PromiseLike<TResult>]`
+- **Return Type**: `Promise<OverallUseAxiosReturn<T, R, D> | TResult>`
+- **Calls**:
+  - `waitUntilFinished().catch`
 ### `execute(executeUrl: string | AxiosRequestConfig<D> | undefined, config: AxiosRequestConfig<D>): Promise<OverallUseAxiosReturn<T, R, D>>`
 
 <details><summary>Code</summary>
@@ -263,13 +403,6 @@ export function useAxios<T = any, R = AxiosResponse<T>, D = any, O extends UseAx
       })
       .finally`
   - `options.onFinish`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

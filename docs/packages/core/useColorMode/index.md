@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 15 |
+| 📊 Variables & Constants | 9 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 4 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 3 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 15
-- **Interfaces**: 1
-- **Type Aliases**: 3
 
 ## 🛠️ File Location:
 📂 **`packages/core/useColorMode/index.ts`**
@@ -39,6 +50,46 @@
 | `unrefElement` | `../unrefElement` |
 | `usePreferredDark` | `../usePreferredDark` |
 | `useStorage` | `../useStorage` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `CSS_DISABLE_TRANS` | `"*,*::before,*::after{-webkit-transition:none!important;-moz-transition:none!important;-o-transition:none!important;-ms-transition:none!important;transition:none!important}"` | const | `'*,*::before,*::after{-webkit-transition:none!important;-moz-transition:none!important;-o-transition:none!important;-ms-transition:none!important;transition:none!important}'` | ✗ |
+| `modes` | `Record<BasicColorSchema | T, string>` | const | `{
+    auto: '',
+    light: 'light',
+    dark: 'dark',
+    ...options.modes || {},
+  } as Record<BasicColorSchema | T, string>` | ✗ |
+| `store` | `any` | const | `storageRef || (
+    storageKey == null
+      ? toRef(initialValue) as Ref<T | BasicColorSchema>
+      : useStorage<T | BasicColorSchema>(storageKey, initialValue, storage, { window, listenToStorageChanges })
+  )` | ✗ |
+| `el` | `any` | const | `typeof selector === 'string'
+        ? window?.document.querySelector(selector)
+        : unrefElement(selector)` | ✗ |
+| `classesToAdd` | `Set<string>` | const | `new Set<string>()` | ✗ |
+| `classesToRemove` | `Set<string>` | const | `new Set<string>()` | ✗ |
+| `attributeToChange` | `{ key: string, value: string } | null` | let/var | `null` | ✗ |
+| `style` | `HTMLStyleElement | undefined` | let/var | `*not shown*` | ✗ |
+| `_` | `string` | const | `window!.getComputedStyle(style!).opacity` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `watch` | watch | *none* | *none* |
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -263,13 +314,6 @@ function onChanged(mode: T | BasicColorMode) {
 - **Calls**:
   - `options.onChanged`
   - `defaultOnChanged`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

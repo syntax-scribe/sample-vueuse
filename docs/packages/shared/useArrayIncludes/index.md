@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 2 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 6 |
+| 📊 Variables & Constants | 5 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 1 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 2 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 2
-- **Classes**: 0
-- **Imports**: 6
-- **Interfaces**: 1
-- **Type Aliases**: 2
 
 ## 🛠️ File Location:
 📂 **`packages/shared/useArrayIncludes/index.ts`**
@@ -30,6 +41,28 @@
 | `toValue` | `vue` |
 | `containsProp` | `../utils` |
 | `isObject` | `../utils` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `list` | `MaybeRefOrGetter<MaybeRefOrGetter<T>[]>` | const | `args[0]` | ✗ |
+| `value` | `MaybeRefOrGetter<V>` | const | `args[1]` | ✗ |
+| `comparator` | `UseArrayIncludesComparatorFn<T, V>` | let/var | `args[2]` | ✗ |
+| `formIndex` | `number` | let/var | `0` | ✗ |
+| `key` | `keyof T` | const | `comparator as keyof T` | ✗ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
 
 
 ---
@@ -82,13 +115,6 @@ export function useArrayIncludes<T, V = any>(
   - `value: MaybeRefOrGetter<V>`
   - `comparator: UseArrayIncludesComparatorFn<T, V>`
 - **Return Type**: `UseArrayIncludesReturn`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

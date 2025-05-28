@@ -2,19 +2,29 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 0 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 3 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 4 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 0
-- **Type Aliases**: 4
 
 ## 🛠️ File Location:
 📂 **`packages/integrations/useChangeCase/index.ts`**
@@ -35,6 +45,17 @@
 
 ---
 
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+| `computed` | computed | *none* | *none* |
+
+
+---
+
 ## Functions
 
 ### `useChangeCase(input: MaybeRef<string>, type: MaybeRefOrGetter<ChangeCaseType>, options: MaybeRefOrGetter<Options> | undefined): WritableComputedRef<string>`
@@ -51,20 +72,6 @@ export function useChangeCase(input: MaybeRef<string>, type: MaybeRefOrGetter<Ch
   - `type: MaybeRefOrGetter<ChangeCaseType>`
   - `options: MaybeRefOrGetter<Options> | undefined`
 - **Return Type**: `WritableComputedRef<string>`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

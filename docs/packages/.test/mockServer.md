@@ -2,18 +2,29 @@
 
 # 📄 `mockServer.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 11 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 1 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 7
-- **Interfaces**: 0
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/.test/mockServer.ts`**
@@ -29,6 +40,34 @@
 | `afterAll` | `vitest` |
 | `afterEach` | `vitest` |
 | `beforeAll` | `vitest` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `defaultJsonMessage` | `{ hello: string; }` | const | `{ hello: 'world' }` | ✗ |
+| `defaultTextMessage` | `"Hello World"` | const | `'Hello World'` | ✗ |
+| `baseUrl` | `"https://example.com"` | const | `'https://example.com'` | ✗ |
+| `url` | `URL` | let/var | `new URL(req.url)` | ✗ |
+| `qs` | `URLSearchParams` | let/var | `url.searchParams` | ✗ |
+| `status` | `number` | let/var | `200` | ✗ |
+| `url` | `URL` | let/var | `new URL(request.url)` | ✗ |
+| `qs` | `URLSearchParams` | let/var | `url.searchParams` | ✗ |
+| `status` | `number` | let/var | `200` | ✗ |
+| `text` | `any` | let/var | `await request.text()` | ✗ |
+| `json` | `any` | let/var | `text.startsWith('{') ? JSON.parse(text) : null` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| async-function | `commonTransformers` | delay(Number(qs.get('delay'))) | *none* |
 
 
 ---
@@ -73,26 +112,5 @@ async function commonTransformers(req: Request) {
   - `Number`
   - `HttpResponse.json`
   - `JSON.parse`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
-
 
 ---

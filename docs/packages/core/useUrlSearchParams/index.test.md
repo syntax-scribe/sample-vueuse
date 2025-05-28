@@ -2,19 +2,29 @@
 
 # 📄 `index.test.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 7 |
+| 📊 Variables & Constants | 3 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 1 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 7
-- **Interfaces**: 1
-- **Type Aliases**: 0
 
 ## 🛠️ File Location:
 📂 **`packages/core/useUrlSearchParams/index.test.ts`**
@@ -30,6 +40,17 @@
 | `vi` | `vitest` |
 | `nextTick` | `vue` |
 | `useUrlSearchParams` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `baseURL` | `"https://vueuse.org"` | const | `'https://vueuse.org'` | ✗ |
+| `initialValue` | `{ foo: string; }` | let/var | `{ foo: 'bar' }` | ✗ |
+| `newHash` | `"#/change/?foo=bar"` | const | `'#/change/?foo=bar'` | ✗ |
 
 
 ---
@@ -64,13 +85,6 @@
 
 ---
 
-## Classes
-
-> No classes found in this file.
-
-
----
-
 ## Interfaces
 
 ### `CustomUrlParams`
@@ -89,13 +103,6 @@ interface CustomUrlParams extends Record<string, any> {
 | Name | Type | Optional | Description |
 |------|------|----------|-------------|
 | `customFoo` | `number | undefined` | ✗ |  |
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---

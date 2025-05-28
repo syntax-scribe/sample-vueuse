@@ -2,19 +2,30 @@
 
 # 📄 `directive.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 0 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 2 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 3 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Vue Composition API](#vue-composition-api)
 - [Functions](#functions)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 0
-- **Type Aliases**: 3
 
 ## 🛠️ File Location:
 📂 **`packages/core/useMouseInElement/directive.ts`**
@@ -31,6 +42,35 @@
 | `reactive` | `vue` |
 | `watch` | `vue` |
 | `useMouseInElement` | `./index` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `vMouseInElement` | `ObjectDirective<
+  HTMLElement,
+  BindingValueFunction | BindingValueArray
+>` | const | `{
+  mounted(el, binding) {
+    const [handler, options] = (typeof binding.value === 'function' ? [binding.value, {}] : binding.value) as BindingValueArray
+
+    const state = reactiveOmit(reactive(useMouseInElement(el, options)), 'stop')
+    watch(state, val => handler(val))
+  },
+}` | ✓ |
+
+
+---
+
+## Vue Composition API
+
+| Name | Type | Reactive Variables | Composables |
+|------|------|-------------------|-------------|
+| `reactive` | reactive | *none* | *none* |
+| `watch` | watch | *none* | *none* |
 
 
 ---
@@ -61,20 +101,6 @@ mounted(el, binding) {
   - `useMouseInElement (from ./index)`
   - `watch (from vue)`
   - `handler`
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
 
 ---
 

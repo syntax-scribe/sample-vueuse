@@ -2,20 +2,31 @@
 
 # 📄 `index.ts`
 
+## 📊 Analysis Summary
+
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 3 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 8 |
+| 📊 Variables & Constants | 4 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 4 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 2 |
+| 📑 Type Aliases | 1 |
+| 🎯 Enums | 0 |
+
 ## 📚 Table of Contents
 
 - [Imports](#imports)
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
 - [Functions](#functions)
 - [Interfaces](#interfaces)
 - [Type Aliases](#type-aliases)
-
-## 📊 Analysis Summary
-
-- **Functions**: 3
-- **Classes**: 0
-- **Imports**: 8
-- **Interfaces**: 2
-- **Type Aliases**: 1
 
 ## 🛠️ File Location:
 📂 **`packages/core/useAsyncState/index.ts`**
@@ -32,6 +43,38 @@
 | `until` | `@vueuse/shared` |
 | `deepRef` | `vue` |
 | `shallowRef` | `vue` |
+
+
+---
+
+## Variables & Constants
+
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `state` | `any` | const | `shallow ? shallowRef(initialState) : deepRef(initialState)` | ✗ |
+| `_promise` | `Promise<Data>` | let/var | `typeof promise === 'function'
+      ? promise(...args as Params)
+      : promise` | ✗ |
+| `data` | `Awaited<Data>` | let/var | `await _promise` | ✗ |
+| `shell` | `UseAsyncStateReturnBase<Data, Params, Shallow>` | const | `{
+    state: state as Shallow extends true ? ShallowRef<Data> : Ref<UnwrapRef<Data>>,
+    isReady,
+    isLoading,
+    error,
+    execute,
+  }` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `useAsyncState` | *none* | new Promise(...), until(isLoading).toBe(false).then(() => resolve(shell)).catch, until(isLoading).toBe(false).then, waitUntilIsLoaded().then |
+| await-expression | `useAsyncState` | promiseTimeout(delay), _promise | *none* |
+| async-function | `execute` | promiseTimeout(delay), _promise | *none* |
+| promise-chain | `waitUntilIsLoaded` | *none* | new Promise(...), until(isLoading).toBe(false).then(() => resolve(shell)).catch, until(isLoading).toBe(false).then |
 
 
 ---
@@ -218,13 +261,6 @@ function waitUntilIsLoaded() {
 - **Return Type**: `Promise<UseAsyncStateReturnBase<Data, Params, Shallow>>`
 - **Calls**:
   - `until(isLoading).toBe(false).then(() => resolve(shell)).catch`
-
----
-
-## Classes
-
-> No classes found in this file.
-
 
 ---
 

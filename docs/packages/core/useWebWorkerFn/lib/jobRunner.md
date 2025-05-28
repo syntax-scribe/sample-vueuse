@@ -2,24 +2,49 @@
 
 # 📄 `jobRunner.ts`
 
-## 📚 Table of Contents
-
-- [Functions](#functions)
-
 ## 📊 Analysis Summary
 
-- **Functions**: 1
-- **Classes**: 0
-- **Imports**: 0
-- **Interfaces**: 0
-- **Type Aliases**: 0
+| Metric | Count |
+|--------|-------|
+| 🔧 Functions | 1 |
+| 🧱 Classes | 0 |
+| 📦 Imports | 0 |
+| 📊 Variables & Constants | 1 |
+| ✨ Decorators | 0 |
+| 🔄 Re-exports | 0 |
+| ⚡ Async/Await Patterns | 1 |
+| 💠 JSX Elements | 0 |
+| 🟢 Vue Composition API | 0 |
+| 📐 Interfaces | 0 |
+| 📑 Type Aliases | 0 |
+| 🎯 Enums | 0 |
+
+## 📚 Table of Contents
+
+- [Variables & Constants](#variables-constants)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Functions](#functions)
 
 ## 🛠️ File Location:
 📂 **`packages/core/useWebWorkerFn/lib/jobRunner.ts`**
 
-## 📦 Imports
+## Variables & Constants
 
-> No imports found in this file.
+| Name | Type | Kind | Value | Exported |
+|------|------|------|-------|----------|
+| `userFuncArgs` | `any` | const | `e.data[0]` | ✗ |
+
+
+---
+
+## Async/Await Patterns
+
+| Type | Function | Await Expressions | Promise Chains |
+|------|----------|-------------------|----------------|
+| promise-chain | `jobRunner` | *none* | Promise.resolve(userFunc.apply(undefined, userFuncArgs))
+      .then((result) => {
+        postMessage(['SUCCESS', result])
+      }).catch, Promise.resolve(userFunc.apply(undefined, userFuncArgs)).then, Promise.resolve |
 
 
 ---
@@ -79,27 +104,6 @@ function jobRunner(userFunc: Function) {
 ```
 // eslint-disable-next-line prefer-spread
 ```
-
-
----
-
-## Classes
-
-> No classes found in this file.
-
-
----
-
-## Interfaces
-
-> No interfaces found in this file.
-
-
----
-
-## Type Aliases
-
-> No type aliases found in this file.
 
 
 ---
