@@ -6,18 +6,9 @@
 
 | Metric | Count |
 |--------|-------|
-| 🔧 Functions | 0 |
-| 🧱 Classes | 0 |
 | 📦 Imports | 13 |
 | 📊 Variables & Constants | 15 |
-| ✨ Decorators | 0 |
-| 🔄 Re-exports | 0 |
-| ⚡ Async/Await Patterns | 0 |
-| 💠 JSX Elements | 0 |
-| 🟢 Vue Composition API | 0 |
 | 📐 Interfaces | 4 |
-| 📑 Type Aliases | 0 |
-| 🎯 Enums | 0 |
 
 ## 📚 Table of Contents
 
@@ -86,13 +77,6 @@
       userId: 2,
     }` | ✗ |
 | `o` | `UseAxiosOptions<number>` | let/var | `{ ...options, initialData: 1 }` | ✗ |
-
-
----
-
-## 🔧 Functions
-
-> No functions found in this file.
 
 
 ---

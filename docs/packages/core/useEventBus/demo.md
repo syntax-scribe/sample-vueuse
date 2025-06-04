@@ -6,18 +6,8 @@
 
 | Metric | Count |
 |--------|-------|
-| 🔧 Functions | 0 |
-| 🧱 Classes | 0 |
 | 📦 Imports | 2 |
 | 📊 Variables & Constants | 1 |
-| ✨ Decorators | 0 |
-| 🔄 Re-exports | 0 |
-| ⚡ Async/Await Patterns | 0 |
-| 💠 JSX Elements | 0 |
-| 🟢 Vue Composition API | 0 |
-| 📐 Interfaces | 0 |
-| 📑 Type Aliases | 0 |
-| 🎯 Enums | 0 |
 
 ## 📚 Table of Contents
 
@@ -48,13 +38,6 @@
   'China adds two gold medals in Olympic diving and weightlifting',
   'Tokyo Olympic service provokes athletes sleeping in cardboard suitcases and eating canned food, reviewing the Beijing Olympics god-level arrangements',
 ]` | ✗ |
-
-
----
-
-## 🔧 Functions
-
-> No functions found in this file.
 
 
 ---

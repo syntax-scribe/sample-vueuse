@@ -32,8 +32,7 @@ theme:
 plugins:
   - search
   - awesome-nav
-  - glightbox
-
+  
 markdown_extensions:
   - toc:
       permalink: true

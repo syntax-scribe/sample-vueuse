@@ -6,18 +6,9 @@
 
 | Metric | Count |
 |--------|-------|
-| 🔧 Functions | 0 |
-| 🧱 Classes | 0 |
 | 📦 Imports | 8 |
 | 📊 Variables & Constants | 3 |
-| ✨ Decorators | 0 |
-| 🔄 Re-exports | 0 |
-| ⚡ Async/Await Patterns | 0 |
-| 💠 JSX Elements | 0 |
-| 🟢 Vue Composition API | 0 |
 | 📐 Interfaces | 3 |
-| 📑 Type Aliases | 0 |
-| 🎯 Enums | 0 |
 
 ## 📚 Table of Contents
 
@@ -73,13 +64,6 @@
   'router',
 ]` | ✗ |
 | `names` | `any[]` | const | `[i.name, ...i.alias || []]` | ✗ |
-
-
----
-
-## 🔧 Functions
-
-> No functions found in this file.
 
 
 ---

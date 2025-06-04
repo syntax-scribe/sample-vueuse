@@ -7,17 +7,12 @@
 | Metric | Count |
 |--------|-------|
 | 🔧 Functions | 3 |
-| 🧱 Classes | 0 |
 | 📦 Imports | 4 |
 | 📊 Variables & Constants | 3 |
-| ✨ Decorators | 0 |
-| 🔄 Re-exports | 0 |
 | ⚡ Async/Await Patterns | 2 |
-| 💠 JSX Elements | 0 |
 | 🟢 Vue Composition API | 1 |
 | 📐 Interfaces | 3 |
 | 📑 Type Aliases | 2 |
-| 🎯 Enums | 0 |
 
 ## 📚 Table of Contents
 

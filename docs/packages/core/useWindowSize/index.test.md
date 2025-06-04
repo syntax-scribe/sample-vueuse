@@ -6,18 +6,8 @@
 
 | Metric | Count |
 |--------|-------|
-| 🔧 Functions | 0 |
-| 🧱 Classes | 0 |
 | 📦 Imports | 7 |
 | 📊 Variables & Constants | 2 |
-| ✨ Decorators | 0 |
-| 🔄 Re-exports | 0 |
-| ⚡ Async/Await Patterns | 0 |
-| 💠 JSX Elements | 0 |
-| 🟢 Vue Composition API | 0 |
-| 📐 Interfaces | 0 |
-| 📑 Type Aliases | 0 |
-| 🎯 Enums | 0 |
 
 ## 📚 Table of Contents
 
@@ -48,13 +38,6 @@
 |------|------|------|-------|----------|
 | `call` | `any` | let/var | `addEventListenerSpy.mock.calls[0] as any` | ✗ |
 | `call` | `any` | let/var | `matchMediaSpy.mock.calls[0] as any` | ✗ |
-
-
----
-
-## 🔧 Functions
-
-> No functions found in this file.
 
 
 ---

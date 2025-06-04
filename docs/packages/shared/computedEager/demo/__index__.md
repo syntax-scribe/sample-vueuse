@@ -5,7 +5,6 @@
 | Metric | Count |
 |--------|-------|
 | 📁 Total Files | 3 |
-| 🔧 Functions | 0 |
 | 📦 Imports | 7 |
 | 🟢 Vue Composition | 1 |
 | 🔢 Line Count | 19 |

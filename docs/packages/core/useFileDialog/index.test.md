@@ -6,18 +6,9 @@
 
 | Metric | Count |
 |--------|-------|
-| 🔧 Functions | 0 |
 | 🧱 Classes | 1 |
 | 📦 Imports | 6 |
 | 📊 Variables & Constants | 5 |
-| ✨ Decorators | 0 |
-| 🔄 Re-exports | 0 |
-| ⚡ Async/Await Patterns | 0 |
-| 💠 JSX Elements | 0 |
-| 🟢 Vue Composition API | 0 |
-| 📐 Interfaces | 0 |
-| 📑 Type Aliases | 0 |
-| 🎯 Enums | 0 |
 
 ## 📚 Table of Contents
 
@@ -51,13 +42,6 @@
 | `initialFiles` | `DataTransfer` | const | `new DataTransfer()` | ✗ |
 | `expectedFiles` | `DataTransfer` | const | `new DataTransfer()` | ✗ |
 | `file` | `File` | let/var | `new File(['dummy content'], 'example.txt', { type: 'text/plain' })` | ✗ |
-
-
----
-
-## 🔧 Functions
-
-> No functions found in this file.
 
 
 ---
